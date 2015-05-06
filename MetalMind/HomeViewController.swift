@@ -8,9 +8,21 @@
 
 import UIKit
 import SpriteKit
+import Locksmith
 
 class HomeViewController: UIViewController {
+    
+    var userData: NSDictionary? {
+        get {
+            let (data, error) = Locksmith.loadDataForUserAccount("MetalMindUserAccount")
+            if error != nil { return nil }
+            
+            return data
+        }
+    }
+    var token: String?  { return userData?.objectForKey("token") as? String }
 
+    // MARK:- UIViewController Life-Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -21,6 +33,13 @@ class HomeViewController: UIViewController {
         skView.ignoresSiblingOrder = true
         playesOverviewScene.scaleMode = .ResizeFill
         skView.presentScene(playesOverviewScene)
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        if userData?.objectForKey("token") == nil {
+            self.performSegueWithIdentifier("ModalLoginViewController", sender: self)
+        }
     }
 
     override func didReceiveMemoryWarning() {

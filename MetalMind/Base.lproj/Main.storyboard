@@ -5,6 +5,81 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="914-aj-HbE">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="DtR-FX-Uit" customClass="LoginViewController" customModule="MetalMind" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="r0W-V0-BZ3"/>
+                        <viewControllerLayoutGuide type="bottom" id="fmb-YU-fee"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Tnm-sp-5Ai">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d5Q-wT-qbW">
+                                <rect key="frame" x="16" y="285" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kw2-Hq-b8H">
+                                <rect key="frame" x="16" y="540" width="568" height="40"/>
+                                <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButtonAction:" destination="DtR-FX-Uit" eventType="touchUpInside" id="1fY-Va-R6g"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please login before continuing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcF-A7-0CW">
+                                <rect key="frame" x="16" y="218" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter User Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Twa-wU-8Cp">
+                                <rect key="frame" x="16" y="247" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="d5Q-wT-qbW" firstAttribute="trailing" secondItem="Tnm-sp-5Ai" secondAttribute="trailingMargin" id="GZb-2V-ZKO"/>
+                            <constraint firstItem="Twa-wU-8Cp" firstAttribute="trailing" secondItem="Tnm-sp-5Ai" secondAttribute="trailingMargin" id="K5z-W6-fu0"/>
+                            <constraint firstItem="Twa-wU-8Cp" firstAttribute="leading" secondItem="Tnm-sp-5Ai" secondAttribute="leadingMargin" id="OrC-ie-6tI"/>
+                            <constraint firstAttribute="centerY" secondItem="d5Q-wT-qbW" secondAttribute="centerY" id="Xkg-eJ-4a9"/>
+                            <constraint firstItem="d5Q-wT-qbW" firstAttribute="top" secondItem="Twa-wU-8Cp" secondAttribute="bottom" constant="8" id="c5f-hP-jFf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Kw2-Hq-b8H" secondAttribute="trailing" id="jOz-r6-Zlh"/>
+                            <constraint firstItem="Kw2-Hq-b8H" firstAttribute="leading" secondItem="Tnm-sp-5Ai" secondAttribute="leadingMargin" id="lpg-3C-WkR"/>
+                            <constraint firstItem="qcF-A7-0CW" firstAttribute="trailing" secondItem="Tnm-sp-5Ai" secondAttribute="trailingMargin" id="mBI-FN-8gp"/>
+                            <constraint firstItem="Twa-wU-8Cp" firstAttribute="top" secondItem="qcF-A7-0CW" secondAttribute="bottom" constant="8" id="pRb-9Y-FkY"/>
+                            <constraint firstItem="qcF-A7-0CW" firstAttribute="leading" secondItem="Tnm-sp-5Ai" secondAttribute="leadingMargin" id="rpA-Z2-MC3"/>
+                            <constraint firstItem="fmb-YU-fee" firstAttribute="top" secondItem="Kw2-Hq-b8H" secondAttribute="bottom" constant="20" id="u9a-2P-i8H"/>
+                            <constraint firstItem="d5Q-wT-qbW" firstAttribute="leading" secondItem="Tnm-sp-5Ai" secondAttribute="leadingMargin" id="z3Y-s8-MMF"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Ksh-fW-nbD" appends="YES" id="l70-k9-Xcc"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="notificationLabel" destination="qcF-A7-0CW" id="CfX-84-Q2C"/>
+                        <outlet property="passwordTextField" destination="d5Q-wT-qbW" id="BfO-DP-WWy"/>
+                        <outlet property="usernameTextField" destination="Twa-wU-8Cp" id="Db3-Ep-bOF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2e2-Af-sYb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Ksh-fW-nbD">
+                    <connections>
+                        <action selector="loginViewTap:" destination="DtR-FX-Uit" id="BpL-2y-KJC"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2609" y="-1680"/>
+        </scene>
         <!--Overview-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -26,6 +101,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="DtR-FX-Uit" kind="presentation" identifier="ModalLoginViewController" id="xVo-Ix-REG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -34,7 +112,7 @@
         <!--Stats-->
         <scene sceneID="rb3-qW-12i">
             <objects>
-                <viewController id="Imc-NC-UkO" customClass="PlayerStatsViewController" customModule="MetalMind" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Imc-NC-UkO" customClass="OverviewViewController" customModule="MetalMind" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FUl-PZ-mTA"/>
                         <viewControllerLayoutGuide type="bottom" id="2Ld-2A-ZUI"/>
