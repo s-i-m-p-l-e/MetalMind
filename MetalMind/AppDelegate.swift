@@ -18,14 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        let usernameKey = "victor"
-        let passwordKey = "password"
-        
+        let testView = UIView()
         let e1 = Locksmith.deleteDataForUserAccount("myUserAccount")
-        let error = Locksmith.saveData(["some key": "some value"], forUserAccount: "myUserAccount")
+        let error = Locksmith.saveData(["token": "some value"], forUserAccount: "myUserAccount")
         println(error)
         let (dictionary, err) = Locksmith.loadDataForUserAccount("myUserAccount")
-        println(dictionary?.objectForKey("some key"))
+        println(dictionary?.objectForKey("token"))
         
         println("application loaded")
 //        SecItemAdd(attributes: [kSecAttrAccount: "victor", kSecValueData: "password"], nil)
