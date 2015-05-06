@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		570ADE031AD59CBB009FDC4E /* boyDownWalk.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 570ADE021AD59CBB009FDC4E /* boyDownWalk.atlas */; };
+		5746AB4F1AFA5516004E06FE /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5746AB4E1AFA5516004E06FE /* Authentication.swift */; };
+		5746AB511AFA5529004E06FE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5746AB501AFA5529004E06FE /* Security.framework */; };
 		57C532DB1AF2152400028E0E /* MetalMindKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57C532D91AF2151200028E0E /* MetalMindKit.framework */; };
 		57C532DC1AF2152400028E0E /* MetalMindKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 57C532D91AF2151200028E0E /* MetalMindKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		57C532DD1AF2152400028E0E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57C532D71AF214F100028E0E /* Alamofire.framework */; };
@@ -50,6 +52,8 @@
 
 /* Begin PBXFileReference section */
 		570ADE021AD59CBB009FDC4E /* boyDownWalk.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = boyDownWalk.atlas; sourceTree = "<group>"; };
+		5746AB4E1AFA5516004E06FE /* Authentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		5746AB501AFA5529004E06FE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		57C532D71AF214F100028E0E /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		57C532D91AF2151200028E0E /* MetalMindKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalMindKit.framework; path = Carthage/Build/iOS/MetalMindKit.framework; sourceTree = "<group>"; };
 		57D1C6641AD52ECF00609C72 /* MetalMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5746AB511AFA5529004E06FE /* Security.framework in Frameworks */,
 				57D1C68C1AD5535A00609C72 /* SpriteKit.framework in Frameworks */,
 				57C532DD1AF2152400028E0E /* Alamofire.framework in Frameworks */,
 				57C532DB1AF2152400028E0E /* MetalMindKit.framework in Frameworks */,
@@ -110,6 +115,7 @@
 		57D1C6661AD52ECF00609C72 /* MetalMind */ = {
 			isa = PBXGroup;
 			children = (
+				5746AB4E1AFA5516004E06FE /* Authentication.swift */,
 				57D1C66B1AD52ECF00609C72 /* HomeViewController.swift */,
 				57D1C6891AD54F6B00609C72 /* HomeScene.swift */,
 				57D1C66D1AD52ECF00609C72 /* Main.storyboard */,
@@ -151,6 +157,7 @@
 		57D1C68D1AD5536D00609C72 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5746AB501AFA5529004E06FE /* Security.framework */,
 				57C532D91AF2151200028E0E /* MetalMindKit.framework */,
 				57C532D71AF214F100028E0E /* Alamofire.framework */,
 				57D1C68B1AD5535A00609C72 /* SpriteKit.framework */,
@@ -284,6 +291,7 @@
 				57D1C68A1AD54F6B00609C72 /* HomeScene.swift in Sources */,
 				57D1C66C1AD52ECF00609C72 /* HomeViewController.swift in Sources */,
 				57D1C66A1AD52ECF00609C72 /* AppDelegate.swift in Sources */,
+				5746AB4F1AFA5516004E06FE /* Authentication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
