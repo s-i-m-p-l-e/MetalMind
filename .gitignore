@@ -72,17 +72,7 @@ DerivedData
 # you should judge for yourself, the pros and cons are mentioned at:
 # http://guides.cocoapods.org/using/using-cocoapods.html#should-i-ignore-the-pods-directory-in-source-control
 #
-# Pods/
-
-### Carthage ###
-Carthage.checkout
-Carthage.build
-# Carthage - A simple, decentralized dependency manager for Cocoa
-#
-# Add this line if you want to avoid checking in source code from Carthage dependencies.
-Carthage/Checkouts
-#Carthage/Build
-
+#Pods/
 
 ### Vim ###
 [._]*.s[a-w][a-z]

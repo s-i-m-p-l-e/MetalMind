@@ -8,8 +8,6 @@
 
 import UIKit
 import SpriteKit
-import Alamofire
-import MetalMindKit
 
 class HomeViewController: UIViewController {
 
