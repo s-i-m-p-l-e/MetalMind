@@ -8,6 +8,7 @@
 
 import UIKit
 import Security
+import Locksmith
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let usernameKey = "victor"
         let passwordKey = "password"
+        
+        let e1 = Locksmith.deleteDataForUserAccount("myUserAccount")
+        let error = Locksmith.saveData(["some key": "some value"], forUserAccount: "myUserAccount")
+        println(error)
+        let (dictionary, err) = Locksmith.loadDataForUserAccount("myUserAccount")
+        println(dictionary?.objectForKey("some key"))
         
         println("application loaded")
 //        SecItemAdd(attributes: [kSecAttrAccount: "victor", kSecValueData: "password"], nil)
