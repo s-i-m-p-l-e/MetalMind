@@ -7,15 +7,21 @@
 //
 
 import UIKit
+import Security
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let usernameKey = "victor"
+        let passwordKey = "password"
+        
+        println("application loaded")
+//        SecItemAdd(attributes: [kSecAttrAccount: "victor", kSecValueData: "password"], nil)
         return true
     }
 
