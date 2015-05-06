@@ -1,2 +1,2 @@
-# MetalMind
-Game client
+# MetalMindKit
+Frame for metal mind game
