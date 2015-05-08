@@ -10,6 +10,15 @@ import SpriteKit
 
 class HomeScene: SKScene {
     
+    
+    // player = MetalMindPlayer()
+    // player.moveDownTextures = SKTexturesAltlas(named: "boyDownWalk")
+    // player.moveRightTextures = SKTexturesAtlas(named: "boyRightWalk")
+    // ....
+    //player.moveToY(25.0)
+    //player.moveToY(150.0)
+    //player.moveToY(55.0)
+    
     let playerWalkAnimationAtlas = SKTextureAtlas(named: "boyDownWalk")
     lazy var playerWalkFrames: [SKTexture] = {
         let frameNames = self.playerWalkAnimationAtlas.textureNames as! [String]
@@ -24,7 +33,9 @@ class HomeScene: SKScene {
         return lazyPlayerWalkFrames
     }()
     
+    
     override func didMoveToView(view: SKView) {
+        let frames = playerWalkAnimationAtlas.textureNames as! [SKTexture]
         
         let firstFrame = playerWalkFrames.first!
         let player = SKSpriteNode(texture: firstFrame)
@@ -43,6 +54,6 @@ class HomeScene: SKScene {
         
         addChild(backgroundImage)
         addChild(player)
-        
+        player.parent
     }
 }

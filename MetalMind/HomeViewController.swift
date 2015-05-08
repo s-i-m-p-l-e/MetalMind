@@ -9,6 +9,7 @@
 import UIKit
 import SpriteKit
 import Locksmith
+import MetalMindKit
 
 class HomeViewController: UIViewController {
     
@@ -26,6 +27,9 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let arena = MetalMindKit.MetalMindArena()
+        
         let playesOverviewScene = HomeScene(size: view.bounds.size)
         let skView = self.view as! SKView
         skView.showsFPS = true
