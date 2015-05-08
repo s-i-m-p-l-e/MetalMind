@@ -41,13 +41,14 @@ class HomeScene: SKScene {
     override func didMoveToView(view: SKView) {
         player.textures[.Right] = SKTextureAtlas(named: "rightWalks").textures
         
+            println(player.textures[.Right])
 //        let frames = playerWalkAnimationAtlas.textureNames as! [SKTexture]
 //        
 //        let firstFrame = playerWalkFrames.first!
 //        let player = SKSpriteNode(texture: firstFrame)
         let backgroundImage = SKSpriteNode(imageNamed: "spaceShipBackground")
 //
-//        player.size = CGSizeMake(size.width * 0.8, size.height * 0.6)
+        player.playerNode.size = CGSizeMake(size.width * 0.8, size.height * 0.6)
         player.playerNode.position = CGPoint(x: size.width/2, y: size.height/3)
 //
         backgroundImage.position = CGPointMake(size.width/2, size.height/2 - 40.0)
@@ -61,16 +62,8 @@ class HomeScene: SKScene {
         addChild(backgroundImage)
 //        addChild(player)
         addChild(player.playerNode)
-        player.move(.Right, distance: 20.0, duration: 2.0)
+        player.move(.Right, distance: 120.0, duration: 4.0)
 
 
-    }
-}
-
-/** Internal extension to extract textures easier */
-internal extension SKTextureAtlas {
-    /** Extract all textures in an array */
-    var textures: [SKTexture] {
-        return map(self.textureNames) { self.textureNamed($0 as! String) }
     }
 }
