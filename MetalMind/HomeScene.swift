@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+import MetalMindKit
 
 class HomeScene: SKScene {
     
@@ -18,6 +19,9 @@ class HomeScene: SKScene {
     //player.moveToY(25.0)
     //player.moveToY(150.0)
     //player.moveToY(55.0)
+    
+    let player = MMPlayer(parentScene: SKScene())
+    
     
     let playerWalkAnimationAtlas = SKTextureAtlas(named: "boyDownWalk")
     lazy var playerWalkFrames: [SKTexture] = {
@@ -35,25 +39,38 @@ class HomeScene: SKScene {
     
     
     override func didMoveToView(view: SKView) {
-        let frames = playerWalkAnimationAtlas.textureNames as! [SKTexture]
+        player.textures[.Right] = SKTextureAtlas(named: "rightWalks").textures
         
-        let firstFrame = playerWalkFrames.first!
-        let player = SKSpriteNode(texture: firstFrame)
+//        let frames = playerWalkAnimationAtlas.textureNames as! [SKTexture]
+//        
+//        let firstFrame = playerWalkFrames.first!
+//        let player = SKSpriteNode(texture: firstFrame)
         let backgroundImage = SKSpriteNode(imageNamed: "spaceShipBackground")
-        
-        player.size = CGSizeMake(size.width * 0.8, size.height * 0.6)
-        player.position = CGPoint(x: size.width/2, y: size.height/3)
-
+//
+//        player.size = CGSizeMake(size.width * 0.8, size.height * 0.6)
+        player.playerNode.position = CGPoint(x: size.width/2, y: size.height/3)
+//
         backgroundImage.position = CGPointMake(size.width/2, size.height/2 - 40.0)
-        
-
-        let playerWalkAction = SKAction.animateWithTextures(playerWalkFrames, timePerFrame: 0.3)
-        player.runAction(SKAction.repeatActionForever(playerWalkAction))
-        
-        self.backgroundColor = SKColor.whiteColor()
-        
+//
+//
+//        let playerWalkAction = SKAction.animateWithTextures(playerWalkFrames, timePerFrame: 0.3)
+//        player.runAction(SKAction.repeatActionForever(playerWalkAction))
+//        
+//        self.backgroundColor = SKColor.whiteColor()
+//        
         addChild(backgroundImage)
-        addChild(player)
-        player.parent
+//        addChild(player)
+        addChild(player.playerNode)
+        player.move(.Right, distance: 20.0, duration: 2.0)
+
+
+    }
+}
+
+/** Internal extension to extract textures easier */
+internal extension SKTextureAtlas {
+    /** Extract all textures in an array */
+    var textures: [SKTexture] {
+        return map(self.textureNames) { self.textureNamed($0 as! String) }
     }
 }

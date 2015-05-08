@@ -1,25 +1,13 @@
 PODS:
   - Alamofire (1.2.1)
   - Locksmith (1.2.1)
-  - MetalMindKit (0.1-alpha.1)
 
 DEPENDENCIES:
   - Alamofire
   - Locksmith
-  - MetalMindKit (from `https://github.com/s-i-m-p-l-e/MetalMindKit.git`)
-
-EXTERNAL SOURCES:
-  MetalMindKit:
-    :git: https://github.com/s-i-m-p-l-e/MetalMindKit.git
-
-CHECKOUT OPTIONS:
-  MetalMindKit:
-    :commit: f87e1f2fe716bb0463894be510e5d7695b86e96d
-    :git: https://github.com/s-i-m-p-l-e/MetalMindKit.git
 
 SPEC CHECKSUMS:
   Alamofire: 1acfdf179aff68b41a48dff70c1ac7fa263e2bcb
   Locksmith: 770f6c5c6e5c5c712d1f00e709c62b8a7240c716
-  MetalMindKit: 0744460b36d35e8f2e7d59ccae36c720de0f1653
 
 COCOAPODS: 0.37.0
