@@ -1,0 +1,6 @@
+framework module MetalMindKit {
+  umbrella header "Pods-MetalMind-MetalMindKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

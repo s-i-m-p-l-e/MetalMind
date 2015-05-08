@@ -3,6 +3,6 @@ use_frameworks!
 
 target 'MetalMind' do
   pod 'Alamofire'
-  #pod 'MetalMindKit'
+  pod 'MetalMindKit', :git => 'https://github.com/s-i-m-p-l-e/MetalMindKit.git'
   pod 'Locksmith'
 end
