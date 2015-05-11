@@ -6,6 +6,6 @@ target 'MetalMind' do
   #pod 'MetalMindKit', :git => 'https://github.com/s-i-m-p-l-e/MetalMindKit.git'
   pod 'Locksmith'
   #pod 'SpineSpriteKit'
-  pod 'EZAudio'
+  #pod 'EZAudio'
 end
 

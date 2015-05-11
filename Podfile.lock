@@ -1,16 +1,13 @@
 PODS:
   - Alamofire (1.2.1)
-  - EZAudio (0.0.6)
   - Locksmith (1.2.1)
 
 DEPENDENCIES:
   - Alamofire
-  - EZAudio
   - Locksmith
 
 SPEC CHECKSUMS:
   Alamofire: 1acfdf179aff68b41a48dff70c1ac7fa263e2bcb
-  EZAudio: feb8e1c3ec17d8933bc2efc66b59ead1f2e79e54
   Locksmith: 770f6c5c6e5c5c712d1f00e709c62b8a7240c716
 
 COCOAPODS: 0.37.0

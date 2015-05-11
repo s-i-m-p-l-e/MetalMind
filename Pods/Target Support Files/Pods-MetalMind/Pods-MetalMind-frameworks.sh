@@ -49,11 +49,9 @@ code_sign() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Alamofire.framework'
-  install_framework 'EZAudio.framework'
   install_framework 'Locksmith.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Alamofire.framework'
-  install_framework 'EZAudio.framework'
   install_framework 'Locksmith.framework'
 fi
