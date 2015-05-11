@@ -8,8 +8,6 @@
 
 import SpriteKit
 import MetalMindKit
-import SpineSpriteKit
-import ObjectiveSpine
 
 class HomeScene: SKScene {
     

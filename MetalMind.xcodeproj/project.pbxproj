@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		570ADE031AD59CBB009FDC4E /* downWalk.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 570ADE021AD59CBB009FDC4E /* downWalk.atlas */; };
+		571F1A311B00BC2C000EE11C /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571F1A301B00BC2C000EE11C /* Player.swift */; };
 		5746AB511AFA5529004E06FE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5746AB501AFA5529004E06FE /* Security.framework */; };
 		574980841B00B3DD00CE9A97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 574980821B00B3DD00CE9A97 /* Main.storyboard */; };
 		575D6C0F1AFAB0D800D6AE41 /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575D6C0E1AFAB0D800D6AE41 /* OverviewViewController.swift */; };
@@ -55,6 +56,7 @@
 		040470657417509BAFA9A234 /* Pods_MetalMind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MetalMind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4517CF1532232E21965A8836 /* Pods-MetalMind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetalMind.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MetalMind/Pods-MetalMind.debug.xcconfig"; sourceTree = "<group>"; };
 		570ADE021AD59CBB009FDC4E /* downWalk.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = downWalk.atlas; sourceTree = "<group>"; };
+		571F1A301B00BC2C000EE11C /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		5746AB501AFA5529004E06FE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		574980831B00B3DD00CE9A97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		575D6C0E1AFAB0D800D6AE41 /* OverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +119,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		571F1A321B00BCD4000EE11C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				571F1A301B00BC2C000EE11C /* Player.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		571F1A331B00BCDD000EE11C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				57B14FD11AFE60CB004B42A5 /* RootTabBarController.swift */,
+				57B14FCF1AFE5E51004B42A5 /* NavigationController.swift */,
+				57D1C66B1AD52ECF00609C72 /* HomeViewController.swift */,
+				57D1C6891AD54F6B00609C72 /* HomeScene.swift */,
+				57851C001AFA76BC0000382F /* LoginViewController.swift */,
+				575D6C0E1AFAB0D800D6AE41 /* OverviewViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		57775C2A1AFE8C4B009ABF3C /* Spine */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,12 +183,8 @@
 		57D1C6661AD52ECF00609C72 /* MetalMind */ = {
 			isa = PBXGroup;
 			children = (
-				57B14FD11AFE60CB004B42A5 /* RootTabBarController.swift */,
-				57B14FCF1AFE5E51004B42A5 /* NavigationController.swift */,
-				57D1C66B1AD52ECF00609C72 /* HomeViewController.swift */,
-				57D1C6891AD54F6B00609C72 /* HomeScene.swift */,
-				57851C001AFA76BC0000382F /* LoginViewController.swift */,
-				575D6C0E1AFAB0D800D6AE41 /* OverviewViewController.swift */,
+				571F1A321B00BCD4000EE11C /* Model */,
+				571F1A331B00BCDD000EE11C /* Controller */,
 				574980821B00B3DD00CE9A97 /* Main.storyboard */,
 				57D1C6671AD52ECF00609C72 /* Supporting Files */,
 			);
@@ -397,6 +416,7 @@
 				57B14FD21AFE60CB004B42A5 /* RootTabBarController.swift in Sources */,
 				57B14FD01AFE5E51004B42A5 /* NavigationController.swift in Sources */,
 				57D1C68A1AD54F6B00609C72 /* HomeScene.swift in Sources */,
+				571F1A311B00BC2C000EE11C /* Player.swift in Sources */,
 				575D6C0F1AFAB0D800D6AE41 /* OverviewViewController.swift in Sources */,
 				57D1C66C1AD52ECF00609C72 /* HomeViewController.swift in Sources */,
 				57D1C66A1AD52ECF00609C72 /* AppDelegate.swift in Sources */,

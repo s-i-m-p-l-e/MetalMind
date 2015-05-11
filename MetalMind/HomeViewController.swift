@@ -9,7 +9,6 @@
 import UIKit
 import SpriteKit
 import Locksmith
-import MetalMindKit
 
 class HomeViewController: UIViewController {
     
@@ -47,9 +46,9 @@ class HomeViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-//        if userData?.objectForKey("token") == nil {
-//            self.performSegueWithIdentifier("ModalLoginViewController", sender: self)
-//        }
+        if userData?.objectForKey("token") == nil {
+            self.performSegueWithIdentifier("ModalLoginViewController", sender: self)
+        }
     }
 
     override func didReceiveMemoryWarning() {

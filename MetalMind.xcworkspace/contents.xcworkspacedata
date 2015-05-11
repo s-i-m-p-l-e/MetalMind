@@ -5,9 +5,6 @@
       location = "group:MetalMind.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:../MetalMindKit/MetalMindKit.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
