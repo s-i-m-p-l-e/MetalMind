@@ -7,304 +7,479 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1E078541A29FAECBCF12AE6A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C73DC3057D57F0D44B306E53 /* Foundation.framework */; };
-		36769EA159BBCB437CDBF075 /* Pods-MetalMind-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A56742FA8D89940D065D7 /* Pods-MetalMind-dummy.m */; };
-		3EC76E49A8BE26C09AE01BAB /* Pods-MetalMind-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0ED79DF5253160B417F7A86C /* Pods-MetalMind-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		400856C62A6FC5EB29A51990 /* Pods-MetalMind-Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 88F4E034DDDDB19837A1EF81 /* Pods-MetalMind-Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		51BA4A18D9DF38C4F191680A /* LocksmithRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4F16E173FA2DADCDAE4CA9 /* LocksmithRequest.swift */; };
-		53D5639E574B9B4402B3662C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C73DC3057D57F0D44B306E53 /* Foundation.framework */; };
-		784737E62EBBAC0ADCE22455 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CC923D736E714417954597 /* Alamofire.swift */; };
-		A61930F49E2D67F7D6D98629 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C73DC3057D57F0D44B306E53 /* Foundation.framework */; };
-		BC24FDC58E58097206C27198 /* Pods-MetalMind-Locksmith-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA32AA97A59C3B77D7512B1 /* Pods-MetalMind-Locksmith-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C273185D2EA477C39457510F /* Locksmith.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9BF237FA6BE56EB0FECD8124 /* Locksmith.bundle */; };
-		C6577A90C3CBE47A63CB5D34 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7AADDE07934FF1FE853CFA8 /* Security.framework */; };
-		D453B42BE38A05A893483CA1 /* Pods-MetalMind-Locksmith-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 43AA7D4CDE571A5FAD7EDB76 /* Pods-MetalMind-Locksmith-dummy.m */; };
-		DF07D457837FBE76A25B7EC4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABEC28CEC24E73BC55394E42 /* UIKit.framework */; };
-		E8BDDCEC6C034CA3ABEF2EFE /* Locksmith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C17221A1EF88190EB44DDE /* Locksmith.swift */; };
-		F8FD45627FCE0B233C9F62E1 /* Pods-MetalMind-Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EFCBA43B07E6BBC2A261E4B /* Pods-MetalMind-Alamofire-dummy.m */; };
+		03C0FFF5C6DF3C8FB924832E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 151AF269AFAF46EF2F7A4653 /* Foundation.framework */; };
+		059992F40CBDE984484F84AD /* EZOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = 60096B62C9F5B9F248860A46 /* EZOutput.m */; };
+		064080E871BAEF73414358C4 /* EZAudioPlotGL.h in Headers */ = {isa = PBXBuildFile; fileRef = 69964C4B55B59EAA8A679026 /* EZAudioPlotGL.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09EC0A00461B4D90111DABF8 /* EZAudioPlot.h in Headers */ = {isa = PBXBuildFile; fileRef = E2BF0AF4E1470318434225FF /* EZAudioPlot.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16E4B8D2F8E4D9529CCAC70A /* TPCircularBuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD907AA22EF9723D548EDA /* TPCircularBuffer.c */; };
+		1795B34FCC3B18A51FE20249 /* Pods-MetalMind-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EC64F1515EF688D745259D5F /* Pods-MetalMind-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1B2595DA34672A77186652C3 /* EZRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = E617BEFE11D0DAFBB69F1E98 /* EZRecorder.m */; };
+		2634D8099254FB4318C196D6 /* EZAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F29B36AC1C8921F826543A /* EZAudio.m */; };
+		26B07AF205A583139D0BE1E1 /* EZAudioPlotGLKViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CE583452D3E170AF0325A53 /* EZAudioPlotGLKViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2ACA66D5E02F61D530E2B3F2 /* EZMicrophone.h in Headers */ = {isa = PBXBuildFile; fileRef = 07AF65D4DEFE0EEB60EA2FA5 /* EZMicrophone.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		304B0749DE9DA21B26C9C0AA /* Locksmith.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 42B5F8B2B182746276605F7C /* Locksmith.bundle */; };
+		3FDC696CC25222A9546BEE8F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 151AF269AFAF46EF2F7A4653 /* Foundation.framework */; };
+		469B61239CCD8FE9C6963487 /* EZOutput.h in Headers */ = {isa = PBXBuildFile; fileRef = F6A206F81E9529277EBFA817 /* EZOutput.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4BD04274FA42CE671157ACD9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B1EA76FA46DA39F4B2251C5 /* Security.framework */; };
+		4DE6780020AAE1A3DD9AEA38 /* AEFloatConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AA2121AE3EBC709B4E9AC58 /* AEFloatConverter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		501063F2644FE0FDD5F0E825 /* LocksmithRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E475FB370C60F4072F1A24 /* LocksmithRequest.swift */; };
+		508911296B737A654A36D83F /* EZAudioPlot.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6CCDBA06ABFA439CDC297 /* EZAudioPlot.m */; };
+		575A0717603FFF0CF297E42D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72CA46A8E389D4CE7E3E3DB2 /* AVFoundation.framework */; };
+		5979742AF8BB1E53AABD404E /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39FFAD5C3656E924224E61F /* Alamofire.swift */; };
+		5E2B931D6F5BEA623B4D7B7D /* TPCircularBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 48BD27017E878CF59D78D4E6 /* TPCircularBuffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5E5E2A0B9DACF11310D84697 /* EZAudio.h in Headers */ = {isa = PBXBuildFile; fileRef = 3127BECE3155A49A8C92A73C /* EZAudio.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		60A25864083DD0DA78CA57AA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F43CA168EC2AD0A1711711C /* UIKit.framework */; };
+		656C587E97E2DCC1E537ADA0 /* Pods-MetalMind-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BD90EE56921B586A4E459A /* Pods-MetalMind-dummy.m */; };
+		688FD47D0C06F90126298C7D /* AEFloatConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = C0DBDEC10E28F0F144607BFD /* AEFloatConverter.m */; };
+		6AED9CAD43F1CFB18629B061 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC024BA0BCFA01DC1F83B554 /* GLKit.framework */; };
+		854EB01DE04E3313392C4632 /* Pods-MetalMind-EZAudio-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E02AF4E3946B6614E3F0BF /* Pods-MetalMind-EZAudio-dummy.m */; };
+		883C8387085DD330E1F5C494 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CA537D5FBB60B866B53670B /* AudioToolbox.framework */; };
+		8B31B3BE7F97BC8F40E04FD5 /* Pods-MetalMind-Locksmith-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E6AF98F22AA91B1B82D349 /* Pods-MetalMind-Locksmith-dummy.m */; };
+		9F43B8F42D980703B584B91D /* EZRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D717E1AE857E34C2AF1D3A6 /* EZRecorder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A0F53A506A5F6C9DF0E6998E /* EZAudioPlotGL.m in Sources */ = {isa = PBXBuildFile; fileRef = E80A862E9E5E36A0CAC65279 /* EZAudioPlotGL.m */; };
+		A4A277D3EF013E8474C4BBF1 /* Pods-MetalMind-Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 98374BAB3BD435AC7BC97A13 /* Pods-MetalMind-Alamofire-dummy.m */; };
+		AD4C91BC3D5E9A79A0A907DA /* EZMicrophone.m in Sources */ = {isa = PBXBuildFile; fileRef = A1277CDC589129BBDFFD395E /* EZMicrophone.m */; };
+		B40710549D96C3419A89E508 /* Pods-MetalMind-Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A8E39B2D1F71BB0BE858513 /* Pods-MetalMind-Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B95855D70F49C555F234D2F2 /* EZAudioFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FA98E4C0B409922899ADA9F /* EZAudioFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B9BF11DE67E6311C0C2647C7 /* EZAudioPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = C5E90C3AA1B331CD9EFF1669 /* EZAudioPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C63DE62ADAB4ABDFB5FE1325 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 151AF269AFAF46EF2F7A4653 /* Foundation.framework */; };
+		CAF56BAADFD914769B7756A3 /* EZAudioPlotGLKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ABED69BC6E7F38666273F58 /* EZAudioPlotGLKViewController.m */; };
+		D6D7D05E5EF5134695C59ECD /* EZAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E17D9CE48549BE11A8803F39 /* EZAudioPlayer.m */; };
+		D75455263ABF239BB9E329FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 151AF269AFAF46EF2F7A4653 /* Foundation.framework */; };
+		D7E4AD2B80F0A34E78F7E97A /* Locksmith.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55C227E6C42D38760E8E063 /* Locksmith.swift */; };
+		E3B87C2B8B0ECF525E969AAD /* Pods-MetalMind-EZAudio-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5457E88ACB3ADF7351C72A0B /* Pods-MetalMind-EZAudio-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA9CAE3EB75F396657C0822A /* EZPlot.h in Headers */ = {isa = PBXBuildFile; fileRef = 282811F5E00B8588607C3F9A /* EZPlot.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F07C143EEE352381D7B334F7 /* Pods-MetalMind-Locksmith-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DE409EADA4B548546FC66A9 /* Pods-MetalMind-Locksmith-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F57B32EE5E417783CC6645E4 /* EZPlot.m in Sources */ = {isa = PBXBuildFile; fileRef = F803FF124F4E6B738243CED3 /* EZPlot.m */; };
+		FB92B74953C3B5FE83E88141 /* EZAudioFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 49979B583AAED0138C132569 /* EZAudioFile.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1BDBC170850552E2BDF28ACC /* PBXContainerItemProxy */ = {
+		2917653ECE30E77014DC09FF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0AED4CAF304C6EDC9D0C1F71 /* Project object */;
+			containerPortal = E7F7AB13BB51084F4119752B /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 04A0EC81238A72A919148478;
+			remoteGlobalIDString = 92E02549E84B0AACF799F8D7;
+			remoteInfo = "Pods-MetalMind-Locksmith-Locksmith";
+		};
+		2B9E357288DEF2E8EF139319 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E7F7AB13BB51084F4119752B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42556CC27A83C45CE6D0DC50;
 			remoteInfo = "Pods-MetalMind-Locksmith";
 		};
-		A9D9571986BE0B34B7EAE441 /* PBXContainerItemProxy */ = {
+		69F59E7E4E2CCE6FFBEE9864 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0AED4CAF304C6EDC9D0C1F71 /* Project object */;
+			containerPortal = E7F7AB13BB51084F4119752B /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = CDA2F0AC8D25EE9A2C63123B;
-			remoteInfo = "Pods-MetalMind-Alamofire";
+			remoteGlobalIDString = B2242B43A9DCA3FF926AF178;
+			remoteInfo = "Pods-MetalMind-EZAudio";
 		};
-		ECC69EBFDF47B7A671490CD4 /* PBXContainerItemProxy */ = {
+		B5F4B38F4537B34407F1585C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0AED4CAF304C6EDC9D0C1F71 /* Project object */;
+			containerPortal = E7F7AB13BB51084F4119752B /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 485B9951A91EB77C03F4F13D;
-			remoteInfo = "Pods-MetalMind-Locksmith-Locksmith";
+			remoteGlobalIDString = A93CEE8F2CDBC21A59808D2E;
+			remoteInfo = "Pods-MetalMind-Alamofire";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0640E8DCB8701F94734C123C /* Pods-MetalMind-Alamofire-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MetalMind-Alamofire-Private.xcconfig"; sourceTree = "<group>"; };
-		0ED79DF5253160B417F7A86C /* Pods-MetalMind-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MetalMind-umbrella.h"; sourceTree = "<group>"; };
-		11C2B61FACC9FED9E5B818CB /* Pods-MetalMind-Locksmith-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MetalMind-Locksmith-Private.xcconfig"; sourceTree = "<group>"; };
-		2A1C3F607C23075407BD7A8D /* Pods_MetalMind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MetalMind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2E3ACEBCB183D06A8E269852 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3BD7CC11D2E2F8E123B27270 /* Pods-MetalMind-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MetalMind-acknowledgements.markdown"; sourceTree = "<group>"; };
-		3CE357C784728C75FD10AFC5 /* Pods-MetalMind-Locksmith.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MetalMind-Locksmith.xcconfig"; sourceTree = "<group>"; };
-		3F7092166928270A264C500C /* Locksmith.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Locksmith.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4069C60B18F02167AFE3FB6F /* Pods-MetalMind-Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MetalMind-Alamofire.xcconfig"; sourceTree = "<group>"; };
-		43AA7D4CDE571A5FAD7EDB76 /* Pods-MetalMind-Locksmith-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MetalMind-Locksmith-dummy.m"; sourceTree = "<group>"; };
-		56F97570907C697B358BC554 /* Pods-MetalMind-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MetalMind-frameworks.sh"; sourceTree = "<group>"; };
-		5E11A577D45A5180C23A734B /* Pods-MetalMind-Locksmith.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-MetalMind-Locksmith.modulemap"; sourceTree = "<group>"; };
-		5EC31F0491A4A5E7A09F919B /* Pods-MetalMind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MetalMind.debug.xcconfig"; sourceTree = "<group>"; };
-		5F5FDBE13378CF5EBB58E539 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		62CC923D736E714417954597 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
-		67B77BD40AA4A49B96F3A567 /* Pods-MetalMind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MetalMind.release.xcconfig"; sourceTree = "<group>"; };
-		715AD95F9B8C13F0F1596E31 /* Pods-MetalMind-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MetalMind-environment.h"; sourceTree = "<group>"; };
-		73C17221A1EF88190EB44DDE /* Locksmith.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Locksmith.swift; path = Pod/Classes/Locksmith.swift; sourceTree = "<group>"; };
-		7E768EB3CAB98FA4C137BB01 /* Pods-MetalMind-Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MetalMind-Alamofire-prefix.pch"; sourceTree = "<group>"; };
-		81DE4FFEEE1E6E4CEEEFB66D /* Pods-MetalMind-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MetalMind-resources.sh"; sourceTree = "<group>"; };
-		8374D0809A8E4C2D373CC7BB /* Pods-MetalMind.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-MetalMind.modulemap"; sourceTree = "<group>"; };
-		88F4E034DDDDB19837A1EF81 /* Pods-MetalMind-Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MetalMind-Alamofire-umbrella.h"; sourceTree = "<group>"; };
-		8F4F16E173FA2DADCDAE4CA9 /* LocksmithRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocksmithRequest.swift; path = Pod/Classes/LocksmithRequest.swift; sourceTree = "<group>"; };
-		9BF237FA6BE56EB0FECD8124 /* Locksmith.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Locksmith.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		9EFCBA43B07E6BBC2A261E4B /* Pods-MetalMind-Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MetalMind-Alamofire-dummy.m"; sourceTree = "<group>"; };
-		A40A56742FA8D89940D065D7 /* Pods-MetalMind-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MetalMind-dummy.m"; sourceTree = "<group>"; };
-		ABEC28CEC24E73BC55394E42 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		AFF71835A1B213BC241E9AC0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B012391615AF6CEC962F6684 /* Pods-MetalMind-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MetalMind-acknowledgements.plist"; sourceTree = "<group>"; };
-		C6FE721F21A0E7C731F8C8F9 /* Pods-MetalMind-Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-MetalMind-Alamofire.modulemap"; sourceTree = "<group>"; };
-		C73DC3057D57F0D44B306E53 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		CB6816CFBA80CBB234DFCD43 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		E1CD0803194803F09BCA69F9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ECA32AA97A59C3B77D7512B1 /* Pods-MetalMind-Locksmith-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MetalMind-Locksmith-umbrella.h"; sourceTree = "<group>"; };
-		F338E2E25E9B0A14BDB4A6AB /* Pods-MetalMind-Locksmith-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MetalMind-Locksmith-prefix.pch"; sourceTree = "<group>"; };
-		F7AADDE07934FF1FE853CFA8 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		00FC99189B86F6BA4C9D13D2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0277B0C8752B8E3FBFE3E24F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04F68EF4D43652E165100319 /* Pods-MetalMind-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MetalMind-acknowledgements.markdown"; sourceTree = "<group>"; };
+		07AF65D4DEFE0EEB60EA2FA5 /* EZMicrophone.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZMicrophone.h; path = EZAudio/EZMicrophone.h; sourceTree = "<group>"; };
+		0C5670BF6C59DCB0EBF1FDA1 /* Locksmith.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Locksmith.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D717E1AE857E34C2AF1D3A6 /* EZRecorder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZRecorder.h; path = EZAudio/EZRecorder.h; sourceTree = "<group>"; };
+		0F8738F2C1FAD32EBAE58DC0 /* EZAudio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EZAudio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		12003E420BE773CF3EC04CCE /* Pods-MetalMind-Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-MetalMind-Alamofire.modulemap"; sourceTree = "<group>"; };
+		124E34446DD18FDB95D4FA7B /* Pods-MetalMind-EZAudio-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MetalMind-EZAudio-Private.xcconfig"; sourceTree = "<group>"; };
+		12B43344D374884E9EEE607A /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		151AF269AFAF46EF2F7A4653 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		1AB6CCDBA06ABFA439CDC297 /* EZAudioPlot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioPlot.m; path = EZAudio/EZAudioPlot.m; sourceTree = "<group>"; };
+		1F5379012FF69DCF9BE65BFB /* Pods-MetalMind-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MetalMind-resources.sh"; sourceTree = "<group>"; };
+		1F7918EB9A76039F7AA66DA6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		282811F5E00B8588607C3F9A /* EZPlot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZPlot.h; path = EZAudio/EZPlot.h; sourceTree = "<group>"; };
+		2F43CA168EC2AD0A1711711C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		3127BECE3155A49A8C92A73C /* EZAudio.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudio.h; path = EZAudio/EZAudio.h; sourceTree = "<group>"; };
+		3A8E39B2D1F71BB0BE858513 /* Pods-MetalMind-Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MetalMind-Alamofire-umbrella.h"; sourceTree = "<group>"; };
+		3BE070031498488285A7A52C /* Pods_MetalMind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MetalMind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DE409EADA4B548546FC66A9 /* Pods-MetalMind-Locksmith-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MetalMind-Locksmith-umbrella.h"; sourceTree = "<group>"; };
+		3EFDC0B23D39384106F502AA /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		42B5F8B2B182746276605F7C /* Locksmith.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Locksmith.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		44A4F193194F8B120942D295 /* Pods-MetalMind-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MetalMind-frameworks.sh"; sourceTree = "<group>"; };
+		48BD27017E878CF59D78D4E6 /* TPCircularBuffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TPCircularBuffer.h; path = EZAudio/TPCircularBuffer.h; sourceTree = "<group>"; };
+		49979B583AAED0138C132569 /* EZAudioFile.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioFile.m; path = EZAudio/EZAudioFile.m; sourceTree = "<group>"; };
+		4A0EFAA6783D4C826ED7789D /* Pods-MetalMind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MetalMind.release.xcconfig"; sourceTree = "<group>"; };
+		5457E88ACB3ADF7351C72A0B /* Pods-MetalMind-EZAudio-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MetalMind-EZAudio-umbrella.h"; sourceTree = "<group>"; };
+		548555D3F5D362D61E1A5268 /* Pods-MetalMind-EZAudio-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MetalMind-EZAudio-prefix.pch"; sourceTree = "<group>"; };
+		55BD90EE56921B586A4E459A /* Pods-MetalMind-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MetalMind-dummy.m"; sourceTree = "<group>"; };
+		5B81F18563E2F33EB7DAF9F1 /* Pods-MetalMind-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MetalMind-acknowledgements.plist"; sourceTree = "<group>"; };
+		5CA537D5FBB60B866B53670B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		5FA98E4C0B409922899ADA9F /* EZAudioFile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioFile.h; path = EZAudio/EZAudioFile.h; sourceTree = "<group>"; };
+		60096B62C9F5B9F248860A46 /* EZOutput.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZOutput.m; path = EZAudio/EZOutput.m; sourceTree = "<group>"; };
+		69964C4B55B59EAA8A679026 /* EZAudioPlotGL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioPlotGL.h; path = EZAudio/EZAudioPlotGL.h; sourceTree = "<group>"; };
+		6B1EA76FA46DA39F4B2251C5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		72CA46A8E389D4CE7E3E3DB2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		78E02AF4E3946B6614E3F0BF /* Pods-MetalMind-EZAudio-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MetalMind-EZAudio-dummy.m"; sourceTree = "<group>"; };
+		7AA2121AE3EBC709B4E9AC58 /* AEFloatConverter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AEFloatConverter.h; path = EZAudio/AEFloatConverter.h; sourceTree = "<group>"; };
+		7DC91984A374289D8CFCAB09 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8ABED69BC6E7F38666273F58 /* EZAudioPlotGLKViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioPlotGLKViewController.m; path = EZAudio/EZAudioPlotGLKViewController.m; sourceTree = "<group>"; };
+		8CE583452D3E170AF0325A53 /* EZAudioPlotGLKViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioPlotGLKViewController.h; path = EZAudio/EZAudioPlotGLKViewController.h; sourceTree = "<group>"; };
+		8EFD907AA22EF9723D548EDA /* TPCircularBuffer.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = TPCircularBuffer.c; path = EZAudio/TPCircularBuffer.c; sourceTree = "<group>"; };
+		977A8F9B7157E1CC5148B85D /* Pods-MetalMind-Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MetalMind-Alamofire-prefix.pch"; sourceTree = "<group>"; };
+		98374BAB3BD435AC7BC97A13 /* Pods-MetalMind-Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MetalMind-Alamofire-dummy.m"; sourceTree = "<group>"; };
+		98B5E17A9EAFCE2A3212CC23 /* Pods-MetalMind.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-MetalMind.modulemap"; sourceTree = "<group>"; };
+		A1277CDC589129BBDFFD395E /* EZMicrophone.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZMicrophone.m; path = EZAudio/EZMicrophone.m; sourceTree = "<group>"; };
+		A2E475FB370C60F4072F1A24 /* LocksmithRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocksmithRequest.swift; path = Pod/Classes/LocksmithRequest.swift; sourceTree = "<group>"; };
+		AF3659178DA469C2840BA665 /* Pods-MetalMind-Locksmith-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MetalMind-Locksmith-Private.xcconfig"; sourceTree = "<group>"; };
+		B39FFAD5C3656E924224E61F /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
+		B8FEE9FF719C1960EA410368 /* Pods-MetalMind-Locksmith-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MetalMind-Locksmith-prefix.pch"; sourceTree = "<group>"; };
+		B9516C1E06FB18065C51A11C /* Pods-MetalMind-EZAudio.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-MetalMind-EZAudio.modulemap"; sourceTree = "<group>"; };
+		B9D1761F5669B65BAE17DF76 /* Pods-MetalMind-Locksmith.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MetalMind-Locksmith.xcconfig"; sourceTree = "<group>"; };
+		B9D844F2163B8628D387E153 /* Pods-MetalMind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MetalMind.debug.xcconfig"; sourceTree = "<group>"; };
+		BB2A1E4A87E45047A5F98532 /* Pods-MetalMind-Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MetalMind-Alamofire.xcconfig"; sourceTree = "<group>"; };
+		BC024BA0BCFA01DC1F83B554 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/GLKit.framework; sourceTree = DEVELOPER_DIR; };
+		C0DBDEC10E28F0F144607BFD /* AEFloatConverter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AEFloatConverter.m; path = EZAudio/AEFloatConverter.m; sourceTree = "<group>"; };
+		C1DA686AC6399635BB197D29 /* Pods-MetalMind-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MetalMind-environment.h"; sourceTree = "<group>"; };
+		C1E6AF98F22AA91B1B82D349 /* Pods-MetalMind-Locksmith-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MetalMind-Locksmith-dummy.m"; sourceTree = "<group>"; };
+		C55C227E6C42D38760E8E063 /* Locksmith.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Locksmith.swift; path = Pod/Classes/Locksmith.swift; sourceTree = "<group>"; };
+		C5E90C3AA1B331CD9EFF1669 /* EZAudioPlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioPlayer.h; path = EZAudio/EZAudioPlayer.h; sourceTree = "<group>"; };
+		CF26F62CB6039C56E722665C /* Pods-MetalMind-Alamofire-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MetalMind-Alamofire-Private.xcconfig"; sourceTree = "<group>"; };
+		E17D9CE48549BE11A8803F39 /* EZAudioPlayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioPlayer.m; path = EZAudio/EZAudioPlayer.m; sourceTree = "<group>"; };
+		E2BF0AF4E1470318434225FF /* EZAudioPlot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioPlot.h; path = EZAudio/EZAudioPlot.h; sourceTree = "<group>"; };
+		E4F29B36AC1C8921F826543A /* EZAudio.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudio.m; path = EZAudio/EZAudio.m; sourceTree = "<group>"; };
+		E617BEFE11D0DAFBB69F1E98 /* EZRecorder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZRecorder.m; path = EZAudio/EZRecorder.m; sourceTree = "<group>"; };
+		E80A862E9E5E36A0CAC65279 /* EZAudioPlotGL.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioPlotGL.m; path = EZAudio/EZAudioPlotGL.m; sourceTree = "<group>"; };
+		EC64F1515EF688D745259D5F /* Pods-MetalMind-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MetalMind-umbrella.h"; sourceTree = "<group>"; };
+		ED8F91BB970A07FE522EB5D5 /* Pods-MetalMind-Locksmith.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-MetalMind-Locksmith.modulemap"; sourceTree = "<group>"; };
+		F53ADF570BD45967905978CB /* Pods-MetalMind-EZAudio.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MetalMind-EZAudio.xcconfig"; sourceTree = "<group>"; };
+		F6A206F81E9529277EBFA817 /* EZOutput.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZOutput.h; path = EZAudio/EZOutput.h; sourceTree = "<group>"; };
+		F803FF124F4E6B738243CED3 /* EZPlot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZPlot.m; path = EZAudio/EZPlot.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		331AB8271AF9E15A156DBDA9 /* Frameworks */ = {
+		4010DC212BEE4CB04A7C24AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C63DE62ADAB4ABDFB5FE1325 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44051ABCA887E809E89B5501 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FDC696CC25222A9546BEE8F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48411D20FF804461934DE91E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				575A0717603FFF0CF297E42D /* AVFoundation.framework in Frameworks */,
+				883C8387085DD330E1F5C494 /* AudioToolbox.framework in Frameworks */,
+				D75455263ABF239BB9E329FB /* Foundation.framework in Frameworks */,
+				6AED9CAD43F1CFB18629B061 /* GLKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67080F54816595466DBDFB0C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		67B247763FF1A8D67093417C /* Frameworks */ = {
+		DCC492F42131C47188905DDB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53D5639E574B9B4402B3662C /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A5793679BBE5EE7FA02D8817 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A61930F49E2D67F7D6D98629 /* Foundation.framework in Frameworks */,
-				C6577A90C3CBE47A63CB5D34 /* Security.framework in Frameworks */,
-				DF07D457837FBE76A25B7EC4 /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F32CBAFEDA8FCA82CF57E30A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1E078541A29FAECBCF12AE6A /* Foundation.framework in Frameworks */,
+				03C0FFF5C6DF3C8FB924832E /* Foundation.framework in Frameworks */,
+				4BD04274FA42CE671157ACD9 /* Security.framework in Frameworks */,
+				60A25864083DD0DA78CA57AA /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5031640D3183216266D6791D /* Products */ = {
+		20AE52639D2B8DAAF2ED3B94 /* EZAudio */ = {
 			isa = PBXGroup;
 			children = (
-				2E3ACEBCB183D06A8E269852 /* Alamofire.framework */,
-				9BF237FA6BE56EB0FECD8124 /* Locksmith.bundle */,
-				3F7092166928270A264C500C /* Locksmith.framework */,
-				2A1C3F607C23075407BD7A8D /* Pods_MetalMind.framework */,
+				7AA2121AE3EBC709B4E9AC58 /* AEFloatConverter.h */,
+				C0DBDEC10E28F0F144607BFD /* AEFloatConverter.m */,
+				3127BECE3155A49A8C92A73C /* EZAudio.h */,
+				E4F29B36AC1C8921F826543A /* EZAudio.m */,
+				5FA98E4C0B409922899ADA9F /* EZAudioFile.h */,
+				49979B583AAED0138C132569 /* EZAudioFile.m */,
+				C5E90C3AA1B331CD9EFF1669 /* EZAudioPlayer.h */,
+				E17D9CE48549BE11A8803F39 /* EZAudioPlayer.m */,
+				E2BF0AF4E1470318434225FF /* EZAudioPlot.h */,
+				1AB6CCDBA06ABFA439CDC297 /* EZAudioPlot.m */,
+				69964C4B55B59EAA8A679026 /* EZAudioPlotGL.h */,
+				E80A862E9E5E36A0CAC65279 /* EZAudioPlotGL.m */,
+				8CE583452D3E170AF0325A53 /* EZAudioPlotGLKViewController.h */,
+				8ABED69BC6E7F38666273F58 /* EZAudioPlotGLKViewController.m */,
+				07AF65D4DEFE0EEB60EA2FA5 /* EZMicrophone.h */,
+				A1277CDC589129BBDFFD395E /* EZMicrophone.m */,
+				F6A206F81E9529277EBFA817 /* EZOutput.h */,
+				60096B62C9F5B9F248860A46 /* EZOutput.m */,
+				282811F5E00B8588607C3F9A /* EZPlot.h */,
+				F803FF124F4E6B738243CED3 /* EZPlot.m */,
+				0D717E1AE857E34C2AF1D3A6 /* EZRecorder.h */,
+				E617BEFE11D0DAFBB69F1E98 /* EZRecorder.m */,
+				8EFD907AA22EF9723D548EDA /* TPCircularBuffer.c */,
+				48BD27017E878CF59D78D4E6 /* TPCircularBuffer.h */,
+				36DA36689F66F60932E3E726 /* Support Files */,
 			);
-			name = Products;
+			path = EZAudio;
 			sourceTree = "<group>";
 		};
-		7B77152ED0AC08D40C2B023C /* Support Files */ = {
+		2B0FAF9A3E6D47F176A65E9E /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				E1CD0803194803F09BCA69F9 /* Info.plist */,
-				C6FE721F21A0E7C731F8C8F9 /* Pods-MetalMind-Alamofire.modulemap */,
-				4069C60B18F02167AFE3FB6F /* Pods-MetalMind-Alamofire.xcconfig */,
-				0640E8DCB8701F94734C123C /* Pods-MetalMind-Alamofire-Private.xcconfig */,
-				9EFCBA43B07E6BBC2A261E4B /* Pods-MetalMind-Alamofire-dummy.m */,
-				7E768EB3CAB98FA4C137BB01 /* Pods-MetalMind-Alamofire-prefix.pch */,
-				88F4E034DDDDB19837A1EF81 /* Pods-MetalMind-Alamofire-umbrella.h */,
+				7DC91984A374289D8CFCAB09 /* Info.plist */,
+				12003E420BE773CF3EC04CCE /* Pods-MetalMind-Alamofire.modulemap */,
+				BB2A1E4A87E45047A5F98532 /* Pods-MetalMind-Alamofire.xcconfig */,
+				CF26F62CB6039C56E722665C /* Pods-MetalMind-Alamofire-Private.xcconfig */,
+				98374BAB3BD435AC7BC97A13 /* Pods-MetalMind-Alamofire-dummy.m */,
+				977A8F9B7157E1CC5148B85D /* Pods-MetalMind-Alamofire-prefix.pch */,
+				3A8E39B2D1F71BB0BE858513 /* Pods-MetalMind-Alamofire-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Pods-MetalMind-Alamofire";
 			sourceTree = "<group>";
 		};
-		7BC20AB0F2EC3CCDE18492F1 /* Frameworks */ = {
+		2DF18BFEED2B239BE0EF21FD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EE32B008F7C40E378D2E6081 /* iOS */,
+				7601A8D7DBF5233B64B3C6B6 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8FAFD6B44064AFE477958932 /* Support Files */ = {
+		35CD580F86E0697F1759B508 /* Locksmith */ = {
 			isa = PBXGroup;
 			children = (
-				AFF71835A1B213BC241E9AC0 /* Info.plist */,
-				5E11A577D45A5180C23A734B /* Pods-MetalMind-Locksmith.modulemap */,
-				3CE357C784728C75FD10AFC5 /* Pods-MetalMind-Locksmith.xcconfig */,
-				11C2B61FACC9FED9E5B818CB /* Pods-MetalMind-Locksmith-Private.xcconfig */,
-				43AA7D4CDE571A5FAD7EDB76 /* Pods-MetalMind-Locksmith-dummy.m */,
-				F338E2E25E9B0A14BDB4A6AB /* Pods-MetalMind-Locksmith-prefix.pch */,
-				ECA32AA97A59C3B77D7512B1 /* Pods-MetalMind-Locksmith-umbrella.h */,
+				C55C227E6C42D38760E8E063 /* Locksmith.swift */,
+				A2E475FB370C60F4072F1A24 /* LocksmithRequest.swift */,
+				D6A6B42DA9698BB8D9B4B13C /* Support Files */,
+			);
+			path = Locksmith;
+			sourceTree = "<group>";
+		};
+		36DA36689F66F60932E3E726 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				00FC99189B86F6BA4C9D13D2 /* Info.plist */,
+				B9516C1E06FB18065C51A11C /* Pods-MetalMind-EZAudio.modulemap */,
+				F53ADF570BD45967905978CB /* Pods-MetalMind-EZAudio.xcconfig */,
+				124E34446DD18FDB95D4FA7B /* Pods-MetalMind-EZAudio-Private.xcconfig */,
+				78E02AF4E3946B6614E3F0BF /* Pods-MetalMind-EZAudio-dummy.m */,
+				548555D3F5D362D61E1A5268 /* Pods-MetalMind-EZAudio-prefix.pch */,
+				5457E88ACB3ADF7351C72A0B /* Pods-MetalMind-EZAudio-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-MetalMind-EZAudio";
+			sourceTree = "<group>";
+		};
+		4BC74B89EE6E8E645689F214 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FBB56A313FBC13C634D7691E /* Pods-MetalMind */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7601A8D7DBF5233B64B3C6B6 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				72CA46A8E389D4CE7E3E3DB2 /* AVFoundation.framework */,
+				5CA537D5FBB60B866B53670B /* AudioToolbox.framework */,
+				151AF269AFAF46EF2F7A4653 /* Foundation.framework */,
+				BC024BA0BCFA01DC1F83B554 /* GLKit.framework */,
+				6B1EA76FA46DA39F4B2251C5 /* Security.framework */,
+				2F43CA168EC2AD0A1711711C /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		84DD17A20A3888F218FEB4B1 /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				B39FFAD5C3656E924224E61F /* Alamofire.swift */,
+				2B0FAF9A3E6D47F176A65E9E /* Support Files */,
+			);
+			path = Alamofire;
+			sourceTree = "<group>";
+		};
+		B24CECB58C8E29B396AC0257 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				84DD17A20A3888F218FEB4B1 /* Alamofire */,
+				20AE52639D2B8DAAF2ED3B94 /* EZAudio */,
+				35CD580F86E0697F1759B508 /* Locksmith */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B279019F5B9CA4711238E4B2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				12B43344D374884E9EEE607A /* Alamofire.framework */,
+				0F8738F2C1FAD32EBAE58DC0 /* EZAudio.framework */,
+				42B5F8B2B182746276605F7C /* Locksmith.bundle */,
+				0C5670BF6C59DCB0EBF1FDA1 /* Locksmith.framework */,
+				3BE070031498488285A7A52C /* Pods_MetalMind.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D3416366826A88AE3399E876 = {
+			isa = PBXGroup;
+			children = (
+				3EFDC0B23D39384106F502AA /* Podfile */,
+				2DF18BFEED2B239BE0EF21FD /* Frameworks */,
+				B24CECB58C8E29B396AC0257 /* Pods */,
+				B279019F5B9CA4711238E4B2 /* Products */,
+				4BC74B89EE6E8E645689F214 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D6A6B42DA9698BB8D9B4B13C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0277B0C8752B8E3FBFE3E24F /* Info.plist */,
+				ED8F91BB970A07FE522EB5D5 /* Pods-MetalMind-Locksmith.modulemap */,
+				B9D1761F5669B65BAE17DF76 /* Pods-MetalMind-Locksmith.xcconfig */,
+				AF3659178DA469C2840BA665 /* Pods-MetalMind-Locksmith-Private.xcconfig */,
+				C1E6AF98F22AA91B1B82D349 /* Pods-MetalMind-Locksmith-dummy.m */,
+				B8FEE9FF719C1960EA410368 /* Pods-MetalMind-Locksmith-prefix.pch */,
+				3DE409EADA4B548546FC66A9 /* Pods-MetalMind-Locksmith-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Pods-MetalMind-Locksmith";
 			sourceTree = "<group>";
 		};
-		972D1B2C89BD39DD87357F4B /* Pods */ = {
+		FBB56A313FBC13C634D7691E /* Pods-MetalMind */ = {
 			isa = PBXGroup;
 			children = (
-				B1BFFCC588D72969837E0E3B /* Alamofire */,
-				B063576A2A30DECF90EEDD12 /* Locksmith */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		B063576A2A30DECF90EEDD12 /* Locksmith */ = {
-			isa = PBXGroup;
-			children = (
-				73C17221A1EF88190EB44DDE /* Locksmith.swift */,
-				8F4F16E173FA2DADCDAE4CA9 /* LocksmithRequest.swift */,
-				8FAFD6B44064AFE477958932 /* Support Files */,
-			);
-			path = Locksmith;
-			sourceTree = "<group>";
-		};
-		B1BFFCC588D72969837E0E3B /* Alamofire */ = {
-			isa = PBXGroup;
-			children = (
-				62CC923D736E714417954597 /* Alamofire.swift */,
-				7B77152ED0AC08D40C2B023C /* Support Files */,
-			);
-			path = Alamofire;
-			sourceTree = "<group>";
-		};
-		BCF650C03C622777B6466C7F /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				E581446B104A3247F0BB192A /* Pods-MetalMind */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		C946508FEDF05556C0715F15 = {
-			isa = PBXGroup;
-			children = (
-				CB6816CFBA80CBB234DFCD43 /* Podfile */,
-				7BC20AB0F2EC3CCDE18492F1 /* Frameworks */,
-				972D1B2C89BD39DD87357F4B /* Pods */,
-				5031640D3183216266D6791D /* Products */,
-				BCF650C03C622777B6466C7F /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		E581446B104A3247F0BB192A /* Pods-MetalMind */ = {
-			isa = PBXGroup;
-			children = (
-				5F5FDBE13378CF5EBB58E539 /* Info.plist */,
-				8374D0809A8E4C2D373CC7BB /* Pods-MetalMind.modulemap */,
-				3BD7CC11D2E2F8E123B27270 /* Pods-MetalMind-acknowledgements.markdown */,
-				B012391615AF6CEC962F6684 /* Pods-MetalMind-acknowledgements.plist */,
-				A40A56742FA8D89940D065D7 /* Pods-MetalMind-dummy.m */,
-				715AD95F9B8C13F0F1596E31 /* Pods-MetalMind-environment.h */,
-				56F97570907C697B358BC554 /* Pods-MetalMind-frameworks.sh */,
-				81DE4FFEEE1E6E4CEEEFB66D /* Pods-MetalMind-resources.sh */,
-				0ED79DF5253160B417F7A86C /* Pods-MetalMind-umbrella.h */,
-				5EC31F0491A4A5E7A09F919B /* Pods-MetalMind.debug.xcconfig */,
-				67B77BD40AA4A49B96F3A567 /* Pods-MetalMind.release.xcconfig */,
+				1F7918EB9A76039F7AA66DA6 /* Info.plist */,
+				98B5E17A9EAFCE2A3212CC23 /* Pods-MetalMind.modulemap */,
+				04F68EF4D43652E165100319 /* Pods-MetalMind-acknowledgements.markdown */,
+				5B81F18563E2F33EB7DAF9F1 /* Pods-MetalMind-acknowledgements.plist */,
+				55BD90EE56921B586A4E459A /* Pods-MetalMind-dummy.m */,
+				C1DA686AC6399635BB197D29 /* Pods-MetalMind-environment.h */,
+				44A4F193194F8B120942D295 /* Pods-MetalMind-frameworks.sh */,
+				1F5379012FF69DCF9BE65BFB /* Pods-MetalMind-resources.sh */,
+				EC64F1515EF688D745259D5F /* Pods-MetalMind-umbrella.h */,
+				B9D844F2163B8628D387E153 /* Pods-MetalMind.debug.xcconfig */,
+				4A0EFAA6783D4C826ED7789D /* Pods-MetalMind.release.xcconfig */,
 			);
 			name = "Pods-MetalMind";
 			path = "Target Support Files/Pods-MetalMind";
 			sourceTree = "<group>";
 		};
-		EE32B008F7C40E378D2E6081 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				C73DC3057D57F0D44B306E53 /* Foundation.framework */,
-				F7AADDE07934FF1FE853CFA8 /* Security.framework */,
-				ABEC28CEC24E73BC55394E42 /* UIKit.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		C5A98E5DA869ECFAA33E84F4 /* Headers */ = {
+		7DBA9BD40A400FDB015BF078 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC24FDC58E58097206C27198 /* Pods-MetalMind-Locksmith-umbrella.h in Headers */,
+				1795B34FCC3B18A51FE20249 /* Pods-MetalMind-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DD0B859B38C16B24FD215C1D /* Headers */ = {
+		923D037837B40A9163ECEE4E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EC76E49A8BE26C09AE01BAB /* Pods-MetalMind-umbrella.h in Headers */,
+				4DE6780020AAE1A3DD9AEA38 /* AEFloatConverter.h in Headers */,
+				5E5E2A0B9DACF11310D84697 /* EZAudio.h in Headers */,
+				B95855D70F49C555F234D2F2 /* EZAudioFile.h in Headers */,
+				B9BF11DE67E6311C0C2647C7 /* EZAudioPlayer.h in Headers */,
+				09EC0A00461B4D90111DABF8 /* EZAudioPlot.h in Headers */,
+				064080E871BAEF73414358C4 /* EZAudioPlotGL.h in Headers */,
+				26B07AF205A583139D0BE1E1 /* EZAudioPlotGLKViewController.h in Headers */,
+				2ACA66D5E02F61D530E2B3F2 /* EZMicrophone.h in Headers */,
+				469B61239CCD8FE9C6963487 /* EZOutput.h in Headers */,
+				EA9CAE3EB75F396657C0822A /* EZPlot.h in Headers */,
+				9F43B8F42D980703B584B91D /* EZRecorder.h in Headers */,
+				E3B87C2B8B0ECF525E969AAD /* Pods-MetalMind-EZAudio-umbrella.h in Headers */,
+				5E2B931D6F5BEA623B4D7B7D /* TPCircularBuffer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EC0100B5802438E9434DA2EB /* Headers */ = {
+		A7F48B13BB4A0F3D110F5028 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				400856C62A6FC5EB29A51990 /* Pods-MetalMind-Alamofire-umbrella.h in Headers */,
+				B40710549D96C3419A89E508 /* Pods-MetalMind-Alamofire-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6971A2D705E623C5E9D5AD8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F07C143EEE352381D7B334F7 /* Pods-MetalMind-Locksmith-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		04A0EC81238A72A919148478 /* Pods-MetalMind-Locksmith */ = {
+		29BF9A1371BD04A021B2EDE6 /* Pods-MetalMind */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AE7C596E5086283A05524090 /* Build configuration list for PBXNativeTarget "Pods-MetalMind-Locksmith" */;
+			buildConfigurationList = CA56B02E038646E7311A61CA /* Build configuration list for PBXNativeTarget "Pods-MetalMind" */;
 			buildPhases = (
-				07398DEC31D17B0437C6A378 /* Sources */,
-				A5793679BBE5EE7FA02D8817 /* Frameworks */,
-				03DCC8D6F2840FB48F85A15E /* Resources */,
-				C5A98E5DA869ECFAA33E84F4 /* Headers */,
+				3B89B4149208353A648F73C4 /* Sources */,
+				4010DC212BEE4CB04A7C24AA /* Frameworks */,
+				7DBA9BD40A400FDB015BF078 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				3F2806C1414EEACCDD10D9A4 /* PBXTargetDependency */,
+				9F0B19C70FC8628770846DC9 /* PBXTargetDependency */,
+				60B3FDFC362DD9BB045E97F1 /* PBXTargetDependency */,
+				732C172991C894858AF071A2 /* PBXTargetDependency */,
+			);
+			name = "Pods-MetalMind";
+			productName = "Pods-MetalMind";
+			productReference = 3BE070031498488285A7A52C /* Pods_MetalMind.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		42556CC27A83C45CE6D0DC50 /* Pods-MetalMind-Locksmith */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1CEBF909088A4978E68E7DAC /* Build configuration list for PBXNativeTarget "Pods-MetalMind-Locksmith" */;
+			buildPhases = (
+				1E3E1DE32E126F186922D90D /* Sources */,
+				DCC492F42131C47188905DDB /* Frameworks */,
+				9953DE5ED2C45B93F64532CE /* Resources */,
+				B6971A2D705E623C5E9D5AD8 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8C479D5DCE110944C2667090 /* PBXTargetDependency */,
 			);
 			name = "Pods-MetalMind-Locksmith";
 			productName = "Pods-MetalMind-Locksmith";
-			productReference = 3F7092166928270A264C500C /* Locksmith.framework */;
+			productReference = 0C5670BF6C59DCB0EBF1FDA1 /* Locksmith.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		485B9951A91EB77C03F4F13D /* Pods-MetalMind-Locksmith-Locksmith */ = {
+		92E02549E84B0AACF799F8D7 /* Pods-MetalMind-Locksmith-Locksmith */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0AC6B74AE9B8EE0DA0050883 /* Build configuration list for PBXNativeTarget "Pods-MetalMind-Locksmith-Locksmith" */;
+			buildConfigurationList = 310DCBC3DF62BDAFFD7A730F /* Build configuration list for PBXNativeTarget "Pods-MetalMind-Locksmith-Locksmith" */;
 			buildPhases = (
-				D7E11621350040673946A601 /* Sources */,
-				331AB8271AF9E15A156DBDA9 /* Frameworks */,
-				597A8A035BC38DFC877FD0BF /* Resources */,
+				DAB71DE84A1BC11E3C65AA71 /* Sources */,
+				67080F54816595466DBDFB0C /* Frameworks */,
+				57438F32B387F0FF264495D3 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -312,16 +487,16 @@
 			);
 			name = "Pods-MetalMind-Locksmith-Locksmith";
 			productName = "Pods-MetalMind-Locksmith-Locksmith";
-			productReference = 9BF237FA6BE56EB0FECD8124 /* Locksmith.bundle */;
+			productReference = 42B5F8B2B182746276605F7C /* Locksmith.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
-		CDA2F0AC8D25EE9A2C63123B /* Pods-MetalMind-Alamofire */ = {
+		A93CEE8F2CDBC21A59808D2E /* Pods-MetalMind-Alamofire */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6761E92738DFDB3E57A0F3B9 /* Build configuration list for PBXNativeTarget "Pods-MetalMind-Alamofire" */;
+			buildConfigurationList = 1C323493CA72AA5CCB7B8DC8 /* Build configuration list for PBXNativeTarget "Pods-MetalMind-Alamofire" */;
 			buildPhases = (
-				ECE1D87F0D41167BC398E807 /* Sources */,
-				F32CBAFEDA8FCA82CF57E30A /* Frameworks */,
-				EC0100B5802438E9434DA2EB /* Headers */,
+				1FDAE7FE5AAB5E97D2830844 /* Sources */,
+				44051ABCA887E809E89B5501 /* Frameworks */,
+				A7F48B13BB4A0F3D110F5028 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -329,194 +504,161 @@
 			);
 			name = "Pods-MetalMind-Alamofire";
 			productName = "Pods-MetalMind-Alamofire";
-			productReference = 2E3ACEBCB183D06A8E269852 /* Alamofire.framework */;
+			productReference = 12B43344D374884E9EEE607A /* Alamofire.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		F00FC2D219FA5E924B1361BD /* Pods-MetalMind */ = {
+		B2242B43A9DCA3FF926AF178 /* Pods-MetalMind-EZAudio */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 69921E707F7F78C07D7447E3 /* Build configuration list for PBXNativeTarget "Pods-MetalMind" */;
+			buildConfigurationList = 82D69425250743D27D276D75 /* Build configuration list for PBXNativeTarget "Pods-MetalMind-EZAudio" */;
 			buildPhases = (
-				7CF327D9BE74A08A54FE7AC6 /* Sources */,
-				67B247763FF1A8D67093417C /* Frameworks */,
-				DD0B859B38C16B24FD215C1D /* Headers */,
+				926F54395FB58E544ABC867D /* Sources */,
+				48411D20FF804461934DE91E /* Frameworks */,
+				923D037837B40A9163ECEE4E /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				BFF14A4FF012EA885509DA5C /* PBXTargetDependency */,
-				BA60E47EDDBD730252105021 /* PBXTargetDependency */,
 			);
-			name = "Pods-MetalMind";
-			productName = "Pods-MetalMind";
-			productReference = 2A1C3F607C23075407BD7A8D /* Pods_MetalMind.framework */;
+			name = "Pods-MetalMind-EZAudio";
+			productName = "Pods-MetalMind-EZAudio";
+			productReference = 0F8738F2C1FAD32EBAE58DC0 /* EZAudio.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		0AED4CAF304C6EDC9D0C1F71 /* Project object */ = {
+		E7F7AB13BB51084F4119752B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0640;
 			};
-			buildConfigurationList = 6D1D411E1170B3764CEC861A /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = EBA07C840980113EC1E0D98C /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = C946508FEDF05556C0715F15;
-			productRefGroup = 5031640D3183216266D6791D /* Products */;
+			mainGroup = D3416366826A88AE3399E876;
+			productRefGroup = B279019F5B9CA4711238E4B2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F00FC2D219FA5E924B1361BD /* Pods-MetalMind */,
-				CDA2F0AC8D25EE9A2C63123B /* Pods-MetalMind-Alamofire */,
-				04A0EC81238A72A919148478 /* Pods-MetalMind-Locksmith */,
-				485B9951A91EB77C03F4F13D /* Pods-MetalMind-Locksmith-Locksmith */,
+				29BF9A1371BD04A021B2EDE6 /* Pods-MetalMind */,
+				A93CEE8F2CDBC21A59808D2E /* Pods-MetalMind-Alamofire */,
+				B2242B43A9DCA3FF926AF178 /* Pods-MetalMind-EZAudio */,
+				42556CC27A83C45CE6D0DC50 /* Pods-MetalMind-Locksmith */,
+				92E02549E84B0AACF799F8D7 /* Pods-MetalMind-Locksmith-Locksmith */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		03DCC8D6F2840FB48F85A15E /* Resources */ = {
+		57438F32B387F0FF264495D3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C273185D2EA477C39457510F /* Locksmith.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		597A8A035BC38DFC877FD0BF /* Resources */ = {
+		9953DE5ED2C45B93F64532CE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				304B0749DE9DA21B26C9C0AA /* Locksmith.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		07398DEC31D17B0437C6A378 /* Sources */ = {
+		1E3E1DE32E126F186922D90D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8BDDCEC6C034CA3ABEF2EFE /* Locksmith.swift in Sources */,
-				51BA4A18D9DF38C4F191680A /* LocksmithRequest.swift in Sources */,
-				D453B42BE38A05A893483CA1 /* Pods-MetalMind-Locksmith-dummy.m in Sources */,
+				D7E4AD2B80F0A34E78F7E97A /* Locksmith.swift in Sources */,
+				501063F2644FE0FDD5F0E825 /* LocksmithRequest.swift in Sources */,
+				8B31B3BE7F97BC8F40E04FD5 /* Pods-MetalMind-Locksmith-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7CF327D9BE74A08A54FE7AC6 /* Sources */ = {
+		1FDAE7FE5AAB5E97D2830844 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36769EA159BBCB437CDBF075 /* Pods-MetalMind-dummy.m in Sources */,
+				5979742AF8BB1E53AABD404E /* Alamofire.swift in Sources */,
+				A4A277D3EF013E8474C4BBF1 /* Pods-MetalMind-Alamofire-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D7E11621350040673946A601 /* Sources */ = {
+		3B89B4149208353A648F73C4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				656C587E97E2DCC1E537ADA0 /* Pods-MetalMind-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ECE1D87F0D41167BC398E807 /* Sources */ = {
+		926F54395FB58E544ABC867D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				784737E62EBBAC0ADCE22455 /* Alamofire.swift in Sources */,
-				F8FD45627FCE0B233C9F62E1 /* Pods-MetalMind-Alamofire-dummy.m in Sources */,
+				688FD47D0C06F90126298C7D /* AEFloatConverter.m in Sources */,
+				2634D8099254FB4318C196D6 /* EZAudio.m in Sources */,
+				FB92B74953C3B5FE83E88141 /* EZAudioFile.m in Sources */,
+				D6D7D05E5EF5134695C59ECD /* EZAudioPlayer.m in Sources */,
+				508911296B737A654A36D83F /* EZAudioPlot.m in Sources */,
+				A0F53A506A5F6C9DF0E6998E /* EZAudioPlotGL.m in Sources */,
+				CAF56BAADFD914769B7756A3 /* EZAudioPlotGLKViewController.m in Sources */,
+				AD4C91BC3D5E9A79A0A907DA /* EZMicrophone.m in Sources */,
+				059992F40CBDE984484F84AD /* EZOutput.m in Sources */,
+				F57B32EE5E417783CC6645E4 /* EZPlot.m in Sources */,
+				1B2595DA34672A77186652C3 /* EZRecorder.m in Sources */,
+				854EB01DE04E3313392C4632 /* Pods-MetalMind-EZAudio-dummy.m in Sources */,
+				16E4B8D2F8E4D9529CCAC70A /* TPCircularBuffer.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAB71DE84A1BC11E3C65AA71 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3F2806C1414EEACCDD10D9A4 /* PBXTargetDependency */ = {
+		60B3FDFC362DD9BB045E97F1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "Pods-MetalMind-Locksmith-Locksmith";
-			target = 485B9951A91EB77C03F4F13D /* Pods-MetalMind-Locksmith-Locksmith */;
-			targetProxy = ECC69EBFDF47B7A671490CD4 /* PBXContainerItemProxy */;
+			name = "Pods-MetalMind-EZAudio";
+			target = B2242B43A9DCA3FF926AF178 /* Pods-MetalMind-EZAudio */;
+			targetProxy = 69F59E7E4E2CCE6FFBEE9864 /* PBXContainerItemProxy */;
 		};
-		BA60E47EDDBD730252105021 /* PBXTargetDependency */ = {
+		732C172991C894858AF071A2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-MetalMind-Locksmith";
-			target = 04A0EC81238A72A919148478 /* Pods-MetalMind-Locksmith */;
-			targetProxy = 1BDBC170850552E2BDF28ACC /* PBXContainerItemProxy */;
+			target = 42556CC27A83C45CE6D0DC50 /* Pods-MetalMind-Locksmith */;
+			targetProxy = 2B9E357288DEF2E8EF139319 /* PBXContainerItemProxy */;
 		};
-		BFF14A4FF012EA885509DA5C /* PBXTargetDependency */ = {
+		8C479D5DCE110944C2667090 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-MetalMind-Locksmith-Locksmith";
+			target = 92E02549E84B0AACF799F8D7 /* Pods-MetalMind-Locksmith-Locksmith */;
+			targetProxy = 2917653ECE30E77014DC09FF /* PBXContainerItemProxy */;
+		};
+		9F0B19C70FC8628770846DC9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-MetalMind-Alamofire";
-			target = CDA2F0AC8D25EE9A2C63123B /* Pods-MetalMind-Alamofire */;
-			targetProxy = A9D9571986BE0B34B7EAE441 /* PBXContainerItemProxy */;
+			target = A93CEE8F2CDBC21A59808D2E /* Pods-MetalMind-Alamofire */;
+			targetProxy = B5F4B38F4537B34407F1585C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0554F5CD2B03DB25106A3805 /* Debug */ = {
+		01205A192924E46E0846221C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5EC31F0491A4A5E7A09F919B /* Pods-MetalMind.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-MetalMind/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-MetalMind/Pods-MetalMind.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_MetalMind;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		2D4889691238E88D17C0812C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0640E8DCB8701F94734C123C /* Pods-MetalMind-Alamofire-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-MetalMind-Alamofire/Pods-MetalMind-Alamofire-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-MetalMind-Alamofire/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-MetalMind-Alamofire/Pods-MetalMind-Alamofire.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = Alamofire;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		2E14AD7BC92AD6B2B80166B9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 11C2B61FACC9FED9E5B818CB /* Pods-MetalMind-Locksmith-Private.xcconfig */;
+			baseConfigurationReference = AF3659178DA469C2840BA665 /* Pods-MetalMind-Locksmith-Private.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -531,18 +673,46 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Pods-MetalMind-Locksmith/Pods-MetalMind-Locksmith.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = Locksmith;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
-		4C156FAE5EA5A0CAA16F4373 /* Release */ = {
+		093B118EE50E60E647BA5D98 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A0EFAA6783D4C826ED7789D /* Pods-MetalMind.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-MetalMind/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-MetalMind/Pods-MetalMind.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_MetalMind;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		25DFA81E7A8128A6C1F47022 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -576,36 +746,9 @@
 			};
 			name = Release;
 		};
-		72E8FC16E67EBBB34B97D497 /* Release */ = {
+		550F676929EB6E3D79317911 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 11C2B61FACC9FED9E5B818CB /* Pods-MetalMind-Locksmith-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-MetalMind-Locksmith/Pods-MetalMind-Locksmith-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-MetalMind-Locksmith/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-MetalMind-Locksmith/Pods-MetalMind-Locksmith.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Locksmith;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		9FC91E2EF1457F5BA23C7437 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0640E8DCB8701F94734C123C /* Pods-MetalMind-Alamofire-Private.xcconfig */;
+			baseConfigurationReference = CF26F62CB6039C56E722665C /* Pods-MetalMind-Alamofire-Private.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -620,72 +763,18 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Pods-MetalMind-Alamofire/Pods-MetalMind-Alamofire.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = Alamofire;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		B62EB87B487D84B7C30008CE /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 67B77BD40AA4A49B96F3A567 /* Pods-MetalMind.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-MetalMind/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-MetalMind/Pods-MetalMind.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_MetalMind;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		C9C581F5AEF5BF3AC97B0BAE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 11C2B61FACC9FED9E5B818CB /* Pods-MetalMind-Locksmith-Private.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-MetalMind";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = Locksmith;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
 		};
-		F483A221F47C3CAE0C91EC69 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 11C2B61FACC9FED9E5B818CB /* Pods-MetalMind-Locksmith-Private.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-MetalMind";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = Locksmith;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		F8D63A0CCE6E7F58969EE609 /* Debug */ = {
+		5D797E1DD09C2AE8114C7396 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -724,55 +813,229 @@
 			};
 			name = Debug;
 		};
+		8D9704F3D9F675538119192A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9D844F2163B8628D387E153 /* Pods-MetalMind.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-MetalMind/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-MetalMind/Pods-MetalMind.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_MetalMind;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		97AD03294309C525DA1527E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 124E34446DD18FDB95D4FA7B /* Pods-MetalMind-EZAudio-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-MetalMind-EZAudio/Pods-MetalMind-EZAudio-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-MetalMind-EZAudio/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-MetalMind-EZAudio/Pods-MetalMind-EZAudio.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = EZAudio;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9B23065756CDC9B17E395028 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF3659178DA469C2840BA665 /* Pods-MetalMind-Locksmith-Private.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-MetalMind";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = Locksmith;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		B2BA505A9652F57BC68C745F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF26F62CB6039C56E722665C /* Pods-MetalMind-Alamofire-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-MetalMind-Alamofire/Pods-MetalMind-Alamofire-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-MetalMind-Alamofire/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-MetalMind-Alamofire/Pods-MetalMind-Alamofire.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Alamofire;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B3B41145CB4707AB8B402974 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF3659178DA469C2840BA665 /* Pods-MetalMind-Locksmith-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-MetalMind-Locksmith/Pods-MetalMind-Locksmith-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-MetalMind-Locksmith/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-MetalMind-Locksmith/Pods-MetalMind-Locksmith.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Locksmith;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CF53FA41B89AE42F7D169000 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 124E34446DD18FDB95D4FA7B /* Pods-MetalMind-EZAudio-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-MetalMind-EZAudio/Pods-MetalMind-EZAudio-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-MetalMind-EZAudio/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-MetalMind-EZAudio/Pods-MetalMind-EZAudio.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = EZAudio;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EDDC5FD0BD9F95511CF5DADC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF3659178DA469C2840BA665 /* Pods-MetalMind-Locksmith-Private.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-MetalMind";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = Locksmith;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0AC6B74AE9B8EE0DA0050883 /* Build configuration list for PBXNativeTarget "Pods-MetalMind-Locksmith-Locksmith" */ = {
+		1C323493CA72AA5CCB7B8DC8 /* Build configuration list for PBXNativeTarget "Pods-MetalMind-Alamofire" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C9C581F5AEF5BF3AC97B0BAE /* Debug */,
-				F483A221F47C3CAE0C91EC69 /* Release */,
+				550F676929EB6E3D79317911 /* Debug */,
+				B2BA505A9652F57BC68C745F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6761E92738DFDB3E57A0F3B9 /* Build configuration list for PBXNativeTarget "Pods-MetalMind-Alamofire" */ = {
+		1CEBF909088A4978E68E7DAC /* Build configuration list for PBXNativeTarget "Pods-MetalMind-Locksmith" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2D4889691238E88D17C0812C /* Debug */,
-				9FC91E2EF1457F5BA23C7437 /* Release */,
+				B3B41145CB4707AB8B402974 /* Debug */,
+				01205A192924E46E0846221C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		69921E707F7F78C07D7447E3 /* Build configuration list for PBXNativeTarget "Pods-MetalMind" */ = {
+		310DCBC3DF62BDAFFD7A730F /* Build configuration list for PBXNativeTarget "Pods-MetalMind-Locksmith-Locksmith" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0554F5CD2B03DB25106A3805 /* Debug */,
-				B62EB87B487D84B7C30008CE /* Release */,
+				9B23065756CDC9B17E395028 /* Debug */,
+				EDDC5FD0BD9F95511CF5DADC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6D1D411E1170B3764CEC861A /* Build configuration list for PBXProject "Pods" */ = {
+		82D69425250743D27D276D75 /* Build configuration list for PBXNativeTarget "Pods-MetalMind-EZAudio" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F8D63A0CCE6E7F58969EE609 /* Debug */,
-				4C156FAE5EA5A0CAA16F4373 /* Release */,
+				CF53FA41B89AE42F7D169000 /* Debug */,
+				97AD03294309C525DA1527E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AE7C596E5086283A05524090 /* Build configuration list for PBXNativeTarget "Pods-MetalMind-Locksmith" */ = {
+		CA56B02E038646E7311A61CA /* Build configuration list for PBXNativeTarget "Pods-MetalMind" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2E14AD7BC92AD6B2B80166B9 /* Debug */,
-				72E8FC16E67EBBB34B97D497 /* Release */,
+				8D9704F3D9F675538119192A /* Debug */,
+				093B118EE50E60E647BA5D98 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBA07C840980113EC1E0D98C /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D797E1DD09C2AE8114C7396 /* Debug */,
+				25DFA81E7A8128A6C1F47022 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 0AED4CAF304C6EDC9D0C1F71 /* Project object */;
+	rootObject = E7F7AB13BB51084F4119752B /* Project object */;
 }

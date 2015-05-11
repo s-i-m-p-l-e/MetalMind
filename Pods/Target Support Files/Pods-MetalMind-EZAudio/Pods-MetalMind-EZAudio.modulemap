@@ -1,0 +1,6 @@
+framework module EZAudio {
+  umbrella header "Pods-MetalMind-EZAudio-umbrella.h"
+
+  export *
+  module * { export * }
+}

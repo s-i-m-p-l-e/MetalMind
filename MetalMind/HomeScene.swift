@@ -8,35 +8,35 @@
 
 import SpriteKit
 import MetalMindKit
+import SpineSpriteKit
+import ObjectiveSpine
 
 class HomeScene: SKScene {
     
     let player = MMPlayer(horizontalSpriteOrientation: .Right)
     
     override func didMoveToView(view: SKView) {
+        /* load textures */
         player.textures[.Down] = SKTextureAtlas(named: "downWalk").textures
         player.textures[.Horizontal] = SKTextureAtlas(named: "rightWalks").textures
-        
-        println(player.textures[.Down])
-        
+        player.textures[.Idle] = SKTextureAtlas(named: "idleCharTest").textures
         let backgroundImage = SKSpriteNode(imageNamed: "spaceShipBackground")
-        player.spriteNode.size = CGSizeMake(size.width * 0.8, size.height * 0.6)
-        player.spriteNode.position = CGPoint(x: size.width/2, y: size.height/3)
         
-        backgroundImage.position = CGPointMake(size.width/2, size.height/2 - 40.0)
+        /* sizing and positioning textures */
+        player.setSpriteNodeSize(.Idle)
+        player.spriteNode.setScale(0.5)
+        player.spriteNode.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
+        backgroundImage.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
+        
         addChild(backgroundImage)
         addChild(player.spriteNode)
         
-        if let moveDown = player.moveDownAction() {
-            player.spriteNode.runAction(SKAction.repeatActionForever(moveDown))
-        }
-        
-        if let moveRight = player.moveRightAction(130.0, duration: 4.0) {
-            player.spriteNode.runAction(moveRight) {
-                if let moveLeft = self.player.moveLeftAction(130.0, duration: 4.0) {
-                    self.player.spriteNode.runAction(moveLeft, completion: nil)
-                }
-            }
+        if let idlePosition = player.idleAction() {
+            player.spriteNode.runAction(SKAction.repeatActionForever(idlePosition))
         }
     }
 }
+
+
+
+

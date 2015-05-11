@@ -26,27 +26,49 @@ class HomeViewController: UIViewController {
     // MARK:- UIViewController Life-Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
                 
-        let playesOverviewScene = HomeScene(size: view.bounds.size)
+        /* configure scene view */
         let skView = self.view as! SKView
         skView.showsFPS = true
         skView.showsNodeCount = true
         skView.ignoresSiblingOrder = true
-        playesOverviewScene.scaleMode = .ResizeFill
-        skView.presentScene(playesOverviewScene)
         
+        /* create and configure the scene */
+        let playerOverviewScene = HomeScene(size: view.bounds.size)
+        playerOverviewScene.scaleMode = .AspectFill
+        
+        /* present the scene */
+        skView.presentScene(playerOverviewScene)
+
     }
     
     override func viewDidAppear(animated: Bool) {
-        if userData?.objectForKey("token") == nil {
-            self.performSegueWithIdentifier("ModalLoginViewController", sender: self)
-        }
+//        if userData?.objectForKey("token") == nil {
+//            self.performSegueWithIdentifier("ModalLoginViewController", sender: self)
+//        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: - Configuring the View Rotation Settings
+    override func shouldAutorotate() -> Bool {
+        return false
+    }
+    
+    override func preferredInterfaceOrientationForPresentation() -> UIInterfaceOrientation {
+        return .Portrait
+    }
+    
+    override func supportedInterfaceOrientations() -> Int {
+        return Int(UIInterfaceOrientationMask.Portrait.rawValue)
+    }
+    
 }
 
