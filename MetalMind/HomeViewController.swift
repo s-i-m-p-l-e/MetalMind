@@ -12,6 +12,10 @@ import Locksmith
 
 class HomeViewController: UIViewController {
     
+    // MARK: - IBOutlets
+    @IBOutlet weak var loadingDataActivityIndicator: UIActivityIndicatorView!
+    
+    // MARK: - Variables
     var userData: NSDictionary? {
         get {
             let (data, error) = Locksmith.loadDataForUserAccount("MetalMindUserAccount")
@@ -46,8 +50,12 @@ class HomeViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         if userData?.objectForKey("token") == nil {
             self.performSegueWithIdentifier("ModalLoginViewController", sender: self)
+        } else {
+            /* hide loading data actividy indicator */
+            loadingDataActivityIndicator.stopAnimating()
         }
     }
 

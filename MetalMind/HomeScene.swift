@@ -7,7 +7,6 @@
 //
 
 import SpriteKit
-import MetalMindKit
 
 class HomeScene: SKScene {
     

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		570ADE031AD59CBB009FDC4E /* downWalk.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 570ADE021AD59CBB009FDC4E /* downWalk.atlas */; };
+		5716445A1B022C9A00A45393 /* SignUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571644591B022C9A00A45393 /* SignUpTableViewController.swift */; };
 		571F1A311B00BC2C000EE11C /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571F1A301B00BC2C000EE11C /* Player.swift */; };
 		5746AB511AFA5529004E06FE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5746AB501AFA5529004E06FE /* Security.framework */; };
 		574980841B00B3DD00CE9A97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 574980821B00B3DD00CE9A97 /* Main.storyboard */; };
@@ -56,6 +57,7 @@
 		040470657417509BAFA9A234 /* Pods_MetalMind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MetalMind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4517CF1532232E21965A8836 /* Pods-MetalMind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetalMind.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MetalMind/Pods-MetalMind.debug.xcconfig"; sourceTree = "<group>"; };
 		570ADE021AD59CBB009FDC4E /* downWalk.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = downWalk.atlas; sourceTree = "<group>"; };
+		571644591B022C9A00A45393 /* SignUpTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpTableViewController.swift; sourceTree = "<group>"; };
 		571F1A301B00BC2C000EE11C /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		5746AB501AFA5529004E06FE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		574980831B00B3DD00CE9A97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				57D1C66B1AD52ECF00609C72 /* HomeViewController.swift */,
 				57D1C6891AD54F6B00609C72 /* HomeScene.swift */,
 				57851C001AFA76BC0000382F /* LoginViewController.swift */,
+				571644591B022C9A00A45393 /* SignUpTableViewController.swift */,
 				575D6C0E1AFAB0D800D6AE41 /* OverviewViewController.swift */,
 			);
 			name = Controller;
@@ -418,6 +421,7 @@
 				57D1C68A1AD54F6B00609C72 /* HomeScene.swift in Sources */,
 				571F1A311B00BC2C000EE11C /* Player.swift in Sources */,
 				575D6C0F1AFAB0D800D6AE41 /* OverviewViewController.swift in Sources */,
+				5716445A1B022C9A00A45393 /* SignUpTableViewController.swift in Sources */,
 				57D1C66C1AD52ECF00609C72 /* HomeViewController.swift in Sources */,
 				57D1C66A1AD52ECF00609C72 /* AppDelegate.swift in Sources */,
 			);

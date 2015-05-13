@@ -9,60 +9,80 @@
 import UIKit
 import Locksmith
 import Alamofire
-import EZAudio
 
-class LoginViewController: UIViewController, EZMicrophoneDelegate {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - IBOutlets
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var audioAnimationView: UIView!
-    var alertView = UIAlertView(title: "Please try again", message: "", delegate: nil, cancelButtonTitle: "OK")
-//    let audioPlot = EZAudioPlot(frame: CGRect(x: 0.0, y: 0.0, width: 300.0, height: 30.0))
-
+    
+    // MARK: - Variables
+    let alertView = UIAlertView(title: "Please try again", message: "", delegate: nil, cancelButtonTitle: "OK")
     
     // MARK: - UIViewContorlle Life-Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        /* Direct user to usernameTextField imidietly */
-        usernameTextField.becomeFirstResponder()
-        
-//        /* Cusotmize audio plot */
-//        audioPlot.backgroundColor = UIColor(red: 0.984, green: 0.71, blue: 0.365, alpha: 1.0)
-//        audioPlot.color = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-//        audioPlot.plotType = .Rolling
-//        audioPlot.shouldFill = true
-//        audioPlot.shouldMirror = true
-        
-//        /* Creating and configuring microfon */
-//        let microphone = EZMicrophone()
-//        microphone.microphoneDelegate = self
-//        
-//        /* Start fetching audio */
-//        microphone.startFetchingAudio()
-//        
-//        /* Add audio animation */
-//        self.audioAnimationView.addSubview(audioPlot)
+        /* Direct user to usernameTextField when view is presented */
+//        usernameTextField.becomeFirstResponder()
     }
     
     override func viewDidAppear(animated: Bool) {
     }
     
     // MARK: - IBActions
+    /* Login user action */
     @IBAction func loginButtonAction(sender: UIButton) {
-        let username = usernameTextField.text
-        let password = passwordTextField.text
-        
+        loginUser()
+    }
+    
+    /* Gesture recognizer action */
+    @IBAction func tagGestureRecognizer(sender: UITapGestureRecognizer) {
+        /* hide keyboard */
+        self.usernameTextField.resignFirstResponder()
+        self.passwordTextField.resignFirstResponder()
+    }
+    
+    // MARK: - UITextFieldDelegate
+    /* Define action for text fields return key */
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        switch textField {
+        case usernameTextField:
+            self.passwordTextField.becomeFirstResponder()
+        case passwordTextField:
+            loginUser()
+        default: break
+        }
+        return true
+    }
+    
+    // MARK: - Configuring the View Rotation Settings
+    override func shouldAutorotate() -> Bool {
+        return false
+    }
+    
+    override func preferredInterfaceOrientationForPresentation() -> UIInterfaceOrientation {
+        return .Portrait
+    }
+    
+    override func supportedInterfaceOrientations() -> Int {
+        return Int(UIInterfaceOrientationMask.Portrait.rawValue)
+    }
+    
+    // MARK: - Private helpers
+    /* Login user using username and password */
+    private func loginUser() {
         let url = "https://api.metalmind.rocks/v1/authenticate"
         let parameters = [
-            "username": username,
-            "password": password
+            "username": usernameTextField.text,
+            "password": passwordTextField.text
         ]
         
-        Alamofire.request(.POST, url, parameters: parameters, encoding: .JSON).responseJSON { (_, response, jsonObject, error) in
+        Alamofire.request(.POST, url, parameters: parameters, encoding: .JSON).responseJSON {
+            (_, response, jsonObject, error) in
 //            println(response!)
-            println(jsonObject!)
+//            println(jsonObject!)
             
             if error == nil {
                 if let token = jsonObject!.objectForKey("token") as? String {
@@ -75,11 +95,4 @@ class LoginViewController: UIViewController, EZMicrophoneDelegate {
             }
         }
     }
-    
-//    // MARK: - EZMicrophoneDelegate
-//    func microphone(microphone: EZMicrophone!, hasAudioReceived buffer: UnsafeMutablePointer<UnsafeMutablePointer<Float>>, withBufferSize bufferSize: UInt32, withNumberOfChannels numberOfChannels: UInt32) {
-//        dispatch_async(dispatch_get_main_queue()) {
-//            self.audioPlot.updateBuffer(buffer[0], withBufferSize: bufferSize)
-//        }
-//    }
 }
