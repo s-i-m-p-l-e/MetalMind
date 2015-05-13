@@ -79,8 +79,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             "password": passwordTextField.text
         ]
         
-        Alamofire.request(.POST, url, parameters: parameters, encoding: .JSON).responseJSON {
-            (_, response, jsonObject, error) in
+        Alamofire.request(.POST, url, parameters: parameters, encoding: .JSON).responseJSON { (_, response, jsonObject, error) in
 //            println(response!)
 //            println(jsonObject!)
             
