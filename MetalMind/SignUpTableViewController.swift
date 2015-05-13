@@ -47,6 +47,7 @@ class SignUpTableViewController: UITableViewController, UITextFieldDelegate {
     
     // MARK: - Private helpers
     private func validateUsername(username: String) -> Bool {
+        if username.isEmpty { return false }
         return true
     }
     
@@ -57,14 +58,23 @@ class SignUpTableViewController: UITableViewController, UITextFieldDelegate {
     }
     
     private func validatePassword(password: String, retypePassword: String) -> Bool {
-        if password != retypePassword { return false }
+        if password != retypePassword || password.isEmpty || retypePassword.isEmpty { return false }
         return true
     }
     
     private func registerUser() {
-        if !validateEmail(emailTextField.text) {
+        if !validateUsername(usernameTextField.text) {
+            alertView.message = "Username is empty"
+            alertView.show()
+            return
+        } else if !validateEmail(emailTextField.text) {
             alertView.message = "Invalid email address"
             alertView.show()
+            return
+        } else if !validatePassword(passwordTextField.text, retypePassword: retypePasswordTextField.text) {
+            alertView.message = "Passwords are empty or doesn't match"
+            alertView.show()
+            return
         }
     }
 }
