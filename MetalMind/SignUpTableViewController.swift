@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import Locksmith
 
 class SignUpTableViewController: UITableViewController, UITextFieldDelegate {
     
@@ -17,6 +19,7 @@ class SignUpTableViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var retypePasswordTextField: UITextField!
     
     // MARK: - Variables
+    let userAccount = "MetalMindUserAccount"
     let alertView = UIAlertView(title: "Please try again", message: "", delegate: nil, cancelButtonTitle: "OK")
     
     // MARK: - IBActions
@@ -45,36 +48,69 @@ class SignUpTableViewController: UITableViewController, UITextFieldDelegate {
         return true
     }
     
+    // MARK: - Configuring the View Rotation Settings
+    override func shouldAutorotate() -> Bool {
+        return false
+    }
+    
+    override func preferredInterfaceOrientationForPresentation() -> UIInterfaceOrientation {
+        return .Portrait
+    }
+    
+    override func supportedInterfaceOrientations() -> Int {
+        return Int(UIInterfaceOrientationMask.Portrait.rawValue)
+    }
+    
     // MARK: - Private helpers
-    private func validateUsername(username: String) -> Bool {
-        if username.isEmpty { return false }
-        return true
-    }
-    
-    private func validateEmail(email: String) -> Bool {
-        let emailRegex = "[A-Z0-9a-z\\._%+-]+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}"
-        let emailTest = NSPredicate(format:"SELF MATCHES %@",emailRegex)
-        return emailTest.evaluateWithObject(email)
-    }
-    
-    private func validatePassword(password: String, retypePassword: String) -> Bool {
-        if password != retypePassword || password.isEmpty || retypePassword.isEmpty { return false }
-        return true
+    private func invalidPassword() -> Bool {
+        return self.passwordTextField.text != self.retypePasswordTextField.text
     }
     
     private func registerUser() {
-        if !validateUsername(usernameTextField.text) {
-            alertView.message = "Username is empty"
-            alertView.show()
-            return
-        } else if !validateEmail(emailTextField.text) {
-            alertView.message = "Invalid email address"
-            alertView.show()
-            return
-        } else if !validatePassword(passwordTextField.text, retypePassword: retypePasswordTextField.text) {
-            alertView.message = "Passwords are empty or doesn't match"
-            alertView.show()
-            return
+        let url = "https://api.metalmind.rocks/v1/user"
+        let parameters = [
+            "username": usernameTextField.text,
+            "email": emailTextField.text,
+            "password": passwordTextField.text
+        ]
+        
+        Alamofire.request(.POST, url, parameters: parameters, encoding: .JSON).responseJSON { (request, response, jsonObject, error) in
+//            println(request)
+//            println(response)
+//            println(jsonObject)
+//            println(error)
+            
+            if error == nil {
+                if let json = jsonObject! as? [[String:String]] {
+                    var errorMessages: String = ""
+                    
+                    for jsonDictionary in json {
+                        errorMessages += jsonDictionary["message"]! + "\n"
+                    }
+                    
+                    if self.invalidPassword() {
+                        errorMessages += "Password do not match"
+                    }
+                    
+                    
+                    self.alertView.message = errorMessages
+                    self.alertView.show()
+                } else {
+                    let token = jsonObject!.objectForKey("token") as! String
+                    let keychainError = Locksmith.saveData(["token": token], forUserAccount: self.userAccount)
+                    
+                    if self.invalidPassword() {
+                        self.alertView.message = "Password do not match"
+                        self.alertView.show()
+                        return
+                    }
+                    
+                    self.alertView.message = "Registered successfully"
+                    self.alertView.show()
+                    self.presentingViewController?.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+                }
+            }
         }
+        
     }
 }

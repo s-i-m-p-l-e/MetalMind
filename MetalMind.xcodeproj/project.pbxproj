@@ -186,9 +186,9 @@
 		57D1C6661AD52ECF00609C72 /* MetalMind */ = {
 			isa = PBXGroup;
 			children = (
+				574980821B00B3DD00CE9A97 /* Main.storyboard */,
 				571F1A321B00BCD4000EE11C /* Model */,
 				571F1A331B00BCDD000EE11C /* Controller */,
-				574980821B00B3DD00CE9A97 /* Main.storyboard */,
 				57D1C6671AD52ECF00609C72 /* Supporting Files */,
 			);
 			path = MetalMind;

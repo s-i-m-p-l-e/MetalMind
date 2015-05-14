@@ -51,7 +51,9 @@ class HomeViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        if userData?.objectForKey("token") == nil {
+        
+        /* ask for user to login if there is no token */
+        if token == nil {
             self.performSegueWithIdentifier("ModalLoginViewController", sender: self)
         } else {
             /* hide loading data actividy indicator */

@@ -10,8 +10,10 @@ import SpriteKit
 
 class HomeScene: SKScene {
     
+    // MARK: - Variables
     let player = MMPlayer(horizontalSpriteOrientation: .Right)
     
+    // MARK: - SKScene Life-Cycle
     override func didMoveToView(view: SKView) {
         /* load textures */
         player.textures[.Down] = SKTextureAtlas(named: "downWalk").textures
