@@ -15,7 +15,6 @@ class HomeViewController: UIViewController {
     
     // MARK: - IBOutlets
     @IBOutlet weak var loadingDataActivityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK: - Variables
     var userData: NSDictionary? {
@@ -27,13 +26,13 @@ class HomeViewController: UIViewController {
         }
     }
     var token: String?  { return userData?.objectForKey("token") as? String }
+
     var robots: [Robot] = []
     var downloadingRobotData = false
 
     // MARK:- UIViewController Life-Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupCollectionView()
         self.loadRobotsData()
     }
     
@@ -42,9 +41,6 @@ class HomeViewController: UIViewController {
                 
         /* configure scene view */
         let skView = self.view as! SKView
-        skView.showsFPS = true
-        skView.showsNodeCount = true
-        skView.ignoresSiblingOrder = true
 
         /* create and configure the scene */
         let playerOverviewScene = OverviewScene(size: view.bounds.size)
@@ -95,14 +91,17 @@ class HomeViewController: UIViewController {
         
         var manager = Alamofire.Manager.sharedInstance
         var request = manager.request(mutableURLRequest)
-        println(request)
-        
-        request.responseJSON { (request, response, jsonObject, error) -> Void in
-            println(request)
-            println(response)
-            println(jsonObject)
+
+        request.responseJSON { (request, response, arrayJSON, error) -> Void in
+            println(arrayJSON)
             println(error)
             
+            if arrayJSON != nil && error == nil  {
+                
+                for json in arrayJSON! {
+                    localRobots.append(Robot(json: json))
+                }
+            }
             
         }
         

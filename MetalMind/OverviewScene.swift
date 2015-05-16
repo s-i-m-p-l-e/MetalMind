@@ -19,11 +19,11 @@ class OverviewScene: SKScene {
         player.textures[.Down] = SKTextureAtlas(named: "downWalk").textures
         player.textures[.Horizontal] = SKTextureAtlas(named: "rightWalks").textures
         player.textures[.Idle] = SKTextureAtlas(named: "idleCharTest").textures
-        let backgroundImage = SKSpriteNode(imageNamed: "spaceShipBackground")
+        let backgroundImage = SKSpriteNode(imageNamed: "dark_background")
         
         /* sizing and positioning textures */
         player.setSpriteNodeSize(.Idle)
-        player.spriteNode.setScale(0.5)
+        player.spriteNode.setScale(0.7)
         player.spriteNode.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
         backgroundImage.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
         

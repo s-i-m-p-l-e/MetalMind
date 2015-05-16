@@ -24,8 +24,11 @@ class Robot {
     var looses: UInt? = 0
 //    currentConfig (string, optional): The current attached config for the robot which will be used in battles
     
-    init() {
-        self.id = 0
-        self.name = "No name"
-    }
+    init (json: [String: NSObject]) {
+        if let id = json["_id"] as? Int {
+            self.id = id
+        } else {
+            log("Invalid json[\"_id\"] field - expected string")
+            self.id = nil
+        }
 }

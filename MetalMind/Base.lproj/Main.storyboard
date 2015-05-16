@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rjo-DP-IPM">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -20,30 +21,33 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="43J-pv-Dae" userLabel="Loading Data Activity Indicator">
                                 <rect key="frame" x="281" y="225" width="37" height="37"/>
                             </activityIndicatorView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="C5k-hF-qTB">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
+                            <button opaque="NO" alpha="0.79999999999999982" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agq-91-A5a">
+                                <rect key="frame" x="16" y="437" width="284" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Previous">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" alpha="0.79999999999999982" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXP-X5-GI7">
+                                <rect key="frame" x="300" y="437" width="284" height="30"/>
                                 <color key="backgroundColor" red="0.37647058820000001" green="0.49019607840000001" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Owg-wx-Wkj">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                                <connections>
-                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="ybl-dH-loq"/>
-                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="FPA-4i-xX6"/>
-                                </connections>
-                            </collectionView>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="C5k-hF-qTB" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="2aT-33-vUs"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="C5k-hF-qTB" secondAttribute="bottom" id="WdT-xU-V1f"/>
-                            <constraint firstItem="C5k-hF-qTB" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="i7b-sh-CHO"/>
-                            <constraint firstAttribute="trailing" secondItem="C5k-hF-qTB" secondAttribute="trailing" id="nCl-Lt-fga"/>
+                            <constraint firstItem="agq-91-A5a" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="Wka-28-0le"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="agq-91-A5a" secondAttribute="bottom" constant="20" id="azk-mb-ad5"/>
+                            <constraint firstItem="UXP-X5-GI7" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="centerXWithinMargins" id="jMS-ul-LF4"/>
                             <constraint firstAttribute="centerX" secondItem="43J-pv-Dae" secondAttribute="centerX" constant="0.5" id="s3E-4K-3Xh"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="UXP-X5-GI7" secondAttribute="bottom" constant="20" id="tC8-Pf-w5E"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UXP-X5-GI7" secondAttribute="trailing" id="wEw-tx-PND"/>
                             <constraint firstAttribute="centerY" secondItem="43J-pv-Dae" secondAttribute="centerY" id="xRg-56-gyP"/>
+                            <constraint firstAttribute="centerXWithinMargins" secondItem="agq-91-A5a" secondAttribute="trailing" id="ykB-rp-dje"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Robot name" id="HpT-vX-gYA">
@@ -57,7 +61,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="collectionView" destination="C5k-hF-qTB" id="6wx-Cw-VUx"/>
                         <outlet property="loadingDataActivityIndicator" destination="43J-pv-Dae" id="tL1-Mr-oEa"/>
                         <segue destination="ivp-6m-vjZ" kind="presentation" identifier="ModalLoginViewController" modalTransitionStyle="crossDissolve" id="O3W-Zh-c0D"/>
                     </connections>

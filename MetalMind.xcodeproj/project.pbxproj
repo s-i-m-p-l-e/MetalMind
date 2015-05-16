@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		570AB8FA1B07D50800D59BD8 /* GlobalHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570AB8F91B07D50800D59BD8 /* GlobalHelpers.swift */; };
 		570ADE031AD59CBB009FDC4E /* downWalk.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 570ADE021AD59CBB009FDC4E /* downWalk.atlas */; };
 		5716445A1B022C9A00A45393 /* SignUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571644591B022C9A00A45393 /* SignUpTableViewController.swift */; };
 		571F1A311B00BC2C000EE11C /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571F1A301B00BC2C000EE11C /* Player.swift */; };
@@ -61,6 +62,7 @@
 /* Begin PBXFileReference section */
 		040470657417509BAFA9A234 /* Pods_MetalMind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MetalMind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4517CF1532232E21965A8836 /* Pods-MetalMind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetalMind.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MetalMind/Pods-MetalMind.debug.xcconfig"; sourceTree = "<group>"; };
+		570AB8F91B07D50800D59BD8 /* GlobalHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalHelpers.swift; sourceTree = "<group>"; };
 		570ADE021AD59CBB009FDC4E /* downWalk.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = downWalk.atlas; sourceTree = "<group>"; };
 		571644591B022C9A00A45393 /* SignUpTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpTableViewController.swift; sourceTree = "<group>"; };
 		571F1A301B00BC2C000EE11C /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
@@ -131,6 +133,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		570AB8F81B07D43000D59BD8 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				570AB8F91B07D50800D59BD8 /* GlobalHelpers.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		571F1A321B00BCD4000EE11C /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +223,7 @@
 				571F1A321B00BCD4000EE11C /* Model */,
 				571F1A331B00BCDD000EE11C /* Controller */,
 				57D1C6671AD52ECF00609C72 /* Supporting Files */,
+				570AB8F81B07D43000D59BD8 /* Helpers */,
 			);
 			path = MetalMind;
 			sourceTree = "<group>";
@@ -447,6 +458,7 @@
 				571F1A311B00BC2C000EE11C /* Player.swift in Sources */,
 				579C8F711B04F2C3002E6E51 /* Robot.swift in Sources */,
 				575D6C0F1AFAB0D800D6AE41 /* OverviewViewController.swift in Sources */,
+				570AB8FA1B07D50800D59BD8 /* GlobalHelpers.swift in Sources */,
 				5716445A1B022C9A00A45393 /* SignUpTableViewController.swift in Sources */,
 				57D1C66C1AD52ECF00609C72 /* HomeViewController.swift in Sources */,
 				579C8F751B04F6EE002E6E51 /* Skill.swift in Sources */,
