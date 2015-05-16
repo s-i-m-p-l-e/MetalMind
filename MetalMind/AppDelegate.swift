@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         // uncomment line to debug LoginViewController and server authentication
-        Locksmith.deleteDataForUserAccount("MetalMindUserAccount")
+//        Locksmith.deleteDataForUserAccount("MetalMindUserAccount")
         
 //        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
 //

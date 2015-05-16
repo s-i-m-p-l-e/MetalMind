@@ -28,13 +28,18 @@
 		57775C5A1AFE9506009ABF3C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57775C591AFE9506009ABF3C /* Foundation.framework */; };
 		5781FBD81AFCDB1300DFDE64 /* rightWalks.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 5781FBD71AFCDB1300DFDE64 /* rightWalks.atlas */; };
 		57851C011AFA76BC0000382F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57851C001AFA76BC0000382F /* LoginViewController.swift */; };
+		579C8F711B04F2C3002E6E51 /* Robot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C8F701B04F2C3002E6E51 /* Robot.swift */; };
+		579C8F731B04F6DA002E6E51 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C8F721B04F6DA002E6E51 /* User.swift */; };
+		579C8F751B04F6EE002E6E51 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C8F741B04F6EE002E6E51 /* Skill.swift */; };
+		579C8F781B05113E002E6E51 /* RobotCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 579C8F771B05113E002E6E51 /* RobotCollectionViewCell.xib */; };
+		579C8F7A1B0515D0002E6E51 /* RobotCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C8F791B0515D0002E6E51 /* RobotCollectionViewCell.swift */; };
 		57B14FD01AFE5E51004B42A5 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B14FCF1AFE5E51004B42A5 /* NavigationController.swift */; };
 		57B14FD21AFE60CB004B42A5 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B14FD11AFE60CB004B42A5 /* RootTabBarController.swift */; };
 		57D1C66A1AD52ECF00609C72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D1C6691AD52ECF00609C72 /* AppDelegate.swift */; };
 		57D1C66C1AD52ECF00609C72 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D1C66B1AD52ECF00609C72 /* HomeViewController.swift */; };
 		57D1C6741AD52ECF00609C72 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57D1C6721AD52ECF00609C72 /* LaunchScreen.xib */; };
 		57D1C6801AD52ECF00609C72 /* MetalMindTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D1C67F1AD52ECF00609C72 /* MetalMindTests.swift */; };
-		57D1C68A1AD54F6B00609C72 /* HomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D1C6891AD54F6B00609C72 /* HomeScene.swift */; };
+		57D1C68A1AD54F6B00609C72 /* OverviewScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D1C6891AD54F6B00609C72 /* OverviewScene.swift */; };
 		57D1C68C1AD5535A00609C72 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D1C68B1AD5535A00609C72 /* SpriteKit.framework */; };
 		57D8EF741AFE7A9D001807B5 /* idleCharTest.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 57D8EF731AFE7A9D001807B5 /* idleCharTest.atlas */; };
 		57D8EF761AFE8A53001807B5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D8EF751AFE8A53001807B5 /* CoreData.framework */; };
@@ -77,6 +82,11 @@
 		57775C591AFE9506009ABF3C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5781FBD71AFCDB1300DFDE64 /* rightWalks.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = rightWalks.atlas; sourceTree = "<group>"; };
 		57851C001AFA76BC0000382F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		579C8F701B04F2C3002E6E51 /* Robot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Robot.swift; sourceTree = "<group>"; };
+		579C8F721B04F6DA002E6E51 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		579C8F741B04F6EE002E6E51 /* Skill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
+		579C8F771B05113E002E6E51 /* RobotCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RobotCollectionViewCell.xib; sourceTree = "<group>"; };
+		579C8F791B0515D0002E6E51 /* RobotCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobotCollectionViewCell.swift; sourceTree = "<group>"; };
 		57B14FCF1AFE5E51004B42A5 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		57B14FD11AFE60CB004B42A5 /* RootTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		57D1C6641AD52ECF00609C72 /* MetalMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,7 +97,7 @@
 		57D1C6791AD52ECF00609C72 /* MetalMindTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetalMindTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D1C67E1AD52ECF00609C72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57D1C67F1AD52ECF00609C72 /* MetalMindTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalMindTests.swift; sourceTree = "<group>"; };
-		57D1C6891AD54F6B00609C72 /* HomeScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScene.swift; sourceTree = "<group>"; };
+		57D1C6891AD54F6B00609C72 /* OverviewScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewScene.swift; sourceTree = "<group>"; };
 		57D1C68B1AD5535A00609C72 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		57D8EF731AFE7A9D001807B5 /* idleCharTest.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = idleCharTest.atlas; sourceTree = "<group>"; };
 		57D8EF751AFE8A53001807B5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -125,6 +135,9 @@
 			isa = PBXGroup;
 			children = (
 				571F1A301B00BC2C000EE11C /* Player.swift */,
+				579C8F701B04F2C3002E6E51 /* Robot.swift */,
+				579C8F721B04F6DA002E6E51 /* User.swift */,
+				579C8F741B04F6EE002E6E51 /* Skill.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -135,10 +148,12 @@
 				57B14FD11AFE60CB004B42A5 /* RootTabBarController.swift */,
 				57B14FCF1AFE5E51004B42A5 /* NavigationController.swift */,
 				57D1C66B1AD52ECF00609C72 /* HomeViewController.swift */,
-				57D1C6891AD54F6B00609C72 /* HomeScene.swift */,
+				57D1C6891AD54F6B00609C72 /* OverviewScene.swift */,
 				57851C001AFA76BC0000382F /* LoginViewController.swift */,
 				571644591B022C9A00A45393 /* SignUpTableViewController.swift */,
 				575D6C0E1AFAB0D800D6AE41 /* OverviewViewController.swift */,
+				579C8F791B0515D0002E6E51 /* RobotCollectionViewCell.swift */,
+				579C8F761B0510E9002E6E51 /* View */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -161,6 +176,14 @@
 			);
 			name = Spine;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		579C8F761B0510E9002E6E51 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				579C8F771B05113E002E6E51 /* RobotCollectionViewCell.xib */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		57D1C65B1AD52ECF00609C72 = {
@@ -336,6 +359,7 @@
 				57775C4F1AFE8C93009ABF3C /* elfREADME.txt in Resources */,
 				57775C581AFE8C93009ABF3C /* stepTesting.json in Resources */,
 				57775C521AFE8C93009ABF3C /* goblin.json in Resources */,
+				579C8F781B05113E002E6E51 /* RobotCollectionViewCell.xib in Resources */,
 				57FAF4381AD6625A0044847F /* Images.xcassets in Resources */,
 				5781FBD81AFCDB1300DFDE64 /* rightWalks.atlas in Resources */,
 				57775C4D1AFE8C93009ABF3C /* elf.atlas in Resources */,
@@ -416,14 +440,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				57851C011AFA76BC0000382F /* LoginViewController.swift in Sources */,
+				579C8F7A1B0515D0002E6E51 /* RobotCollectionViewCell.swift in Sources */,
 				57B14FD21AFE60CB004B42A5 /* RootTabBarController.swift in Sources */,
 				57B14FD01AFE5E51004B42A5 /* NavigationController.swift in Sources */,
-				57D1C68A1AD54F6B00609C72 /* HomeScene.swift in Sources */,
+				57D1C68A1AD54F6B00609C72 /* OverviewScene.swift in Sources */,
 				571F1A311B00BC2C000EE11C /* Player.swift in Sources */,
+				579C8F711B04F2C3002E6E51 /* Robot.swift in Sources */,
 				575D6C0F1AFAB0D800D6AE41 /* OverviewViewController.swift in Sources */,
 				5716445A1B022C9A00A45393 /* SignUpTableViewController.swift in Sources */,
 				57D1C66C1AD52ECF00609C72 /* HomeViewController.swift in Sources */,
+				579C8F751B04F6EE002E6E51 /* Skill.swift in Sources */,
 				57D1C66A1AD52ECF00609C72 /* AppDelegate.swift in Sources */,
+				579C8F731B04F6DA002E6E51 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

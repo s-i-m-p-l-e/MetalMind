@@ -9,11 +9,13 @@
 import UIKit
 import SpriteKit
 import Locksmith
+import Alamofire
 
 class HomeViewController: UIViewController {
     
     // MARK: - IBOutlets
     @IBOutlet weak var loadingDataActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK: - Variables
     var userData: NSDictionary? {
@@ -25,10 +27,14 @@ class HomeViewController: UIViewController {
         }
     }
     var token: String?  { return userData?.objectForKey("token") as? String }
+    var robots: [Robot] = []
+    var downloadingRobotData = false
 
     // MARK:- UIViewController Life-Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupCollectionView()
+        self.loadRobotsData()
     }
     
     override func viewWillLayoutSubviews() {
@@ -39,9 +45,9 @@ class HomeViewController: UIViewController {
         skView.showsFPS = true
         skView.showsNodeCount = true
         skView.ignoresSiblingOrder = true
-        
+
         /* create and configure the scene */
-        let playerOverviewScene = HomeScene(size: view.bounds.size)
+        let playerOverviewScene = OverviewScene(size: view.bounds.size)
         playerOverviewScene.scaleMode = .AspectFill
         
         /* present the scene */
@@ -77,6 +83,29 @@ class HomeViewController: UIViewController {
     
     override func supportedInterfaceOrientations() -> Int {
         return Int(UIInterfaceOrientationMask.Portrait.rawValue)
+    }
+    
+    func loadRobotsData() {
+        if downloadingRobotData { return }
+        downloadingRobotData = true
+        
+        let URL =  NSURL(string: "https://api.metalmind.rocks/v1/robots")
+        var mutableURLRequest = NSMutableURLRequest(URL: URL!)
+        mutableURLRequest.setValue(token!, forHTTPHeaderField: "Authorization")
+        
+        var manager = Alamofire.Manager.sharedInstance
+        var request = manager.request(mutableURLRequest)
+        println(request)
+        
+        request.responseJSON { (request, response, jsonObject, error) -> Void in
+            println(request)
+            println(response)
+            println(jsonObject)
+            println(error)
+            
+            
+        }
+        
     }
     
 }

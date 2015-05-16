@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class HomeScene: SKScene {
+class OverviewScene: SKScene {
     
     // MARK: - Variables
     let player = MMPlayer(horizontalSpriteOrientation: .Right)
