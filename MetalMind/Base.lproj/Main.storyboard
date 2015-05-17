@@ -28,6 +28,9 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="previousButtonAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="fr0-jT-2dl"/>
+                                </connections>
                             </button>
                             <button opaque="NO" alpha="0.79999999999999982" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXP-X5-GI7">
                                 <rect key="frame" x="300" y="437" width="284" height="30"/>
@@ -36,9 +39,13 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="nextButtonAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="fxf-Yv-gY9"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="agq-91-A5a" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="Wka-28-0le"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="agq-91-A5a" secondAttribute="bottom" constant="20" id="azk-mb-ad5"/>
@@ -49,14 +56,20 @@
                             <constraint firstAttribute="centerY" secondItem="43J-pv-Dae" secondAttribute="centerY" id="xRg-56-gyP"/>
                             <constraint firstAttribute="centerXWithinMargins" secondItem="agq-91-A5a" secondAttribute="trailing" id="ykB-rp-dje"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Lad-gh-VaZ" appends="YES" id="5pr-8N-rTS"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Robot name" id="HpT-vX-gYA">
                         <barButtonItem key="leftBarButtonItem" title="Delete" id="Fof-Hb-vvz">
                             <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="deleteCurrentRobot:" destination="vXZ-lx-hvc" id="cyD-TX-x2N"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="82V-9i-3WM">
                             <connections>
-                                <segue destination="Imc-NC-UkO" kind="show" identifier="" id="dxh-8J-rX7"/>
+                                <segue destination="fKC-bw-3GL" kind="show" id="Wja-E5-uQX"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -66,8 +79,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Lad-gh-VaZ">
+                    <connections>
+                        <segue destination="Imc-NC-UkO" kind="show" id="OQg-Xx-YWV"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1755" y="-1021"/>
+            <point key="canvasLocation" x="1755" y="-1777"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="rom-I5-tnK">
@@ -124,6 +142,12 @@
                                     <action selector="loginButtonAction:" destination="ivp-6m-vjZ" eventType="touchUpInside" id="h7d-cY-Zhp"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Metal Mind" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGg-DF-CpT">
+                                <rect key="frame" x="16" y="28" width="568" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XzZ-35-1YG">
                                 <rect key="frame" x="16" y="339" width="568" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.58823529411764708" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -139,12 +163,6 @@
                                     <segue destination="IDv-Gb-wMU" kind="presentation" identifier="ModalSignUpTableViewController" modalTransitionStyle="flipHorizontal" id="vfm-e9-DG1"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Metal Mind" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGg-DF-CpT">
-                                <rect key="frame" x="16" y="28" width="568" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="highlightedColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.37647058820000001" green="0.49019607840000001" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -184,7 +202,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2609" y="-1686"/>
+            <point key="canvasLocation" x="2609" y="-2442"/>
         </scene>
         <!--Sign Up Table View Controller-->
         <scene sceneID="pR6-tc-wAU">
@@ -402,21 +420,21 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="khR-7b-0cx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3278" y="-1686"/>
+            <point key="canvasLocation" x="3278" y="-2442"/>
         </scene>
         <!--Stats-->
         <scene sceneID="rb3-qW-12i">
             <objects>
-                <viewController id="Imc-NC-UkO" customClass="OverviewViewController" customModule="MetalMind" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Imc-NC-UkO" customClass="StatsViewController" customModule="MetalMind" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FUl-PZ-mTA"/>
                         <viewControllerLayoutGuide type="bottom" id="2Ld-2A-ZUI"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="1Ci-e2-md8">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Gp-hk-7fo">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Gp-hk-7fo">
                                 <rect key="frame" x="16" y="20" width="568" height="61"/>
                                 <string key="text">This is the Stats view. This view will present a detailed view of character stats to the user. Additional information dependend on the stats will also be presented here.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -435,7 +453,82 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rbq-wh-g9Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2609" y="-1021"/>
+            <point key="canvasLocation" x="2609" y="-1065"/>
+        </scene>
+        <!--Create Robot View Controller-->
+        <scene sceneID="cM2-xI-Zli">
+            <objects>
+                <viewController id="fKC-bw-3GL" customClass="CreateRobotViewController" customModule="MetalMind" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Tb-74-CVX"/>
+                        <viewControllerLayoutGuide type="bottom" id="Px6-gJ-DGZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EKy-Nh-EDM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Robot Factory" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZgH-cx-oPN">
+                                <rect key="frame" x="16" y="20" width="568" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Robot Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="avG-yq-lwl">
+                                <rect key="frame" x="16" y="64" width="568" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="svk-x9-JeZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="fKC-bw-3GL" id="d36-mi-b1M"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MX0-Uz-xRw">
+                                <rect key="frame" x="16" y="417" width="568" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="7cW-jC-vjO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Create Robot">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="createRobotButtonAction:" destination="fKC-bw-3GL" eventType="touchUpInside" id="2AX-Ia-KOL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.37647058820000001" green="0.49019607840000001" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Px6-gJ-DGZ" firstAttribute="top" secondItem="MX0-Uz-xRw" secondAttribute="bottom" constant="20" id="5AW-hv-qOb"/>
+                            <constraint firstItem="avG-yq-lwl" firstAttribute="leading" secondItem="EKy-Nh-EDM" secondAttribute="leadingMargin" id="Hgz-fw-kVK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="avG-yq-lwl" secondAttribute="trailing" id="Lek-bw-q1g"/>
+                            <constraint firstItem="ZgH-cx-oPN" firstAttribute="leading" secondItem="EKy-Nh-EDM" secondAttribute="leadingMargin" id="RQk-LA-sM4"/>
+                            <constraint firstItem="MX0-Uz-xRw" firstAttribute="leading" secondItem="EKy-Nh-EDM" secondAttribute="leadingMargin" id="Xz0-8J-oqL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZgH-cx-oPN" secondAttribute="trailing" id="Zbf-nz-XC4"/>
+                            <constraint firstItem="avG-yq-lwl" firstAttribute="top" secondItem="ZgH-cx-oPN" secondAttribute="bottom" constant="8" id="a1Z-34-h9h"/>
+                            <constraint firstItem="ZgH-cx-oPN" firstAttribute="top" secondItem="2Tb-74-CVX" secondAttribute="bottom" constant="20" id="iF2-gf-u7J"/>
+                            <constraint firstItem="MX0-Uz-xRw" firstAttribute="trailing" secondItem="EKy-Nh-EDM" secondAttribute="trailingMargin" id="oTc-QA-7Qs"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="J7f-7H-gsf" appends="YES" id="p29-mP-VZ6"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="robotNameTextField" destination="avG-yq-lwl" id="QiH-jK-Rc7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hf6-AR-MKk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="J7f-7H-gsf">
+                    <connections>
+                        <action selector="tapGestureAction:" destination="fKC-bw-3GL" id="9aw-nN-vgB"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2609" y="-1777"/>
         </scene>
         <!--Skill list table view controller-->
         <scene sceneID="zSf-EG-rEs">
@@ -725,7 +818,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xc6-Oj-S95" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1073" y="-1021"/>
+            <point key="canvasLocation" x="1073" y="-1777"/>
         </scene>
     </scenes>
     <resources>
