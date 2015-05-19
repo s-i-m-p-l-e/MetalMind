@@ -19,6 +19,7 @@ class SignUpTableViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var retypePasswordTextField: UITextField!
     
     // MARK: - Variables
+    var delegate: HomeViewControllerDelegate?
     let userAccount = "MetalMindUserAccount"
     let alertView = UIAlertView(title: "Please try again", message: "", delegate: nil, cancelButtonTitle: "OK")
     
@@ -97,16 +98,20 @@ class SignUpTableViewController: UITableViewController, UITextFieldDelegate {
                     self.alertView.show()
                 } else {
                     let token = jsonObject!.objectForKey("token") as! String
-                    let keychainError = Locksmith.saveData(["token": token], forUserAccount: self.userAccount)
-                    
                     if self.invalidPassword() {
                         self.alertView.message = "Password do not match"
                         self.alertView.show()
                         return
                     }
                     
+                    let keychainError = Locksmith.saveData(["token": token], forUserAccount: self.userAccount)
+                
                     self.alertView.message = "Registered successfully"
                     self.alertView.show()
+                    if let delegate = self.delegate {
+                        delegate.controller(self, didLoginUser: true)
+                    }
+                    
                     self.presentingViewController?.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
                 }
             }

@@ -43,6 +43,12 @@ class CreateRobotViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - Helpers
     func createRobot() {
+        if robotNameTextField.text.isEmpty {
+            let alert = UIAlertView(title: "Please enter a robot name", message: "Empty robot name not allowed", delegate: nil, cancelButtonTitle: "OK")
+            alert.show()
+            return
+        }
+
         let aManager = Manager.sharedInstance
         if token != nil {
             aManager.session.configuration.HTTPAdditionalHeaders = [
@@ -55,11 +61,8 @@ class CreateRobotViewController: UIViewController, UITextFieldDelegate {
         ]
         
         Alamofire.request(.POST, url, parameters: parameters, encoding: .JSON).responseJSON { (_, response, jsonObject, error) in
-//            println(jsonObject)
 
             if error == nil && jsonObject != nil {
-                let alert = UIAlertView(title: "Done", message: "Robot \(self.robotNameTextField.text) created!", delegate: nil, cancelButtonTitle: "OK")
-                alert.show()
                 let navigationStack = self.navigationController?.viewControllers
                 let viewControllerCount = navigationStack!.count
                 

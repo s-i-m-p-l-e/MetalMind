@@ -11,10 +11,12 @@ import SpriteKit
 import Locksmith
 import Alamofire
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, HomeViewControllerDelegate, UIAlertViewDelegate {
     
     // MARK: - IBOutlets
     @IBOutlet weak var loadingDataActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
+    @IBOutlet weak var createRobotLabel: UILabel!
     
     // MARK: - Variables
     var userData: NSDictionary? {
@@ -27,10 +29,21 @@ class HomeViewController: UIViewController {
     }
     var token: String?  { return userData?.objectForKey("token") as? String }
 
-    var robots: [Robot] = []
+    var robots: [Robot] = [] {
+        didSet {
+            if currentRobotIndex >= robots.count && robots.count > 0 {
+                currentRobotIndex = robots.count - 1
+            }
+            self.title = currentRobot?.name ?? ""
+            tapGestureRecognizer.enabled = !robots.isEmpty
+            playerOverviewScene?.hidden = robots.isEmpty
+            createRobotLabel.hidden = !robots.isEmpty
+        }
+    }
     var currentRobotIndex: Int = 0
     var currentRobot: Robot? { return robots[currentRobotIndex] }
     var downloadingRobotData = false
+    var playerOverviewScene: OverviewScene?
 
     // MARK:- UIViewController Life-Cycle
     override func viewDidLoad() {
@@ -40,22 +53,24 @@ class HomeViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-                
-        /* configure scene view */
-        let skView = self.view as! SKView
+        
+        if playerOverviewScene == nil {
+            /* configure scene view */
+            let skView = self.view as! SKView
 
         /* create and configure the scene */
-        let playerOverviewScene = OverviewScene(size: view.bounds.size)
-        playerOverviewScene.scaleMode = .AspectFill
-        
-        /* present the scene */
-        skView.presentScene(playerOverviewScene)
-
+            playerOverviewScene = OverviewScene(size: view.bounds.size)
+            playerOverviewScene?.scaleMode = .AspectFill
+            playerOverviewScene?.hidden = true
+            
+            /* present the scene */
+            skView.presentScene(playerOverviewScene)
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
+                
         /* ask for user to login if there is no token */
         if token == nil {
             self.performSegueWithIdentifier("ModalLoginViewController", sender: self)
@@ -85,27 +100,22 @@ class HomeViewController: UIViewController {
     
     // MARK: - Helpers
     func loadRobotsData() {
-        println("LoadRobotData")
         if downloadingRobotData { return }
         downloadingRobotData = true
         
         let URL =  NSURL(string: "https://api.metalmind.rocks/v1/robots")
         var mutableURLRequest = NSMutableURLRequest(URL: URL!)
-        mutableURLRequest.setValue(token!, forHTTPHeaderField: "Authorization")
+        if token != nil {
+            mutableURLRequest.setValue(token!, forHTTPHeaderField: "Authorization")
+        }
         
         var manager = Alamofire.Manager.sharedInstance
         var request = manager.request(mutableURLRequest)
 
         request.RobotDataLoadResponseJSON { (request, response, arrayJSON, error) -> Void in
-//            println(arrayJSON)
-//            println(error)
             
-            if arrayJSON != nil && error == nil  {
-                
-                for json in arrayJSON! {
-                    self.robots.append(Robot(json: json))
-                }
-                self.title = self.robots.first?.name
+            if arrayJSON != nil && error == nil {
+                self.robots = map(arrayJSON!) { Robot(json: $0) }
             }
         }
         downloadingRobotData = false
@@ -133,32 +143,68 @@ class HomeViewController: UIViewController {
         self.title = robots[currentRobotIndex].name
     }
     
-    // MARK: - IBActions
-    @IBAction func previousButtonAction(sender: UIButton) {
-        switchToPreviousRobot()
-    }
-    @IBAction func nextButtonAction(sender: UIButton) {
-        switchToNextRobot()
-    }
-    
-    @IBAction func deleteCurrentRobot(sender: UIBarButtonItem) {
+    func deleteCurrentRobot() {
         let aManager = Manager.sharedInstance
         
         if let id = currentRobot?.id where token != nil {
             aManager.session.configuration.HTTPAdditionalHeaders = [
                 "Authorization": token! ]
-           let url = "https://api.metalmind.rocks/v1/robot/\(id)"
+            let url = "https://api.metalmind.rocks/v1/robot/\(id)"
             let parameters = [
                 "id": id
-                ]
+            ]
+            
+            Alamofire.request(.DELETE, url, parameters: parameters, encoding: .JSON).responseJSON { (request, response, jsonObject, error) in
+                let json = jsonObject as? [String:Int]
+                if json?["success"] == 1 {
+                    
+                    self.robots.removeAtIndex(self.currentRobotIndex)
+                    
+                    let alert = UIAlertView(title: "DELETED", message: "Robot deleted successfully", delegate: nil, cancelButtonTitle: "OK")
+                    alert.show()
+                }
+            }
+        }
+    }
+    
+    // MARK: - IBActions
+    @IBAction func previousButtonAction(sender: UIButton) {
+        switchToPreviousRobot()
+    }
+    
+    @IBAction func nextButtonAction(sender: UIButton) {
+        switchToNextRobot()
+    }
+    
+    @IBAction func deleteButtonAction(sender: UIBarButtonItem) {
+        if robots.isEmpty { return }
+        let alertMessage = "Are you sure you want to delete robot \"\(currentRobot!.name!)\""
+        var alert = UIAlertController(title: "DELETE Robot", message: alertMessage, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: nil))
+        alert.addAction(UIAlertAction(title: "DELETE", style: .Destructive){ action in
+            self.deleteCurrentRobot()
+        })
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    // MARK: - HomeViewControllerDelegate
+    func controller(controller: UIViewController, didLoginUser: Bool) {
+        if token != nil && didLoginUser == true {
+            self.loadRobotsData()
+            dispatch_async(dispatch_get_main_queue()) {
+                self.view.setNeedsDisplay()
+            }
+        }
+    }
+    
+    // MARK: - Segue
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        Alamofire.request(.DELETE, url, parameters: parameters, encoding: .JSON).responseJSON { (request, response, jsonObject, error) in
-            let json = jsonObject as? [String:Int]
-            if json?["success"] == 1 {
-                let alert = UIAlertView(title: "DELETED", message: "Robot deleted successfully", delegate: nil, cancelButtonTitle: "OK")
-            }
-            self.switchToNextRobot()
-            }
+        switch segue.identifier! {
+        case "ModalLoginViewController":
+            let loginVC = segue.destinationViewController as? LoginViewController
+            loginVC?.delegate = self
+        default: break
         }
     }
 }

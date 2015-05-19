@@ -24,7 +24,7 @@ class Robot {
     var lost: UInt?
 //    currentConfig (string, optional): The current attached config for the robot which will be used in battles
     
-    init (json: [String: NSObject]) {
+    init(json: [String: NSObject]) {
         if let id = json["id"] as? Int {
             self.id = id
         } else {

@@ -8,6 +8,6 @@
 
 import UIKit
 
-class StatsViewController: UIViewController {
+class StatsTableViewController: UITableViewController {
     
 }

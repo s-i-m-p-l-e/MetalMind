@@ -18,6 +18,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var audioAnimationView: UIView!
     
     // MARK: - Variables
+    var delegate: HomeViewControllerDelegate?
     let alertView = UIAlertView(title: "Please try again", message: "", delegate: nil, cancelButtonTitle: "OK")
     
     // MARK: - UIViewContorlle Life-Cycle
@@ -70,6 +71,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         return Int(UIInterfaceOrientationMask.Portrait.rawValue)
     }
     
+    // MARK: - Segue
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        switch segue.identifier! {
+        case "ModalSignUpTableViewController":
+            let SignUpTVC = segue.destinationViewController as? SignUpTableViewController
+            SignUpTVC?.delegate = self.delegate
+        default: break
+        }
+    }
+    
     // MARK: - Private helpers
     /* Login user using username and password */
     private func loginUser() {
@@ -86,6 +98,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             if error == nil {
                 if let token = jsonObject!.objectForKey("token") as? String {
                     let keychainError = Locksmith.saveData(["token": token], forUserAccount: "MetalMindUserAccount")
+                    if let delegate = self.delegate {
+                        delegate.controller(self, didLoginUser: true)
+                    }
                     self.dismissViewControllerAnimated(true, completion: nil)
                 } else {
                     self.alertView.message = jsonObject!.objectForKey("message") as? String
