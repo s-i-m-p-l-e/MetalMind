@@ -10,12 +10,15 @@ import UIKit
 import Locksmith
 import Alamofire
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginTableViewController: UITableViewController, UITextFieldDelegate {
+    
+    // MARK: - Segue indentifiers
+    let signUpTVCSegue = "ShowSignUpTableViewController"
     
     // MARK: - IBOutlets
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var audioAnimationView: UIView!
+    @IBOutlet weak var loginButton: UIButton!
     
     // MARK: - Variables
     var delegate: HomeViewControllerDelegate?
@@ -24,9 +27,37 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     // MARK: - UIViewContorlle Life-Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        /* navigation and tab bar configuration */
+        self.navigationItem.hidesBackButton = true
         
-        /* Direct user to usernameTextField when view is presented */
-//        usernameTextField.becomeFirstResponder()
+        /* configure table view */
+        let backgroundImage = UIImageView(image: UIImage(named: "metal_mind_background"))
+        backgroundImage.frame = self.tableView.bounds
+        self.tableView.backgroundView = backgroundImage
+        
+        /* configure text fields */
+        // Username text field
+        self.usernameTextField.layer.borderWidth = 1.0
+        self.usernameTextField.layer.borderColor = UIColor.whiteColor().CGColor
+        self.usernameTextField.attributedPlaceholder = NSAttributedString(
+            string:self.usernameTextField.placeholder!,
+            attributes: [NSForegroundColorAttributeName: UIColor(red: 255, green: 255, blue: 255, alpha: 0.35)]);
+        
+        // Password text field
+        self.passwordTextField.layer.borderWidth = 1.0
+        self.passwordTextField.layer.borderColor = UIColor.whiteColor().CGColor
+        self.passwordTextField.attributedPlaceholder = NSAttributedString(
+            string:self.passwordTextField.placeholder!,
+            attributes: [NSForegroundColorAttributeName: UIColor(red: 255, green: 255, blue: 255, alpha: 0.35)]);
+        
+        // Login button
+        self.loginButton.layer.borderWidth = 1.0
+        self.loginButton.layer.borderColor = UIColor.whiteColor().CGColor
+//        self.loginButton.layer.masksToBounds = false
+//        self.loginButton.layer.shadowOffset = CGSizeMake(0.0, 0.0)
+//        self.loginButton.layer.shadowRadius = 5.0
+//        self.loginButton.layer.shadowColor = UIColor.whiteColor().CGColor
+//        self.loginButton.layer.shadowOpacity = 0.5
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -38,12 +69,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         loginUser()
     }
     
-    /* Gesture recognizer action */
-    @IBAction func tagGestureRecognizer(sender: UITapGestureRecognizer) {
-        /* hide keyboard */
-        self.usernameTextField.resignFirstResponder()
-        self.passwordTextField.resignFirstResponder()
-    }
+//    /* Gesture recognizer action */
+//    @IBAction func tagGestureRecognizer(sender: UITapGestureRecognizer) {
+//        /* hide keyboard */
+//        self.usernameTextField.resignFirstResponder()
+//        self.passwordTextField.resignFirstResponder()
+//    }
     
     // MARK: - UITextFieldDelegate
     /* Define action for text fields return key */
@@ -75,7 +106,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         switch segue.identifier! {
-        case "ModalSignUpTableViewController":
+        case signUpTVCSegue:
             let SignUpTVC = segue.destinationViewController as? SignUpTableViewController
             SignUpTVC?.delegate = self.delegate
         default: break
@@ -101,7 +132,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     if let delegate = self.delegate {
                         delegate.controller(self, didLoginUser: true)
                     }
-                    self.dismissViewControllerAnimated(true, completion: nil)
+                    self.navigationController?.popViewControllerAnimated(true)
                 } else {
                     self.alertView.message = jsonObject!.objectForKey("message") as? String
                     self.alertView.show()

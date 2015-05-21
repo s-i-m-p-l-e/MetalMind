@@ -26,6 +26,17 @@ class CreateRobotViewController: UIViewController, UITextFieldDelegate {
     }
     var token: String?  { return userData?.objectForKey("token") as? String }
     
+    // MARK: - UIViewController Life-Cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Robot name text field
+        self.robotNameTextField.layer.borderWidth = 1.0
+        self.robotNameTextField.layer.borderColor = UIColor.whiteColor().CGColor
+        self.robotNameTextField.attributedPlaceholder = NSAttributedString(
+            string:self.robotNameTextField.placeholder!,
+            attributes: [NSForegroundColorAttributeName: UIColor(red: 255, green: 255, blue: 255, alpha: 0.35)]);
+    }
+    
     // MARK: - UITextFieldDelegate
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         createRobot()

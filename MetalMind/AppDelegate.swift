@@ -17,22 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        // uncomment line to debug LoginViewController and server authentication
-//        Locksmith.deleteDataForUserAccount("MetalMindUserAccount")
+       UIApplication.sharedApplication().statusBarStyle = .LightContent
         
-//        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-//
-//        // Load Main App Screen
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let homeScreenVC = storyboard.instantiateInitialViewController() as? UIViewController
-//        self.window?.rootViewController = homeScreenVC
-//        self.window?.makeKeyAndVisible()
-//        
-//        // Load Login/Signup View Controller
-//        let loginVC = storyboard.instantiateViewControllerWithIdentifier("LoginViewController") as? UIViewController
-//        loginVC?.modalPresentationStyle = .FullScreen
-//        homeScreenVC?.presentViewController(loginVC!, animated: false, completion: nil)
-
+        // uncomment line to debug LoginTableViewController and server authentication
+//        Locksmith.deleteDataForUserAccount("MetalMindUserAccount")
         return true
     }
 

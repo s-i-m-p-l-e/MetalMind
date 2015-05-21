@@ -17,15 +17,62 @@ class SignUpTableViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var retypePasswordTextField: UITextField!
+    @IBOutlet weak var registerButton: UIButton!
     
     // MARK: - Variables
     var delegate: HomeViewControllerDelegate?
     let userAccount = "MetalMindUserAccount"
     let alertView = UIAlertView(title: "Please try again", message: "", delegate: nil, cancelButtonTitle: "OK")
     
+    // MARK: - UIViewController Life-Cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        /* navigation and tab bar configuration */
+        self.navigationItem.hidesBackButton = true
+
+        /* configure table view */
+        let backgroundImage = UIImageView(image: UIImage(named: "metal_mind_background"))
+        backgroundImage.frame = self.tableView.bounds
+        self.tableView.backgroundView = backgroundImage
+        
+        /* configure text fields */
+        // Username text field
+        self.usernameTextField.layer.borderWidth = 1.0
+        self.usernameTextField.layer.borderColor = UIColor.whiteColor().CGColor
+        self.usernameTextField.attributedPlaceholder = NSAttributedString(
+            string:self.usernameTextField.placeholder!,
+            attributes: [NSForegroundColorAttributeName: UIColor(red: 255, green: 255, blue: 255, alpha: 0.35)]);
+        
+        // Email text field
+        self.emailTextField.layer.borderWidth = 1.0
+        self.emailTextField.layer.borderColor = UIColor.whiteColor().CGColor
+        self.emailTextField.attributedPlaceholder = NSAttributedString(
+            string:self.emailTextField.placeholder!,
+            attributes: [NSForegroundColorAttributeName: UIColor(red: 255, green: 255, blue: 255, alpha: 0.35)]);
+        
+        // Password text field
+        self.passwordTextField.layer.borderWidth = 1.0
+        self.passwordTextField.layer.borderColor = UIColor.whiteColor().CGColor
+        self.passwordTextField.attributedPlaceholder = NSAttributedString(
+            string:self.passwordTextField.placeholder!,
+            attributes: [NSForegroundColorAttributeName: UIColor(red: 255, green: 255, blue: 255, alpha: 0.35)]);
+        
+        // Retype Password text field
+        self.retypePasswordTextField.layer.borderWidth = 1.0
+        self.retypePasswordTextField.layer.borderColor = UIColor.whiteColor().CGColor
+        self.retypePasswordTextField.attributedPlaceholder = NSAttributedString(
+            string:self.retypePasswordTextField.placeholder!,
+            attributes: [NSForegroundColorAttributeName: UIColor(red: 255, green: 255, blue: 255, alpha: 0.35)]);
+        
+        // Sign up button
+        self.registerButton.layer.borderWidth = 1.0
+        self.registerButton.layer.borderColor = UIColor.whiteColor().CGColor
+        
+    }
+    
     // MARK: - IBActions
     @IBAction func returnBackToLoginViewController(sender: UIButton) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
     @IBAction func signUpButtonAction(sender: UIButton) {
@@ -111,8 +158,7 @@ class SignUpTableViewController: UITableViewController, UITextFieldDelegate {
                     if let delegate = self.delegate {
                         delegate.controller(self, didLoginUser: true)
                     }
-                    
-                    self.presentingViewController?.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+                    self.navigationController?.popToRootViewControllerAnimated(true)
                 }
             }
         }

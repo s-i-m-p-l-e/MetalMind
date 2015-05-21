@@ -12,6 +12,7 @@
 		570ADE031AD59CBB009FDC4E /* downWalk.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 570ADE021AD59CBB009FDC4E /* downWalk.atlas */; };
 		5716445A1B022C9A00A45393 /* SignUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571644591B022C9A00A45393 /* SignUpTableViewController.swift */; };
 		571F1A311B00BC2C000EE11C /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571F1A301B00BC2C000EE11C /* Player.swift */; };
+		573FB3161B0D4A770021A7A9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 573FB3151B0D4A770021A7A9 /* QuartzCore.framework */; };
 		5746AB511AFA5529004E06FE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5746AB501AFA5529004E06FE /* Security.framework */; };
 		574980841B00B3DD00CE9A97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 574980821B00B3DD00CE9A97 /* Main.storyboard */; };
 		575D6C0F1AFAB0D800D6AE41 /* StatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575D6C0E1AFAB0D800D6AE41 /* StatsTableViewController.swift */; };
@@ -72,6 +73,7 @@
 		570ADE021AD59CBB009FDC4E /* downWalk.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = downWalk.atlas; sourceTree = "<group>"; };
 		571644591B022C9A00A45393 /* SignUpTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpTableViewController.swift; sourceTree = "<group>"; };
 		571F1A301B00BC2C000EE11C /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		573FB3151B0D4A770021A7A9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5746AB501AFA5529004E06FE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		574980831B00B3DD00CE9A97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		575D6C0E1AFAB0D800D6AE41 /* StatsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsTableViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				573FB3161B0D4A770021A7A9 /* QuartzCore.framework in Frameworks */,
 				57775C5A1AFE9506009ABF3C /* Foundation.framework in Frameworks */,
 				57D8EF781AFE8A5D001807B5 /* CoreGraphics.framework in Frameworks */,
 				57D8EF761AFE8A53001807B5 /* CoreData.framework in Frameworks */,
@@ -170,9 +173,9 @@
 				57B14FD11AFE60CB004B42A5 /* RootTabBarController.swift */,
 				57B14FCF1AFE5E51004B42A5 /* NavigationController.swift */,
 				57D1C66B1AD52ECF00609C72 /* HomeViewController.swift */,
-				57D1C6891AD54F6B00609C72 /* OverviewScene.swift */,
 				57851C001AFA76BC0000382F /* LoginViewController.swift */,
 				571644591B022C9A00A45393 /* SignUpTableViewController.swift */,
+				57D1C6891AD54F6B00609C72 /* OverviewScene.swift */,
 				575D6C0E1AFAB0D800D6AE41 /* StatsTableViewController.swift */,
 				570AB8FB1B08BB6F00D59BD8 /* CreateRobotViewController.swift */,
 				579C8F791B0515D0002E6E51 /* RobotCollectionViewCell.swift */,
@@ -287,6 +290,7 @@
 		57D1C68D1AD5536D00609C72 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				573FB3151B0D4A770021A7A9 /* QuartzCore.framework */,
 				57775C591AFE9506009ABF3C /* Foundation.framework */,
 				57D8EF771AFE8A5D001807B5 /* CoreGraphics.framework */,
 				57D8EF751AFE8A53001807B5 /* CoreData.framework */,

@@ -13,6 +13,10 @@ import Alamofire
 
 class HomeViewController: UIViewController, HomeViewControllerDelegate, UIAlertViewDelegate {
     
+    // MARK: - Segue identifiers
+    let loginVCSegue = "ShowLoginTableViewController"
+    let statsTVCSegue = "ShowStatsTableViewController"
+    
     // MARK: - IBOutlets
     @IBOutlet weak var loadingDataActivityIndicator: UIActivityIndicatorView!
     @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
@@ -41,7 +45,7 @@ class HomeViewController: UIViewController, HomeViewControllerDelegate, UIAlertV
         }
     }
     var currentRobotIndex: Int = 0
-    var currentRobot: Robot? { return robots[currentRobotIndex] }
+    var currentRobot: Robot? { return robots.isEmpty ? nil : robots[currentRobotIndex] }
     var downloadingRobotData = false
     var playerOverviewScene: OverviewScene?
 
@@ -73,7 +77,8 @@ class HomeViewController: UIViewController, HomeViewControllerDelegate, UIAlertV
                 
         /* ask for user to login if there is no token */
         if token == nil {
-            self.performSegueWithIdentifier("ModalLoginViewController", sender: self)
+            createRobotLabel.hidden = true
+            self.performSegueWithIdentifier(loginVCSegue, sender: self)
         } else {
             /* hide loading data actividy indicator */
             loadingDataActivityIndicator.stopAnimating()
@@ -201,9 +206,12 @@ class HomeViewController: UIViewController, HomeViewControllerDelegate, UIAlertV
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         switch segue.identifier! {
-        case "ModalLoginViewController":
-            let loginVC = segue.destinationViewController as? LoginViewController
+        case loginVCSegue:
+            let loginVC = segue.destinationViewController as? LoginTableViewController
             loginVC?.delegate = self
+        case statsTVCSegue:
+            let showStatsTVC = segue.destinationViewController as? StatsTableViewController
+            showStatsTVC?.robot = currentRobot
         default: break
         }
     }
