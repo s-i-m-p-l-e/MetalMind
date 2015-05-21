@@ -153,7 +153,8 @@ class SignUpTableViewController: UITableViewController, UITextFieldDelegate {
                     
                     let keychainError = Locksmith.saveData(["token": token], forUserAccount: self.userAccount)
                 
-                    self.alertView.message = "Registered successfully"
+                    self.alertView.title = "Congradulations!"
+                    self.alertView.message = "Registration successfully"
                     self.alertView.show()
                     if let delegate = self.delegate {
                         delegate.controller(self, didLoginUser: true)

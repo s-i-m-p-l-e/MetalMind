@@ -53,6 +53,6 @@ class StatsTableViewController: UITableViewController {
         
         /* Configure section header text color */
         let header = view as! UITableViewHeaderFooterView
-        header.textLabel.textColor = UIColor.whiteColor()
+        header.textLabel.textColor = UIColor(red: 182, green: 182, blue: 182, alpha: 1.0)
     }
 }

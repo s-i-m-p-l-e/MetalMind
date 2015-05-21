@@ -13,6 +13,7 @@
 		5716445A1B022C9A00A45393 /* SignUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571644591B022C9A00A45393 /* SignUpTableViewController.swift */; };
 		571F1A311B00BC2C000EE11C /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571F1A301B00BC2C000EE11C /* Player.swift */; };
 		573FB3161B0D4A770021A7A9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 573FB3151B0D4A770021A7A9 /* QuartzCore.framework */; };
+		5740F0521B0E4E8B00D7DE00 /* BuilderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5740F0511B0E4E8B00D7DE00 /* BuilderTableViewController.swift */; };
 		5746AB511AFA5529004E06FE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5746AB501AFA5529004E06FE /* Security.framework */; };
 		574980841B00B3DD00CE9A97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 574980821B00B3DD00CE9A97 /* Main.storyboard */; };
 		575D6C0F1AFAB0D800D6AE41 /* StatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575D6C0E1AFAB0D800D6AE41 /* StatsTableViewController.swift */; };
@@ -74,6 +75,7 @@
 		571644591B022C9A00A45393 /* SignUpTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpTableViewController.swift; sourceTree = "<group>"; };
 		571F1A301B00BC2C000EE11C /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		573FB3151B0D4A770021A7A9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5740F0511B0E4E8B00D7DE00 /* BuilderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuilderTableViewController.swift; sourceTree = "<group>"; };
 		5746AB501AFA5529004E06FE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		574980831B00B3DD00CE9A97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		575D6C0E1AFAB0D800D6AE41 /* StatsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsTableViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				570AB8FB1B08BB6F00D59BD8 /* CreateRobotViewController.swift */,
 				579C8F791B0515D0002E6E51 /* RobotCollectionViewCell.swift */,
 				57AD2E4C1B0A45D800F04836 /* ArenaViewController.swift */,
+				5740F0511B0E4E8B00D7DE00 /* BuilderTableViewController.swift */,
 				579C8F761B0510E9002E6E51 /* View */,
 			);
 			name = Controller;
@@ -483,6 +486,7 @@
 				57AD2E4D1B0A45D800F04836 /* ArenaViewController.swift in Sources */,
 				570AB8FC1B08BB6F00D59BD8 /* CreateRobotViewController.swift in Sources */,
 				57B14FD21AFE60CB004B42A5 /* RootTabBarController.swift in Sources */,
+				5740F0521B0E4E8B00D7DE00 /* BuilderTableViewController.swift in Sources */,
 				57AD2E4F1B0A56D100F04836 /* Builder.swift in Sources */,
 				57B14FD01AFE5E51004B42A5 /* NavigationController.swift in Sources */,
 				57D1C68A1AD54F6B00609C72 /* OverviewScene.swift in Sources */,
