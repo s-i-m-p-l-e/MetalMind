@@ -15,6 +15,11 @@ struct Builder {
     var trigger: Trigger
     var clause: Clause
     
+    init() {
+        self.trigger = Trigger()
+        self.clause = Clause()
+    }
+    
     static func toRandomDictionary() -> [String : [String : String]] {
         let trigger: [String : String] = Trigger.toRandomDictionary()
         let clause: [String : String] = Clause.toRandomDictionary()
@@ -35,15 +40,9 @@ struct Builder {
 // MARK: - Trigger
 
 struct Trigger {
-    var when: When
-    var who: Who
-    var what: What
-    
-    init(when: When, who: Who, what: What) {
-        self.when = when
-        self.who = who
-        self.what = what
-    }
+    var when: When = .Before
+    var who: Who = .Me
+    var what: What = .Attack
     
     func toDictionary() -> [String : String] {
         return ["when": self.when.toString(),
@@ -132,13 +131,12 @@ enum What: UInt32 {
 
 
 // MARK: - Caluse
-
 struct Clause {
-    var actor: Actor
-    var stats: Stats
-    var mmOperator: MMOperator
-    var value: Float
-    var metrics: Metrics
+    var actor: Actor = .Me
+    var stats: Stats = .Health
+    var mmOperator: MMOperator = .Less
+    var value: Float = 0.0
+    var metrics: Metrics = .Points
     
     static func toRandomDictionary() -> [String : String] {
         return ["actor": Actor.random().toString(),

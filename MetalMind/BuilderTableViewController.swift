@@ -27,6 +27,7 @@ class BuilderTableViewController: UITableViewController {
     // MARK: - Variables
     var delegate: SkillListTableViewController?
     var skillIndex: Int?
+    var skillBuilder: Builder?
     
     // MARK: - UIViewController Life-Cycle
     override func viewDidLoad() {
@@ -60,7 +61,7 @@ class BuilderTableViewController: UITableViewController {
     
     // MARK: - IBActions
     @IBAction func saveChangesButtonAction(sender: UIButton) {
-        delegate?.controller(self, didChangeSkillData: true)
+        delegate?.controller(self, didChangeSkillData: true, index: self.skillIndex!, builder: self.skillBuilder!)
     }
     
 }

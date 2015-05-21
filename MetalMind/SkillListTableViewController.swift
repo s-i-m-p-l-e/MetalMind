@@ -56,8 +56,8 @@ class SkillListTableViewController: UITableViewController, UITableViewDataSource
     }
     
     // MARK: - SkillListDelegate
-    func controller(controller: UITableViewController, didChangeSkillData: Bool) {
-        
+    func controller(controller: UITableViewController, didChangeSkillData: Bool, index: Int, builder: Builder) {
+        println("Index: \(index) \n Builder: \(builder)")
     }
     
     // MARK: - Segue
