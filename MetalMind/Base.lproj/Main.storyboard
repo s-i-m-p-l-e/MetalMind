@@ -996,52 +996,42 @@
         <!--Skill list table view controller-->
         <scene sceneID="zSf-EG-rEs">
             <objects>
-                <tableViewController id="Pa6-DV-hRg" userLabel="Skill list table view controller" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="rfg-Ev-ZRI" userLabel="Skill table view">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                <tableViewController id="Pa6-DV-hRg" userLabel="Skill list table view controller" customClass="SkillListTableViewController" customModule="MetalMind" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="rfg-Ev-ZRI" userLabel="Skill table view">
+                        <rect key="frame" x="0.0" y="64" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.37647058820000001" green="0.49019607840000001" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <sections>
-                            <tableViewSection id="Rst-Nd-n81">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="60" id="VfL-Ek-Ood" userLabel="Skill table cell">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VfL-Ek-Ood" id="eGm-6s-pAx">
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SkillListCell" textLabel="nxl-2a-N6v" detailTextLabel="58h-vg-NCB" imageView="ttQ-8h-AO5" rowHeight="60" style="IBUITableViewCellStyleSubtitle" id="VfL-Ek-Ood" userLabel="Skill table cell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VfL-Ek-Ood" id="eGm-6s-pAx">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nxl-2a-N6v">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="skill_placeholder_icon" id="ttQ-8h-AO5">
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Chk-yc-YNM">
-                                                    <rect key="frame" x="68" y="0.0" width="524" height="60"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="60" id="anK-6p-Adl"/>
-                                                    </constraints>
-                                                    <string key="text">This is a 2 line description of any skill that will be in the list. The user will be able to configure this skill only by clicking on it.</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="4h5-8y-eEz">
-                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="60" id="L2e-Uj-NmB"/>
-                                                        <constraint firstAttribute="width" constant="60" id="rjg-4a-4ON"/>
-                                                    </constraints>
-                                                </imageView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Chk-yc-YNM" firstAttribute="top" secondItem="eGm-6s-pAx" secondAttribute="top" id="4IM-KO-FXd"/>
-                                                <constraint firstItem="4h5-8y-eEz" firstAttribute="top" secondItem="eGm-6s-pAx" secondAttribute="top" id="6bX-bc-CCY"/>
-                                                <constraint firstItem="4h5-8y-eEz" firstAttribute="leading" secondItem="eGm-6s-pAx" secondAttribute="leading" id="DxF-Xx-zE4"/>
-                                                <constraint firstItem="Chk-yc-YNM" firstAttribute="trailing" secondItem="eGm-6s-pAx" secondAttribute="trailingMargin" id="WXK-Dc-BCv"/>
-                                                <constraint firstItem="Chk-yc-YNM" firstAttribute="leading" secondItem="4h5-8y-eEz" secondAttribute="trailing" constant="8" id="nhv-Pv-c2d"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="AED-wm-IUL" kind="show" identifier="ShowBuilderTableViewController" id="TQp-JZ-onW"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
+                                        </imageView>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="58h-vg-NCB">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.81176470590000005" green="0.84705882349999995" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.81176470590000005" green="0.84705882349999995" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="AED-wm-IUL" kind="show" identifier="ShowBuilderTableViewController" id="OdE-ac-Wa6"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="Pa6-DV-hRg" id="fyV-Oc-95O"/>
                             <outlet property="delegate" destination="Pa6-DV-hRg" id="aue-3q-ORX"/>
@@ -1614,8 +1604,8 @@
         <image name="basket" width="43" height="43"/>
         <image name="contact2" width="43" height="43"/>
         <image name="explorer" width="43" height="43"/>
-        <image name="placeholder" width="426" height="266"/>
         <image name="setting" width="43" height="43"/>
         <image name="share" width="43" height="43"/>
+        <image name="skill_placeholder_icon" width="128" height="128"/>
     </resources>
 </document>

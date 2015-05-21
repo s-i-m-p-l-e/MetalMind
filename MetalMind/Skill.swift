@@ -6,8 +6,16 @@
 //  Copyright (c) 2015 simple. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class Skill {
     
+    var image: UIImage?
+    var name: String?
+    var description: String?
+    
+    init(name: String, description: String) {
+        self.name = name
+        self.description = description
+    }
 }

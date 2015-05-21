@@ -24,9 +24,18 @@ class BuilderTableViewController: UITableViewController {
 
     @IBOutlet weak var saveChangesButton: UIButton!
     
+    // MARK: - Variables
+    var delegate: SkillListTableViewController?
+    var skillIndex: Int?
+    
     // MARK: - UIViewController Life-Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        /* make table header smaller */
+        self.tableView.tableHeaderView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: tableView.bounds.width, height: 0.1))
+        
+        /* Gesture recognizer to hide  */
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "hideKeyboard")
         tapGestureRecognizer.cancelsTouchesInView = false
         self.tableView.addGestureRecognizer(tapGestureRecognizer)
@@ -47,6 +56,7 @@ class BuilderTableViewController: UITableViewController {
     
     // MARK: - IBActions
     @IBAction func saveChangesButtonAction(sender: UIButton) {
+        delegate?.controller(self, didSaveSkillData: true)
     }
     
 }
