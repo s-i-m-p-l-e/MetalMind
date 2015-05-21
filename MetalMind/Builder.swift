@@ -12,6 +12,9 @@ import Foundation
 
 struct Builder {
     
+    var trigger: Trigger
+    var clause: Clause
+    
     static func toRandomDictionary() -> [String : [String : String]] {
         let trigger: [String : String] = Trigger.toRandomDictionary()
         let clause: [String : String] = Clause.toRandomDictionary()
@@ -32,9 +35,9 @@ struct Builder {
 // MARK: - Trigger
 
 struct Trigger {
-    let when: When
-    let who: Who
-    let what: What
+    var when: When
+    var who: Who
+    var what: What
     
     init(when: When, who: Who, what: What) {
         self.when = when
@@ -131,11 +134,11 @@ enum What: UInt32 {
 // MARK: - Caluse
 
 struct Clause {
-    let actor: Actor
-    let stats: Stats
-    let mmOperator: MMOperator
-    let value: Float
-    let metrics: Metrics
+    var actor: Actor
+    var stats: Stats
+    var mmOperator: MMOperator
+    var value: Float
+    var metrics: Metrics
     
     static func toRandomDictionary() -> [String : String] {
         return ["actor": Actor.random().toString(),

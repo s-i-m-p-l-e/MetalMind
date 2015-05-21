@@ -13,6 +13,7 @@ class Skill {
     var image: UIImage?
     var name: String?
     var description: String?
+    var builder: Builder?
     
     init(name: String, description: String) {
         self.name = name
