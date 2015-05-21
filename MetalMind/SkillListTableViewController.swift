@@ -63,11 +63,14 @@ class SkillListTableViewController: UITableViewController, UITableViewDataSource
     // MARK: - Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
+        let index = sender as! Int
+        
         switch segue.identifier! {
         case builderTVCSegue:
             let builderTVC = segue.destinationViewController as? BuilderTableViewController
             builderTVC?.delegate = self
-            builderTVC?.skillIndex = sender as? Int
+            builderTVC?.skillIndex = index
+            builderTVC?.skillBuilder = skillList[index].builder
         default: break
         }
     }
