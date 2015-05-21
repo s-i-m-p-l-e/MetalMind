@@ -9,5 +9,5 @@
 import UIKit
 
 protocol SkillListDelegate {
-    func controller(controller: UITableViewController, didChangeSkillData: Bool)
+    func controller(controller: UITableViewController, didChangeSkillData: Bool, index: Int, builder: Builder)
 }

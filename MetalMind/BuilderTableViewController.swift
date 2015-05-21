@@ -54,9 +54,13 @@ class BuilderTableViewController: UITableViewController {
         self.view.endEditing(false)
     }
     
+    func changeData() {
+        
+    }
+    
     // MARK: - IBActions
     @IBAction func saveChangesButtonAction(sender: UIButton) {
-        delegate?.controller(self, didSaveSkillData: true)
+        delegate?.controller(self, didChangeSkillData: true)
     }
     
 }
