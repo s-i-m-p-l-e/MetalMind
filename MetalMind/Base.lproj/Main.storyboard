@@ -998,7 +998,7 @@
             <objects>
                 <tableViewController id="Pa6-DV-hRg" userLabel="Skill list table view controller" customClass="SkillListTableViewController" customModule="MetalMind" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="rfg-Ev-ZRI" userLabel="Skill table view">
-                        <rect key="frame" x="0.0" y="64" width="600" height="551"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.37647058820000001" green="0.49019607840000001" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
@@ -1037,7 +1037,9 @@
                             <outlet property="delegate" destination="Pa6-DV-hRg" id="aue-3q-ORX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="FyP-lA-bbC"/>
+                    <navigationItem key="navigationItem" title="Skill list" id="8l1-Zh-L3N">
+                        <barButtonItem key="backBarButtonItem" title=" " id="0Uy-hG-qC9"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2xg-Ul-1yc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1396,9 +1398,13 @@
                             <outlet property="delegate" destination="AED-wm-IUL" id="WBZ-x0-b3t"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="sBU-MJ-iEy">
+                        <barButtonItem key="backBarButtonItem" title=" " id="VKx-di-QZK"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="actorSegmentControl" destination="Ubg-Az-2KD" id="RPL-cq-jdu"/>
                         <outlet property="metricsSegmentControl" destination="3aK-xC-Suc" id="BaS-wG-YXx"/>
+                        <outlet property="navItem" destination="sBU-MJ-iEy" id="I7g-iH-rAP"/>
                         <outlet property="operatorSegmentControl" destination="NhA-hR-CZ0" id="qXv-2f-dQW"/>
                         <outlet property="saveChangesButton" destination="wTK-GT-YpN" id="5nn-NI-BIb"/>
                         <outlet property="statsSegmentControl" destination="fuP-r1-g55" id="pPS-AQ-jBd"/>
@@ -1498,52 +1504,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="metal_mind_background_text" translatesAutoresizingMaskIntoConstraints="NO" id="pby-gH-JKU">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3qF-R9-L0A">
-                                <rect key="frame" x="220" y="247" width="160" height="30"/>
+                                <rect key="frame" x="16" y="279" width="568" height="42"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="qv5-aL-sEd"/>
+                                    <constraint firstAttribute="width" constant="160" id="3dB-2D-cHY"/>
                                 </constraints>
-                                <state key="normal" title="Practice">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Battle">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="3dB-2D-cHY"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="practiceActionButton:" destination="mFb-KD-74d" eventType="touchUpInside" id="kWM-IK-T1X"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F4E-Lg-ERj">
-                                <rect key="frame" x="220" y="285" width="160" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="TaX-0G-gZo"/>
-                                </constraints>
-                                <state key="normal" title="Campaign">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IdN-DQ-k4T">
-                                <rect key="frame" x="220" y="323" width="160" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="hxP-we-dNa"/>
-                                </constraints>
-                                <state key="normal" title="Arena">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="F4E-Lg-ERj" secondAttribute="centerY" id="CWV-To-WEC"/>
-                            <constraint firstItem="IdN-DQ-k4T" firstAttribute="top" secondItem="F4E-Lg-ERj" secondAttribute="bottom" constant="8" id="Eto-MM-MB4"/>
-                            <constraint firstItem="F4E-Lg-ERj" firstAttribute="top" secondItem="3qF-R9-L0A" secondAttribute="bottom" constant="8" id="bVH-wk-9t8"/>
-                            <constraint firstAttribute="centerX" secondItem="IdN-DQ-k4T" secondAttribute="centerX" id="dgh-7l-HMF"/>
+                            <constraint firstItem="3qF-R9-L0A" firstAttribute="leading" secondItem="xUK-xA-HgZ" secondAttribute="leadingMargin" id="9VM-Oq-ddV"/>
+                            <constraint firstItem="3qF-R9-L0A" firstAttribute="trailing" secondItem="xUK-xA-HgZ" secondAttribute="trailingMargin" id="JSB-Ld-tkJ"/>
+                            <constraint firstItem="pby-gH-JKU" firstAttribute="leading" secondItem="xUK-xA-HgZ" secondAttribute="leadingMargin" constant="-16" id="Qeb-1U-mca"/>
+                            <constraint firstItem="pby-gH-JKU" firstAttribute="top" secondItem="Rdf-qQ-fqJ" secondAttribute="bottom" constant="-20" id="R5P-b1-yIH"/>
                             <constraint firstAttribute="centerX" secondItem="3qF-R9-L0A" secondAttribute="centerX" id="eLC-GI-iOR"/>
-                            <constraint firstAttribute="centerX" secondItem="F4E-Lg-ERj" secondAttribute="centerX" id="mR1-pS-9TT"/>
+                            <constraint firstAttribute="centerY" secondItem="3qF-R9-L0A" secondAttribute="centerY" id="hvD-8b-eFB"/>
+                            <constraint firstItem="5np-h1-UcR" firstAttribute="top" secondItem="pby-gH-JKU" secondAttribute="bottom" id="uiw-eW-FTb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pby-gH-JKU" secondAttribute="trailing" constant="-16" id="zKb-RO-xdL"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="eLC-GI-iOR"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="arena" id="WHg-Xj-4dN">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="20"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="battleButton" destination="3qF-R9-L0A" id="e2Q-CS-zRF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bTE-JC-BUU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1619,6 +1627,7 @@
         <image name="arena" width="32" height="32"/>
         <image name="basket" width="43" height="43"/>
         <image name="configuration" width="32" height="32"/>
+        <image name="metal_mind_background_text" width="640" height="960"/>
         <image name="robot-fill" width="32" height="32"/>
         <image name="share" width="43" height="43"/>
         <image name="skill_placeholder1" width="33" height="33"/>

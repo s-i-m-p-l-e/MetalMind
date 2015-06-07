@@ -12,6 +12,7 @@ class BuilderTableViewController: UITableViewController {
     
     // MARK: - IBOutlets
     // Trigger
+    @IBOutlet weak var navItem: UINavigationItem!
     @IBOutlet weak var whenSegmenControl: UISegmentedControl!
     @IBOutlet weak var whoSegmentControl: UISegmentedControl!
     @IBOutlet weak var whatSegmentControl: UISegmentedControl!
@@ -33,13 +34,16 @@ class BuilderTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        /* make table header smaller */
+        /* Make table header smaller */
         self.tableView.tableHeaderView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: tableView.bounds.width, height: 0.1))
         
-        /* Gesture recognizer to hide  */
+        /* Gesture recognizer to hide keypad */
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "hideKeyboard")
         tapGestureRecognizer.cancelsTouchesInView = false
         self.tableView.addGestureRecognizer(tapGestureRecognizer)
+        
+        /* Update interface to show builder changes */
+        saveChangesButton.setTitle(self.navigationItem.title, forState: .Normal)
     }
     
     // MARK: - UITableViewDelegate

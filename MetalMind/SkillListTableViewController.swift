@@ -22,7 +22,6 @@ class SkillListTableViewController: UITableViewController, UITableViewDataSource
         /* make table header smaller */
         self.tableView.tableHeaderView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: tableView.bounds.width, height: 0.1))
         
-        /* Default data */
         skillList.append(Skill(name: "Attack", description: "Basic attack"))
         skillList.append(Skill(name: "Heal", description: "Heals the character"))
     }
@@ -71,6 +70,7 @@ class SkillListTableViewController: UITableViewController, UITableViewDataSource
             builderTVC?.delegate = self
             builderTVC?.skillIndex = index
             builderTVC?.skillBuilder = skillList[index].builder
+            builderTVC?.navigationItem.title = skillList[index].name
         default: break
         }
     }

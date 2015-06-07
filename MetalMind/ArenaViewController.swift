@@ -9,7 +9,13 @@
 import UIKit
 
 class ArenaViewController: UIViewController {
-    
+    // MARK: - IBOutlets
+    @IBOutlet weak var battleButton: UIButton! {
+        didSet {
+            battleButton.layer.borderWidth = 2.0
+            battleButton.layer.borderColor = UIColor.whiteColor().CGColor
+        }
+    }
     
     // MARK: - IBActions
     @IBAction func practiceActionButton(sender: UIButton) {
