@@ -43,7 +43,7 @@ class SkillListTableViewController: UITableViewController, UITableViewDataSource
         }
         let index = indexPath.row
         
-        cell?.imageView?.image = UIImage(named: "skill_placeholder_icon")
+        cell?.imageView?.image = UIImage(named: "skill_placeholder1")
         cell?.textLabel?.text = skillList[index].name
         cell?.detailTextLabel?.text = skillList[index].description
         

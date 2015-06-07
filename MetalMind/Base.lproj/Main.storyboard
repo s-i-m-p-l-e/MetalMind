@@ -1013,7 +1013,7 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="skill_placeholder_icon" id="ttQ-8h-AO5">
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="skill_placeholder1" id="ttQ-8h-AO5">
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="58h-vg-NCB">
@@ -1621,6 +1621,6 @@
         <image name="configuration" width="32" height="32"/>
         <image name="robot-fill" width="32" height="32"/>
         <image name="share" width="43" height="43"/>
-        <image name="skill_placeholder_icon" width="128" height="128"/>
+        <image name="skill_placeholder1" width="33" height="33"/>
     </resources>
 </document>
