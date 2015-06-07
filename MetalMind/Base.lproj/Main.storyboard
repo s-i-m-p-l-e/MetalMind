@@ -1439,7 +1439,10 @@
                             <constraint firstItem="5j1-lV-TF0" firstAttribute="leading" secondItem="liS-L4-ycO" secondAttribute="leadingMargin" id="Rw4-NE-YgZ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="share" id="IAp-VM-70A"/>
+                    <tabBarItem key="tabBarItem" title="" image="share" id="IAp-VM-70A">
+                        <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="-10"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="20"/>
+                    </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fh6-V8-MYe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1473,7 +1476,10 @@
                             <constraint firstItem="fmN-S8-CTj" firstAttribute="trailing" secondItem="LOv-8e-jkS" secondAttribute="trailingMargin" id="w0h-2L-a8N"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="basket" id="WC6-Ni-8kh"/>
+                    <tabBarItem key="tabBarItem" title="" image="basket" id="WC6-Ni-8kh">
+                        <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="-10"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="20"/>
+                    </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QYr-36-f6q" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1533,7 +1539,10 @@
                             <constraint firstAttribute="centerX" secondItem="F4E-Lg-ERj" secondAttribute="centerX" id="mR1-pS-9TT"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="explorer" id="WHg-Xj-4dN"/>
+                    <tabBarItem key="tabBarItem" title="" image="explorer" id="WHg-Xj-4dN">
+                        <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="-10"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="20"/>
+                    </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bTE-JC-BUU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1560,12 +1569,15 @@
             </objects>
             <point key="canvasLocation" x="267" y="1662"/>
         </scene>
-        <!--Home Navigation Controller-->
+        <!-- -->
         <scene sceneID="4ZI-2t-ny6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Amb-rf-fw3" customClass="HomeNavigationController" customModule="MetalMind" customModuleProvider="target" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="" image="contact2" id="jNJ-kg-2aB" userLabel="Item"/>
+                    <tabBarItem key="tabBarItem" title=" " image="contact2" id="jNJ-kg-2aB" userLabel="Item">
+                        <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="-10"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="20"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="4EK-nJ-iPm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1584,7 +1596,10 @@
         <scene sceneID="9yW-Rr-elE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lzI-Av-vbK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="setting" id="pCt-pT-rSz"/>
+                    <tabBarItem key="tabBarItem" title="" image="setting" id="pCt-pT-rSz">
+                        <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="-10"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="20"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LmF-Qm-apQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
