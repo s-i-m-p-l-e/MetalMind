@@ -39,6 +39,7 @@
 		579C8F751B04F6EE002E6E51 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C8F741B04F6EE002E6E51 /* Skill.swift */; };
 		579C8F781B05113E002E6E51 /* RobotCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 579C8F771B05113E002E6E51 /* RobotCollectionViewCell.xib */; };
 		579C8F7A1B0515D0002E6E51 /* RobotCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C8F791B0515D0002E6E51 /* RobotCollectionViewCell.swift */; };
+		57A91C1C1B24B59B001F80BA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A91C1B1B24B59B001F80BA /* Images.xcassets */; };
 		57AD2E4B1B0A2D8E00F04836 /* HomeViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AD2E4A1B0A2D8E00F04836 /* HomeViewControllerDelegate.swift */; };
 		57AD2E4D1B0A45D800F04836 /* ArenaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AD2E4C1B0A45D800F04836 /* ArenaViewController.swift */; };
 		57AD2E4F1B0A56D100F04836 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AD2E4E1B0A56D100F04836 /* Builder.swift */; };
@@ -54,7 +55,6 @@
 		57D8EF741AFE7A9D001807B5 /* idleCharTest.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 57D8EF731AFE7A9D001807B5 /* idleCharTest.atlas */; };
 		57D8EF761AFE8A53001807B5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D8EF751AFE8A53001807B5 /* CoreData.framework */; };
 		57D8EF781AFE8A5D001807B5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D8EF771AFE8A5D001807B5 /* CoreGraphics.framework */; };
-		57FAF4381AD6625A0044847F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57FAF4371AD6625A0044847F /* Images.xcassets */; };
 		B806B793449ECB995F1E0DB1 /* Pods_MetalMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 040470657417509BAFA9A234 /* Pods_MetalMind.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -103,6 +103,7 @@
 		579C8F741B04F6EE002E6E51 /* Skill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
 		579C8F771B05113E002E6E51 /* RobotCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RobotCollectionViewCell.xib; sourceTree = "<group>"; };
 		579C8F791B0515D0002E6E51 /* RobotCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobotCollectionViewCell.swift; sourceTree = "<group>"; };
+		57A91C1B1B24B59B001F80BA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		57AD2E4A1B0A2D8E00F04836 /* HomeViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewControllerDelegate.swift; sourceTree = "<group>"; };
 		57AD2E4C1B0A45D800F04836 /* ArenaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArenaViewController.swift; sourceTree = "<group>"; };
 		57AD2E4E1B0A56D100F04836 /* Builder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Builder.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -123,7 +124,6 @@
 		57D8EF751AFE8A53001807B5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		57D8EF771AFE8A5D001807B5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		57D8EF791AFE8A93001807B5 /* MetalMind-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MetalMind-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
-		57FAF4371AD6625A0044847F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B098905582B444E282A95529 /* Pods-MetalMind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetalMind.release.xcconfig"; path = "Pods/Target Support Files/Pods-MetalMind/Pods-MetalMind.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -269,7 +269,7 @@
 				57775C2A1AFE8C4B009ABF3C /* Spine */,
 				57D1C6691AD52ECF00609C72 /* AppDelegate.swift */,
 				57D8EF791AFE8A93001807B5 /* MetalMind-Bridging-Header.h */,
-				57FAF4371AD6625A0044847F /* Images.xcassets */,
+				57A91C1B1B24B59B001F80BA /* Images.xcassets */,
 				57D8EF731AFE7A9D001807B5 /* idleCharTest.atlas */,
 				5781FBD71AFCDB1300DFDE64 /* rightWalks.atlas */,
 				570ADE021AD59CBB009FDC4E /* downWalk.atlas */,
@@ -407,7 +407,6 @@
 				57775C581AFE8C93009ABF3C /* stepTesting.json in Resources */,
 				57775C521AFE8C93009ABF3C /* goblin.json in Resources */,
 				579C8F781B05113E002E6E51 /* RobotCollectionViewCell.xib in Resources */,
-				57FAF4381AD6625A0044847F /* Images.xcassets in Resources */,
 				5781FBD81AFCDB1300DFDE64 /* rightWalks.atlas in Resources */,
 				57775C4D1AFE8C93009ABF3C /* elf.atlas in Resources */,
 				570ADE031AD59CBB009FDC4E /* downWalk.atlas in Resources */,
@@ -418,6 +417,7 @@
 				57775C541AFE8C93009ABF3C /* simpleAnimations.spine in Resources */,
 				57775C531AFE8C93009ABF3C /* simpleAnimation.json in Resources */,
 				57775C4E1AFE8C93009ABF3C /* elf.json in Resources */,
+				57A91C1C1B24B59B001F80BA /* Images.xcassets in Resources */,
 				574980841B00B3DD00CE9A97 /* Main.storyboard in Resources */,
 				57775C561AFE8C93009ABF3C /* spineboy.json in Resources */,
 				57775C501AFE8C93009ABF3C /* goblin and spineboy license.txt in Resources */,

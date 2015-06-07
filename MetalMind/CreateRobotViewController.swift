@@ -79,7 +79,7 @@ class CreateRobotViewController: UIViewController, UITextFieldDelegate {
                 let navigationStack = self.navigationController?.viewControllers
                 let viewControllerCount = navigationStack!.count
                 
-                let alert = UIAlertView(title: "Robot created successfully", message: "Robot \(self.robotNameTextField.text) has been created", delegate: nil, cancelButtonTitle: "OK")
+                let alert = UIAlertView(title: "Robot created successfully", message: "", delegate: nil, cancelButtonTitle: "OK")
                 alert.show()
 
                 if let delegate = self.delegate {

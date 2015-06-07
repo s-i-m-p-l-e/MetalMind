@@ -1440,7 +1440,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="share" id="IAp-VM-70A">
-                        <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="-10"/>
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="20"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -1477,7 +1477,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="basket" id="WC6-Ni-8kh">
-                        <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="-10"/>
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="20"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -1539,8 +1539,8 @@
                             <constraint firstAttribute="centerX" secondItem="F4E-Lg-ERj" secondAttribute="centerX" id="mR1-pS-9TT"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="explorer" id="WHg-Xj-4dN">
-                        <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="-10"/>
+                    <tabBarItem key="tabBarItem" title="" image="arena" id="WHg-Xj-4dN">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="20"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -1574,8 +1574,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Amb-rf-fw3" customClass="HomeNavigationController" customModule="MetalMind" customModuleProvider="target" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title=" " image="contact2" id="jNJ-kg-2aB" userLabel="Item">
-                        <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="-10"/>
+                    <tabBarItem key="tabBarItem" title=" " image="robot-fill" id="jNJ-kg-2aB" userLabel="Item">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="20"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -1596,8 +1596,8 @@
         <scene sceneID="9yW-Rr-elE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lzI-Av-vbK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="setting" id="pCt-pT-rSz">
-                        <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="-10"/>
+                    <tabBarItem key="tabBarItem" title="" image="configuration" id="pCt-pT-rSz">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="20"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -1616,10 +1616,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arena" width="32" height="32"/>
         <image name="basket" width="43" height="43"/>
-        <image name="contact2" width="43" height="43"/>
-        <image name="explorer" width="43" height="43"/>
-        <image name="setting" width="43" height="43"/>
+        <image name="configuration" width="32" height="32"/>
+        <image name="robot-fill" width="32" height="32"/>
         <image name="share" width="43" height="43"/>
         <image name="skill_placeholder_icon" width="128" height="128"/>
     </resources>
