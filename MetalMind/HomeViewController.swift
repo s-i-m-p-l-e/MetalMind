@@ -11,11 +11,12 @@ import SpriteKit
 import Locksmith
 import Alamofire
 
-class HomeViewController: UIViewController, HomeViewControllerDelegate, UIAlertViewDelegate {
+class HomeViewController: UIViewController, HomeViewControllerDelegate {
     
     // MARK: - Segue identifiers
     let loginVCSegue = "ShowLoginTableViewController"
     let statsTVCSegue = "ShowStatsTableViewController"
+    let createRobotVCSegue = "ShowCreateRobotViewController"
     
     // MARK: - IBOutlets
     @IBOutlet weak var loadingDataActivityIndicator: UIActivityIndicatorView!
@@ -202,6 +203,13 @@ class HomeViewController: UIViewController, HomeViewControllerDelegate, UIAlertV
         }
     }
     
+    func controller(controller: UIViewController, didAddRobot: Bool) {
+        if token != nil && didAddRobot == true {
+            self.loadRobotsData()
+            currentRobotIndex = robots.count
+        }
+    }
+    
     // MARK: - Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
@@ -212,6 +220,9 @@ class HomeViewController: UIViewController, HomeViewControllerDelegate, UIAlertV
         case statsTVCSegue:
             let showStatsTVC = segue.destinationViewController as? StatsTableViewController
             showStatsTVC?.robot = currentRobot
+        case createRobotVCSegue:
+            let createRobotVC = segue.destinationViewController as? CreateRobotViewController
+            createRobotVC?.delegate = self
         default: break
         }
     }

@@ -12,14 +12,18 @@ class OverviewScene: SKScene {
     
     // MARK: - Variables
     let player = MMPlayer(horizontalSpriteOrientation: .Right)
+    let downTextures = SKTextureAtlas(named: "downWalk").textures
+    let horizontalTextures = SKTextureAtlas(named: "rightWalks").textures
+    let idleTextures = SKTextureAtlas(named: "idleCharTest").textures
+    let backgroundSceneImage = SKSpriteNode(imageNamed: "dark_background")
     
     // MARK: - SKScene Life-Cycle
     override func didMoveToView(view: SKView) {
         /* load textures */
-        player.textures[.Down] = SKTextureAtlas(named: "downWalk").textures
-        player.textures[.Horizontal] = SKTextureAtlas(named: "rightWalks").textures
-        player.textures[.Idle] = SKTextureAtlas(named: "idleCharTest").textures
-        let backgroundImage = SKSpriteNode(imageNamed: "dark_background")
+        player.textures[.Down] = downTextures
+        player.textures[.Horizontal] = horizontalTextures
+        player.textures[.Idle] = idleTextures
+        let backgroundImage = backgroundSceneImage
         
         /* sizing and positioning textures */
         player.setSpriteNodeSize(.Idle)

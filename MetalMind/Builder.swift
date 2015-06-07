@@ -138,6 +138,14 @@ struct Clause {
     var value: Float = 0.0
     var metrics: Metrics = .Points
     
+    func toDictionary() -> [String : String] {
+        return ["actor": self.actor.toString(),
+                "stats": self.stats.toString(),
+                "operator": self.mmOperator.toString(),
+                "value": "\(self.value)",
+                "metrics": self.metrics.toString()]
+    }
+    
     static func toRandomDictionary() -> [String : String] {
         return ["actor": Actor.random().toString(),
                 "stats": Stats.random().toString(),

@@ -25,6 +25,7 @@ class CreateRobotViewController: UIViewController, UITextFieldDelegate {
         }
     }
     var token: String?  { return userData?.objectForKey("token") as? String }
+    var delegate: HomeViewControllerDelegate?
     
     // MARK: - UIViewController Life-Cycle
     override func viewDidLoad() {
@@ -40,6 +41,7 @@ class CreateRobotViewController: UIViewController, UITextFieldDelegate {
     // MARK: - UITextFieldDelegate
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         createRobot()
+        self.robotNameTextField.resignFirstResponder()
         return true
     }
     
@@ -77,9 +79,13 @@ class CreateRobotViewController: UIViewController, UITextFieldDelegate {
                 let navigationStack = self.navigationController?.viewControllers
                 let viewControllerCount = navigationStack!.count
                 
-                if let HomeVC = navigationStack?[viewControllerCount - 2] as? HomeViewController {
-                    HomeVC.loadRobotsData()
+                let alert = UIAlertView(title: "Robot created successfully", message: "Robot \(self.robotNameTextField.text) has been created", delegate: nil, cancelButtonTitle: "OK")
+                alert.show()
+
+                if let delegate = self.delegate {
+                    delegate.controller(self, didAddRobot: true)
                 }
+                
                 self.navigationController?.popViewControllerAnimated(true)
                 
             }

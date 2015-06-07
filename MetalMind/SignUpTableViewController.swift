@@ -140,7 +140,6 @@ class SignUpTableViewController: UITableViewController, UITextFieldDelegate {
                         errorMessages += "Password do not match"
                     }
                     
-                    
                     self.alertView.message = errorMessages
                     self.alertView.show()
                 } else {

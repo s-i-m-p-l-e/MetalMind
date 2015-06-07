@@ -116,7 +116,7 @@ Responsible for player actions, animations and positioning in the `MMArena`.
         let newSize = texture!.size()
         spriteNode.size = newSize
     }
-}
+}   
 
 /**
 Possible movment directions for animation

@@ -10,4 +10,5 @@ import UIKit
 
 protocol HomeViewControllerDelegate {
     func controller(controller: UIViewController, didLoginUser: Bool)
+    func controller(contorller: UIViewController, didAddRobot: Bool)
 }
