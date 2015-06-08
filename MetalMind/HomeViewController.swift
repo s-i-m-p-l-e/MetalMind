@@ -43,9 +43,19 @@ class HomeViewController: UIViewController, HomeViewControllerDelegate {
             tapGestureRecognizer.enabled = !robots.isEmpty
             playerOverviewScene?.hidden = robots.isEmpty
             createRobotLabel.hidden = !robots.isEmpty
+            
+            if let delegate = UIApplication.sharedApplication().delegate as? AppDelegate {
+                delegate.currentRobot = currentRobot
+            }
         }
     }
-    var currentRobotIndex: Int = 0
+    var currentRobotIndex: Int = 0 {
+        didSet {
+            if let delegate = UIApplication.sharedApplication().delegate as? AppDelegate {
+                delegate.currentRobot = currentRobot
+            }
+        }
+    }
     var currentRobot: Robot? { return robots.isEmpty ? nil : robots[currentRobotIndex] }
     var downloadingRobotData = false
     var playerOverviewScene: OverviewScene?

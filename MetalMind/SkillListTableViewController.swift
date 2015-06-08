@@ -35,8 +35,16 @@ class SkillListTableViewController: UITableViewController, UITableViewDataSource
         self.tableView.tableHeaderView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: tableView.bounds.width, height: 0.1))
         
         loadSkills()
-        skillList.append(Skill(name: "Attack", description: "Basic attack"))
-        skillList.append(Skill(name: "Heal", description: "Heals the character"))
+//        skillList.append(Skill(name: "Attack", description: "Basic attack"))
+//        skillList.append(Skill(name: "Heal", description: "Heals the character"))
+
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        if let delegate = UIApplication.sharedApplication().delegate as? AppDelegate {
+            println(delegate.currentRobot?.name)
+        }
     }
     
     // MARK: - UITableViewDataSource
@@ -91,6 +99,7 @@ class SkillListTableViewController: UITableViewController, UITableViewDataSource
         request.RobotDataLoadResponseJSON { (request, response, arrayJSON, error) -> Void in
             
             println(response)
+            println(arrayJSON)
             if arrayJSON != nil && error == nil {
 //                self.robots = map(arrayJSON!) { Robot(json: $0) }
             }
