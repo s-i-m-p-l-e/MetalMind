@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Locksmith
+import Alamofire
 
 class SkillListTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate, SkillListDelegate {
     
@@ -15,6 +17,16 @@ class SkillListTableViewController: UITableViewController, UITableViewDataSource
     
     // MARK: - Variables
     var skillList = [Skill]()
+    var downloadingSkillList = false
+    var userData: NSDictionary? {
+        get {
+            let (data, error) = Locksmith.loadDataForUserAccount("MetalMindUserAccount")
+            if error != nil { return nil }
+            
+            return data
+        }
+    }
+    var token: String?  { return userData?.objectForKey("token") as? String }
     
     // MARK: - UIViewController
     override func viewDidLoad() {
@@ -22,6 +34,7 @@ class SkillListTableViewController: UITableViewController, UITableViewDataSource
         /* make table header smaller */
         self.tableView.tableHeaderView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: tableView.bounds.width, height: 0.1))
         
+        loadSkills()
         skillList.append(Skill(name: "Attack", description: "Basic attack"))
         skillList.append(Skill(name: "Heal", description: "Heals the character"))
     }
@@ -57,6 +70,32 @@ class SkillListTableViewController: UITableViewController, UITableViewDataSource
     // MARK: - SkillListDelegate
     func controller(controller: UITableViewController, didChangeSkillData: Bool, index: Int, builder: Builder) {
         println("Index: \(index) \n Builder: \(builder)")
+        println(builder.trigger.what.rawValue)
+        skillList[index].builder = builder
+    }
+    
+    // MARK: - Helpers
+    func loadSkills() {
+        if downloadingSkillList { return }
+        downloadingSkillList = true
+        
+        let URL =  NSURL(string: "https://api.metalmind.rocks/v1/actions/61")
+        var mutableURLRequest = NSMutableURLRequest(URL: URL!)
+        if token != nil {
+            mutableURLRequest.setValue(token!, forHTTPHeaderField: "Authorization")
+        }
+        
+        var manager = Alamofire.Manager.sharedInstance
+        var request = manager.request(mutableURLRequest)
+        
+        request.RobotDataLoadResponseJSON { (request, response, arrayJSON, error) -> Void in
+            
+            println(response)
+            if arrayJSON != nil && error == nil {
+//                self.robots = map(arrayJSON!) { Robot(json: $0) }
+            }
+        }
+        downloadingSkillList = false
     }
     
     // MARK: - Segue
@@ -74,4 +113,6 @@ class SkillListTableViewController: UITableViewController, UITableViewDataSource
         default: break
         }
     }
+    
+    
 }

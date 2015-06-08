@@ -44,6 +44,15 @@ class BuilderTableViewController: UITableViewController {
         
         /* Update interface to show builder changes */
         saveChangesButton.setTitle(self.navigationItem.title, forState: .Normal)
+        whenSegmenControl.selectedSegmentIndex = Int(skillBuilder!.trigger.when.rawValue)
+        whoSegmentControl.selectedSegmentIndex = Int(skillBuilder!.trigger.who.rawValue)
+        whatSegmentControl.selectedSegmentIndex = Int(skillBuilder!.trigger.what.rawValue)
+        
+        actorSegmentControl.selectedSegmentIndex = Int(skillBuilder!.clause.actor.rawValue)
+        statsSegmentControl.selectedSegmentIndex = Int(skillBuilder!.clause.stats.rawValue)
+        operatorSegmentControl.selectedSegmentIndex = Int(skillBuilder!.clause.mmOperator.rawValue)
+        valueTextField.text = "\(skillBuilder!.clause.value)"
+        metricsSegmentControl.selectedSegmentIndex = Int(skillBuilder!.clause.metrics.rawValue)
     }
     
     // MARK: - UITableViewDelegate
@@ -65,7 +74,24 @@ class BuilderTableViewController: UITableViewController {
     
     // MARK: - IBActions
     @IBAction func saveChangesButtonAction(sender: UIButton) {
+        skillBuilder?.trigger.when = When(rawValue: UInt32(whenSegmenControl.selectedSegmentIndex))!
+        skillBuilder?.trigger.who = Who(rawValue: UInt32(whoSegmentControl.selectedSegmentIndex))!
+        skillBuilder?.trigger.what = What(rawValue: UInt32(whatSegmentControl.selectedSegmentIndex))!
+        
+        skillBuilder?.clause.actor = Actor(rawValue: UInt32(actorSegmentControl.selectedSegmentIndex))!
+        skillBuilder?.clause.stats = Stats(rawValue: UInt32(statsSegmentControl.selectedSegmentIndex))!
+        skillBuilder?.clause.mmOperator = MMOperator(rawValue: UInt32(operatorSegmentControl.selectedSegmentIndex))!
+        skillBuilder?.clause.value = valueTextField.text.floatValue
+        skillBuilder?.clause.metrics = Metrics(rawValue: UInt32(metricsSegmentControl.selectedSegmentIndex))!
+        
         delegate?.controller(self, didChangeSkillData: true, index: self.skillIndex!, builder: self.skillBuilder!)
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
+}
+
+internal extension String {
+    var floatValue: Float {
+        return (self as NSString).floatValue
+    }
 }
