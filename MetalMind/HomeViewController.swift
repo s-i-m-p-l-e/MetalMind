@@ -65,7 +65,7 @@ class HomeViewController: UIViewController, HomeViewControllerDelegate {
 
         /* create and configure the scene */
             playerOverviewScene = OverviewScene(size: view.bounds.size)
-            playerOverviewScene?.scaleMode = .AspectFill
+//            playerOverviewScene?.scaleMode = .AspectFit
             playerOverviewScene?.hidden = true
             
             /* present the scene */
@@ -147,6 +147,22 @@ class HomeViewController: UIViewController, HomeViewControllerDelegate {
             currentRobotIndex += 1
         }
         self.title = robots[currentRobotIndex].name
+        self.animateCharacterChange(self.view, duration: 0.5)
+    }
+    
+    func animateCharacterChange(view: UIView, duration: NSTimeInterval = 2.0) {
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        UIView.animateWithDuration(
+            duration,
+            delay: 0.0,
+            options: .Autoreverse,
+            animations: {
+                self.playerOverviewScene?.view?.alpha = 0.0
+            },
+            completion: { finished in
+                self.playerOverviewScene?.view?.alpha = 1.0
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+            })
     }
     
     func deleteCurrentRobot() {

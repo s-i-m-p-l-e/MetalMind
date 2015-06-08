@@ -46,6 +46,7 @@
 		57AD2E541B0A7C6300F04836 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AD2E531B0A7C6300F04836 /* DoubleExtension.swift */; };
 		57B14FD01AFE5E51004B42A5 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B14FCF1AFE5E51004B42A5 /* NavigationController.swift */; };
 		57B14FD21AFE60CB004B42A5 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B14FD11AFE60CB004B42A5 /* RootTabBarController.swift */; };
+		57CEE10E1B263201007DE037 /* rob_1_stand_resized.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 57CEE10D1B263201007DE037 /* rob_1_stand_resized.atlas */; };
 		57D1C66A1AD52ECF00609C72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D1C6691AD52ECF00609C72 /* AppDelegate.swift */; };
 		57D1C66C1AD52ECF00609C72 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D1C66B1AD52ECF00609C72 /* HomeViewController.swift */; };
 		57D1C6741AD52ECF00609C72 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57D1C6721AD52ECF00609C72 /* LaunchScreen.xib */; };
@@ -110,6 +111,7 @@
 		57AD2E531B0A7C6300F04836 /* DoubleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 		57B14FCF1AFE5E51004B42A5 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		57B14FD11AFE60CB004B42A5 /* RootTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
+		57CEE10D1B263201007DE037 /* rob_1_stand_resized.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = rob_1_stand_resized.atlas; sourceTree = "<group>"; };
 		57D1C6641AD52ECF00609C72 /* MetalMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D1C6681AD52ECF00609C72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57D1C6691AD52ECF00609C72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 				57D1C6691AD52ECF00609C72 /* AppDelegate.swift */,
 				57D8EF791AFE8A93001807B5 /* MetalMind-Bridging-Header.h */,
 				57A91C1B1B24B59B001F80BA /* Images.xcassets */,
+				57CEE10D1B263201007DE037 /* rob_1_stand_resized.atlas */,
 				57D8EF731AFE7A9D001807B5 /* idleCharTest.atlas */,
 				5781FBD71AFCDB1300DFDE64 /* rightWalks.atlas */,
 				570ADE021AD59CBB009FDC4E /* downWalk.atlas */,
@@ -418,6 +421,7 @@
 				57775C531AFE8C93009ABF3C /* simpleAnimation.json in Resources */,
 				57775C4E1AFE8C93009ABF3C /* elf.json in Resources */,
 				57A91C1C1B24B59B001F80BA /* Images.xcassets in Resources */,
+				57CEE10E1B263201007DE037 /* rob_1_stand_resized.atlas in Resources */,
 				574980841B00B3DD00CE9A97 /* Main.storyboard in Resources */,
 				57775C561AFE8C93009ABF3C /* spineboy.json in Resources */,
 				57775C501AFE8C93009ABF3C /* goblin and spineboy license.txt in Resources */,
