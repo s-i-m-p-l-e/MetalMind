@@ -14,6 +14,7 @@ class SkillListTableViewController: UITableViewController, UITableViewDataSource
     
     // MARK: - Segue Identifiers
     let builderTVCSegue = "ShowBuilderTableViewController"
+    let availableSkillListTVCSegue = "ShowAvailableSkillList"
     
     // MARK: - Variables
     var skillList = [Skill]()
@@ -38,13 +39,6 @@ class SkillListTableViewController: UITableViewController, UITableViewDataSource
 //        skillList.append(Skill(name: "Attack", description: "Basic attack"))
 //        skillList.append(Skill(name: "Heal", description: "Heals the character"))
 
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        
-        if let delegate = UIApplication.sharedApplication().delegate as? AppDelegate {
-            println(delegate.currentRobot?.name)
-        }
     }
     
     // MARK: - UITableViewDataSource
@@ -98,8 +92,8 @@ class SkillListTableViewController: UITableViewController, UITableViewDataSource
         
         request.RobotDataLoadResponseJSON { (request, response, arrayJSON, error) -> Void in
             
-            println(response)
-            println(arrayJSON)
+//            println(response)
+//            println(arrayJSON)
             if arrayJSON != nil && error == nil {
 //                self.robots = map(arrayJSON!) { Robot(json: $0) }
             }
@@ -110,15 +104,15 @@ class SkillListTableViewController: UITableViewController, UITableViewDataSource
     // MARK: - Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        let index = sender as! Int
+        let index = sender as? Int
         
         switch segue.identifier! {
         case builderTVCSegue:
             let builderTVC = segue.destinationViewController as? BuilderTableViewController
             builderTVC?.delegate = self
             builderTVC?.skillIndex = index
-            builderTVC?.skillBuilder = skillList[index].builder
-            builderTVC?.navigationItem.title = skillList[index].name
+            builderTVC?.skillBuilder = skillList[index!].builder
+            builderTVC?.navigationItem.title = skillList[index!].name
         default: break
         }
     }

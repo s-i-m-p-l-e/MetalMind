@@ -997,7 +997,7 @@
         <scene sceneID="zSf-EG-rEs">
             <objects>
                 <tableViewController id="Pa6-DV-hRg" userLabel="Skill list table view controller" customClass="SkillListTableViewController" customModule="MetalMind" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="rfg-Ev-ZRI" userLabel="Skill table view">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="rfg-Ev-ZRI" userLabel="Skill table view">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.37647058820000001" green="0.49019607840000001" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1039,6 +1039,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Skill list" id="8l1-Zh-L3N">
                         <barButtonItem key="backBarButtonItem" title=" " id="0Uy-hG-qC9"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="0HS-dF-5I1">
+                            <connections>
+                                <segue destination="rOR-Nw-Tpq" kind="show" identifier="ShowAvailableSkillList" id="Jrv-yB-826"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2xg-Ul-1yc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1417,6 +1422,52 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dkk-je-DfN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2618" y="-359"/>
+        </scene>
+        <!--Available skill list-->
+        <scene sceneID="0SL-wL-RGt">
+            <objects>
+                <tableViewController id="rOR-Nw-Tpq" customClass="AvailableSkillList" customModule="MetalMind" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Mug-8x-Lqc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.37647058820000001" green="0.49019607840000001" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SkillListCell" textLabel="XdS-11-iXC" detailTextLabel="Ojx-1N-4pz" imageView="7NH-sl-a7K" rowHeight="60" style="IBUITableViewCellStyleSubtitle" id="C8o-aV-8GD" userLabel="Skill table cell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="C8o-aV-8GD" id="C2S-k5-HGH">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XdS-11-iXC">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="skill_placeholder1" id="7NH-sl-a7K">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </imageView>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ojx-1N-4pz">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.81176470590000005" green="0.84705882349999995" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.81176470590000005" green="0.84705882349999995" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="rOR-Nw-Tpq" id="kSB-V8-5IH"/>
+                            <outlet property="delegate" destination="rOR-Nw-Tpq" id="qDU-6A-6mn"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Available skill list" id="c6r-rl-P0m"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5vc-WY-mYF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2618" y="392"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="1Ph-Pg-klh">

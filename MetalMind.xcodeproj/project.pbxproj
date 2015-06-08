@@ -47,6 +47,7 @@
 		57B14FD01AFE5E51004B42A5 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B14FCF1AFE5E51004B42A5 /* NavigationController.swift */; };
 		57B14FD21AFE60CB004B42A5 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B14FD11AFE60CB004B42A5 /* RootTabBarController.swift */; };
 		57CEE10E1B263201007DE037 /* rob_1_stand_resized.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 57CEE10D1B263201007DE037 /* rob_1_stand_resized.atlas */; };
+		57CEE1101B264422007DE037 /* AvalableSkillList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CEE10F1B264422007DE037 /* AvalableSkillList.swift */; };
 		57D1C66A1AD52ECF00609C72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D1C6691AD52ECF00609C72 /* AppDelegate.swift */; };
 		57D1C66C1AD52ECF00609C72 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D1C66B1AD52ECF00609C72 /* HomeViewController.swift */; };
 		57D1C6741AD52ECF00609C72 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57D1C6721AD52ECF00609C72 /* LaunchScreen.xib */; };
@@ -112,6 +113,7 @@
 		57B14FCF1AFE5E51004B42A5 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		57B14FD11AFE60CB004B42A5 /* RootTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		57CEE10D1B263201007DE037 /* rob_1_stand_resized.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = rob_1_stand_resized.atlas; sourceTree = "<group>"; };
+		57CEE10F1B264422007DE037 /* AvalableSkillList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvalableSkillList.swift; sourceTree = "<group>"; };
 		57D1C6641AD52ECF00609C72 /* MetalMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D1C6681AD52ECF00609C72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57D1C6691AD52ECF00609C72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				57AD2E4C1B0A45D800F04836 /* ArenaViewController.swift */,
 				5740F0531B0E73B400D7DE00 /* SkillListTableViewController.swift */,
 				5740F0511B0E4E8B00D7DE00 /* BuilderTableViewController.swift */,
+				57CEE10F1B264422007DE037 /* AvalableSkillList.swift */,
 				579C8F761B0510E9002E6E51 /* View */,
 			);
 			name = Controller;
@@ -498,6 +501,7 @@
 				570AB8FC1B08BB6F00D59BD8 /* CreateRobotViewController.swift in Sources */,
 				57B14FD21AFE60CB004B42A5 /* RootTabBarController.swift in Sources */,
 				5740F0521B0E4E8B00D7DE00 /* BuilderTableViewController.swift in Sources */,
+				57CEE1101B264422007DE037 /* AvalableSkillList.swift in Sources */,
 				57AD2E4F1B0A56D100F04836 /* Builder.swift in Sources */,
 				57B14FD01AFE5E51004B42A5 /* NavigationController.swift in Sources */,
 				5740F0561B0E834B00D7DE00 /* SkillListDelegate.swift in Sources */,
