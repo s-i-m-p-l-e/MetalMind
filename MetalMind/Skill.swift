@@ -71,14 +71,15 @@ class Skill {
     }
     
     init(activeSkillJSON: [String: NSObject]) {
+        
+        if let id = activeSkillJSON["id"] as? Int {
+            self.id = id
+        } else {
+            log("Invalid json[\"id\"] field - expected Int")
+            self.id = nil
+        }
+        
         if let action = activeSkillJSON["action"] as? [String: NSObject] {
-            if let id = action["id"] as? Int {
-                self.id = id
-            } else {
-                log("Invalid json[\"id\"] field - expected Int")
-                self.id = nil
-            }
-            
             if let name = action["name"] as? String {
                 self.name = name
             } else {

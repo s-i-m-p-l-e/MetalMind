@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Locksmith
+import Alamofire
 
 class BuilderTableViewController: UITableViewController {
     
@@ -29,6 +31,17 @@ class BuilderTableViewController: UITableViewController {
     var delegate: SkillListTableViewController?
     var skillIndex: Int?
     var skillBuilder: Builder?
+    var skillID: Int?
+    var downloadingSkillData = false
+    var userData: NSDictionary? {
+        get {
+            let (data, error) = Locksmith.loadDataForUserAccount("MetalMindUserAccount")
+            if error != nil { return nil }
+            
+            return data
+        }
+    }
+    var token: String?  { return userData?.objectForKey("token") as? String }
     
     // MARK: - UIViewController Life-Cycle
     override func viewDidLoad() {
@@ -70,12 +83,68 @@ class BuilderTableViewController: UITableViewController {
     }
     
     func loadSkillData() {
-        
+//        if downloadingSkillData { return }
+//        downloadingSkillData = true
+//        
+//        let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
+//        let currentRobotID = appDelegate?.currentRobot!.id
+//        
+//        let URL =  NSURL(string: "https://api.metalmind.rocks/v1/action/\(currentRobotID!)")
+//        var mutableURLRequest = NSMutableURLRequest(URL: URL!)
+//        if token != nil {
+//            mutableURLRequest.setValue(token!, forHTTPHeaderField: "Authorization")
+//        }
+//        
+//        var manager = Alamofire.Manager.sharedInstance
+//        var request = manager.request(mutableURLRequest)
+//        
+//        request.responseJSON { (request, response, arrayJSON, error) -> Void in
+//            //            println(arrayJSON)
+//            
+//            if arrayJSON != nil && error == nil {
+//                let json = arrayJSON as? [[String: NSObject]]
+//                self.skillList = map(json!) { Skill(activeSkillJSON: $0) }
+//            }
+//            
+//            dispatch_async(dispatch_get_main_queue()) {
+//                self.tableView.reloadData()
+//            }
+//        }
+//        downloadingSkillData = false
+//        
     }
     
-    func changeData() { }
+    func changeData() {
+    
+    }
     
     func deleteCurrentSkill() {
+        let aManager = Manager.sharedInstance
+        
+        if let token = self.token where skillID != nil {
+            aManager.session.configuration.HTTPAdditionalHeaders = [
+                "Authorization": token ]
+            let url = "https://api.metalmind.rocks/v1/action/\(skillID!)"
+            let parameters = [
+                "id": self.skillID!
+            ]
+            
+            Alamofire.request(.DELETE, url, parameters: parameters, encoding: .JSON).responseJSON { (request, response, jsonObject, error) in
+                let json = jsonObject as? [String:Int]
+                if json?["success"] == 1 {
+                    
+                    if let delegate = self.delegate {
+                        delegate.controller(self, didAddSkill: false)
+                    }
+                    let alert = UIAlertView(title: "DELETED", message: "Skill deleted successfully", delegate: nil, cancelButtonTitle: "OK")
+                    alert.show()
+                    
+                    self.navigationController?.popViewControllerAnimated(true)
+                    
+                }
+            }
+        }
+
     }
     
     // MARK: - IBActions
@@ -95,6 +164,7 @@ class BuilderTableViewController: UITableViewController {
     }
     
     @IBAction func deleteSkillAction(sender: UIBarButtonItem) {
+        deleteCurrentSkill()
     }
 }
 

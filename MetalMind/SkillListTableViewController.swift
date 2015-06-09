@@ -96,7 +96,7 @@ class SkillListTableViewController: UITableViewController, UITableViewDataSource
         var request = manager.request(mutableURLRequest)
         
         request.responseJSON { (request, response, arrayJSON, error) -> Void in
-            println(arrayJSON)
+//            println(arrayJSON)
 
             if arrayJSON != nil && error == nil {
                 let json = arrayJSON as? [[String: NSObject]]
@@ -120,6 +120,7 @@ class SkillListTableViewController: UITableViewController, UITableViewDataSource
             let builderTVC = segue.destinationViewController as? BuilderTableViewController
             builderTVC?.delegate = self
             builderTVC?.skillIndex = index
+            builderTVC?.skillID = skillList[index!].id
             builderTVC?.skillBuilder = skillList[index!].builder
             builderTVC?.navigationItem.title = skillList[index!].name
         case availableSkillListTVCSegue:
