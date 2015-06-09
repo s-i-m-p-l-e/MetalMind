@@ -32,13 +32,10 @@ class SkillListTableViewController: UITableViewController, UITableViewDataSource
     // MARK: - UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
-        /* make table header smaller */
-        self.tableView.tableHeaderView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: tableView.bounds.width, height: 0.1))
-        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         loadSkills()
-//        skillList.append(Skill(name: "Attack", description: "Basic attack"))
-//        skillList.append(Skill(name: "Heal", description: "Heals the character"))
-
     }
     
     // MARK: - UITableViewDataSource
@@ -86,7 +83,10 @@ class SkillListTableViewController: UITableViewController, UITableViewDataSource
         if downloadingSkillList { return }
         downloadingSkillList = true
         
-        let URL =  NSURL(string: "https://api.metalmind.rocks/v1/actions/61")
+        let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
+        let currentRobotID = appDelegate?.currentRobot!.id
+        
+        let URL =  NSURL(string: "https://api.metalmind.rocks/v1/actions/\(currentRobotID!)")
         var mutableURLRequest = NSMutableURLRequest(URL: URL!)
         if token != nil {
             mutableURLRequest.setValue(token!, forHTTPHeaderField: "Authorization")
@@ -95,10 +95,16 @@ class SkillListTableViewController: UITableViewController, UITableViewDataSource
         var manager = Alamofire.Manager.sharedInstance
         var request = manager.request(mutableURLRequest)
         
-        request.RobotDataLoadResponseJSON { (request, response, arrayJSON, error) -> Void in
-            
+        request.responseJSON { (request, response, arrayJSON, error) -> Void in
+            println(arrayJSON)
+
             if arrayJSON != nil && error == nil {
-//                self.robots = map(arrayJSON!) { Robot(json: $0) }
+                let json = arrayJSON as? [[String: NSObject]]
+                self.skillList = map(json!) { Skill(activeSkillJSON: $0) }
+            }
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                self.tableView.reloadData()
             }
         }
         downloadingSkillList = false

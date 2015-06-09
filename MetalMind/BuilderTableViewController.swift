@@ -68,8 +68,9 @@ class BuilderTableViewController: UITableViewController {
         self.view.endEditing(false)
     }
     
-    func changeData() {
-        
+    func changeData() { }
+    
+    func deleteCurrentSkill() {
     }
     
     // MARK: - IBActions
@@ -88,6 +89,8 @@ class BuilderTableViewController: UITableViewController {
         self.navigationController?.popViewControllerAnimated(true)
     }
     
+    @IBAction func deleteSkillAction(sender: UIBarButtonItem) {
+    }
 }
 
 internal extension String {

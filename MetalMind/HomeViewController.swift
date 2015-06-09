@@ -146,6 +146,7 @@ class HomeViewController: UIViewController, HomeViewControllerDelegate {
            currentRobotIndex -= 1
         }
         self.title = robots[currentRobotIndex].name
+        self.animateCharacterChange(self.view, duration: 0.5)
     }
     
     func switchToNextRobot() {

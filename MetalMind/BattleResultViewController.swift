@@ -1,8 +1,8 @@
 //
-//  Arena.swift
+//  BattleResultViewController.swift
 //  MetalMind
 //
-//  Created by Victor Vasilica on 5/18/15.
+//  Created by Victor Vasilica on 6/9/15.
 //  Copyright (c) 2015 simple. All rights reserved.
 //
 
@@ -10,14 +10,11 @@ import UIKit
 import Locksmith
 import Alamofire
 
-class ArenaViewController: UIViewController {
-    // MARK: - IBOutlets
-    @IBOutlet weak var battleButton: UIButton! {
-        didSet {
-            battleButton.layer.borderWidth = 2.0
-            battleButton.layer.borderColor = UIColor.whiteColor().CGColor
-        }
-    }
+class BattleResultViewController: UIViewController {
+    // MARK: IBOutlets
+    @IBOutlet var announcerLabel: UILabel!
+    @IBOutlet weak var actIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var continueButton: UIButton!
     
     // MARK: - Variables
     var userData: NSDictionary? {
@@ -30,9 +27,10 @@ class ArenaViewController: UIViewController {
     }
     var token: String?  { return userData?.objectForKey("token") as? String }
     
-    // MARK: - IBActions
-    @IBAction func practiceActionButton(sender: UIButton) {
-
+    // MARK: UIViewController Life-Cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
         let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
         let currentRobotID = appDelegate?.currentRobot!.id
         
@@ -62,7 +60,26 @@ class ArenaViewController: UIViewController {
         
         request.responseJSON {(request, response, JSON, error) in
             println(JSON)
+            
+            let winner: AnyObject? = JSON?.objectForKey("winner")
+            let winnerID = winner?.objectForKey("id") as? Int
+            println(winnerID)
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                self.actIndicator.stopAnimating()
+                if currentRobotID == winnerID {
+                    self.announcerLabel.text = "You've Won!"
+                } else {
+                    self.announcerLabel.text = "You've Lost!"
+                }
+                self.continueButton.enabled = true
+            }
         }
-
+        
+    }
+    
+    // MARK: IBActions
+    @IBAction func continueAction(sender: UIButton) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }

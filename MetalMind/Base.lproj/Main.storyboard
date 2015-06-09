@@ -249,7 +249,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="biv-US-6JS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2545" y="-2442"/>
+            <point key="canvasLocation" x="2561" y="-3114"/>
         </scene>
         <!--Signup Table View Controller-->
         <scene sceneID="pR6-tc-wAU">
@@ -474,7 +474,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="khR-7b-0cx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3278" y="-2442"/>
+            <point key="canvasLocation" x="3298" y="-3114"/>
         </scene>
         <!--Create Robot View Controller-->
         <scene sceneID="cM2-xI-Zli">
@@ -550,7 +550,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2609" y="-1777"/>
+            <point key="canvasLocation" x="2561" y="-2445"/>
         </scene>
         <!--Stats Table View Controller-->
         <scene sceneID="xQb-ou-SCt">
@@ -991,7 +991,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zAc-nN-ZfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2609" y="-1063"/>
+            <point key="canvasLocation" x="2561" y="-1777"/>
         </scene>
         <!--Skill list table view controller-->
         <scene sceneID="zSf-EG-rEs">
@@ -1048,7 +1048,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2xg-Ul-1yc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1885" y="-359"/>
+            <point key="canvasLocation" x="1755" y="-359"/>
         </scene>
         <!--BuilderTableViewController-->
         <scene sceneID="zKw-In-TDs">
@@ -1405,6 +1405,12 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Title" id="sBU-MJ-iEy">
                         <barButtonItem key="backBarButtonItem" title=" " id="VKx-di-QZK"/>
+                        <barButtonItem key="rightBarButtonItem" title="Delete" id="87Y-Hj-zYP">
+                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="deleteSkillAction:" destination="AED-wm-IUL" id="6jT-0z-EBZ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="actorSegmentControl" destination="Ubg-Az-2KD" id="RPL-cq-jdu"/>
@@ -1421,7 +1427,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dkk-je-DfN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2618" y="-359"/>
+            <point key="canvasLocation" x="2561" y="-1019"/>
         </scene>
         <!--Available skill list-->
         <scene sceneID="0SL-wL-RGt">
@@ -1467,7 +1473,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5vc-WY-mYF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2618" y="392"/>
+            <point key="canvasLocation" x="2561" y="-359"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="1Ph-Pg-klh">
@@ -1543,7 +1549,7 @@
             </objects>
             <point key="canvasLocation" x="1073" y="993"/>
         </scene>
-        <!--Arena View Controller-->
+        <!--ARENA-->
         <scene sceneID="he1-Ml-stL">
             <objects>
                 <viewController id="mFb-KD-74d" customClass="ArenaViewController" customModule="MetalMind" customModuleProvider="target" sceneMemberID="viewController">
@@ -1555,7 +1561,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="metal_mind_background_text" translatesAutoresizingMaskIntoConstraints="NO" id="pby-gH-JKU">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="metal_mind_background_text" translatesAutoresizingMaskIntoConstraints="NO" id="pby-gH-JKU">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3qF-R9-L0A">
@@ -1564,7 +1570,7 @@
                                     <constraint firstAttribute="width" constant="160" id="3dB-2D-cHY"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Battle">
+                                <state key="normal" title="Practice">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1574,7 +1580,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="practiceActionButton:" destination="mFb-KD-74d" eventType="touchUpInside" id="kWM-IK-T1X"/>
+                                    <segue destination="eF4-ev-L1J" kind="presentation" modalTransitionStyle="crossDissolve" id="2VP-Qm-xVK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1595,10 +1601,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="arena" id="WHg-Xj-4dN">
-                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="20"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" title="ARENA" id="yqA-mI-WQT"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="battleButton" destination="3qF-R9-L0A" id="e2Q-CS-zRF"/>
@@ -1606,7 +1609,63 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bTE-JC-BUU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1073" y="1662"/>
+            <point key="canvasLocation" x="1885" y="1662"/>
+        </scene>
+        <!--Battle Result View Controller-->
+        <scene sceneID="p10-Hr-hCp">
+            <objects>
+                <viewController id="eF4-ev-L1J" customClass="BattleResultViewController" customModule="MetalMind" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1mF-u2-TBM"/>
+                        <viewControllerLayoutGuide type="bottom" id="0X9-8a-Bhv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="h0j-b2-9re">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Processing battle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VFM-z9-Ak9">
+                                <rect key="frame" x="16" y="100" width="568" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="0.27058823529999998" green="0.35294117650000001" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="khw-Fj-bJs">
+                                <rect key="frame" x="16" y="538" width="568" height="42"/>
+                                <color key="backgroundColor" red="0.27058823529999998" green="0.35294117650000001" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="continueAction:" destination="eF4-ev-L1J" eventType="touchUpInside" id="s4i-zF-45H"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="RjE-z0-eaC">
+                                <rect key="frame" x="282" y="281" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.81176470590000005" green="0.84705882349999995" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="RjE-z0-eaC" secondAttribute="centerX" id="0Os-d5-kGT"/>
+                            <constraint firstItem="VFM-z9-Ak9" firstAttribute="leading" secondItem="h0j-b2-9re" secondAttribute="leadingMargin" id="QFf-Lt-xyw"/>
+                            <constraint firstItem="VFM-z9-Ak9" firstAttribute="top" secondItem="1mF-u2-TBM" secondAttribute="bottom" constant="80" id="XdT-QH-tWD"/>
+                            <constraint firstItem="0X9-8a-Bhv" firstAttribute="top" secondItem="khw-Fj-bJs" secondAttribute="bottom" constant="20" id="ZwS-3e-Nzb"/>
+                            <constraint firstItem="khw-Fj-bJs" firstAttribute="trailing" secondItem="h0j-b2-9re" secondAttribute="trailingMargin" id="dAQ-wA-dfl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VFM-z9-Ak9" secondAttribute="trailing" id="j3a-vk-FI5"/>
+                            <constraint firstItem="khw-Fj-bJs" firstAttribute="leading" secondItem="h0j-b2-9re" secondAttribute="leadingMargin" id="kp3-jQ-HaE"/>
+                            <constraint firstAttribute="centerY" secondItem="RjE-z0-eaC" secondAttribute="centerY" id="mYl-a2-BqU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="actIndicator" destination="RjE-z0-eaC" id="czD-kE-chb"/>
+                        <outlet property="announcerLabel" destination="VFM-z9-Ak9" id="QHn-0T-gEj"/>
+                        <outlet property="continueButton" destination="khw-Fj-bJs" id="eon-Mh-zPZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hzY-Pm-icI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2561" y="1662"/>
         </scene>
         <!--Root Tab Bar Controller-->
         <scene sceneID="Dzq-ic-rkJ">
@@ -1621,7 +1680,7 @@
                     <connections>
                         <segue destination="Amb-rf-fw3" kind="relationship" relationship="viewControllers" id="oMJ-Dh-lHg"/>
                         <segue destination="lzI-Av-vbK" kind="relationship" relationship="viewControllers" id="ug1-o6-UTo"/>
-                        <segue destination="mFb-KD-74d" kind="relationship" relationship="viewControllers" id="WEA-m4-Cvf"/>
+                        <segue destination="J9D-9Y-1uY" kind="relationship" relationship="viewControllers" id="WEA-m4-Cvf"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0oA-2d-Cbi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1672,6 +1731,28 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a4l-SD-1HZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1073" y="-359"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KX5-Dw-IvF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J9D-9Y-1uY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="arena" id="WHg-Xj-4dN">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="20"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TEO-35-AHk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mFb-KD-74d" kind="relationship" relationship="rootViewController" id="V2F-mW-aeP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZJW-HZ-kgF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1073" y="1662"/>
         </scene>
     </scenes>
     <resources>

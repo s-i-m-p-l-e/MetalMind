@@ -60,10 +60,6 @@ class AvailableSkillList: UITableViewController, UITableViewDataSource, UITableV
         let actionID = skillList[indexPath.row].id
         
         addSkillToActiveSkillList(actionID!)
-        if let delegate = self.delegate {
-            delegate.controller(self, didAddSkill: true)
-        }
-        self.navigationController?.popViewControllerAnimated(true)
     }
     
     // MARK: - Helpers
@@ -113,7 +109,7 @@ class AvailableSkillList: UITableViewController, UITableViewDataSource, UITableV
         let dataJSON = NSJSONSerialization.dataWithJSONObject(parameters, options: NSJSONWritingOptions.PrettyPrinted, error: &error)
         let stringJSON = NSString(data: dataJSON!,
             encoding: NSASCIIStringEncoding)
-        println(stringJSON)
+//        println(stringJSON)
         
         /* custom request configuration */
         var mutableURLRequest = NSMutableURLRequest(URL: URL!)
@@ -128,7 +124,13 @@ class AvailableSkillList: UITableViewController, UITableViewDataSource, UITableV
         var request = manager.request(mutableURLRequest)
         
         request.responseJSON {(request, response, JSON, error) in
-                println(JSON)
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                if let delegate = self.delegate {
+                    delegate.controller(self, didAddSkill: true)
+                }
+                self.navigationController?.popViewControllerAnimated(true)
+            }
         }
     }
 

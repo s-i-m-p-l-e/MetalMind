@@ -26,10 +26,11 @@ class Skill {
     }
     
     init(json: [String: NSObject]) {
+        println(json)
         if let id = json["id"] as? Int {
             self.id = id
         } else {
-            log("Invalid json[\"_id\"] field - expected Int")
+            log("Invalid json[\"id\"] field - expected Int")
             self.id = nil
         }
         
@@ -66,6 +67,39 @@ class Skill {
         } else {
             log("Invalid json[\"description\"] field - expected String")
             self.description = nil
+        }
+    }
+    
+    init(activeSkillJSON: [String: NSObject]) {
+        if let action = activeSkillJSON["action"] as? [String: NSObject] {
+            if let id = action["id"] as? Int {
+                self.id = id
+            } else {
+                log("Invalid json[\"id\"] field - expected Int")
+                self.id = nil
+            }
+            
+            if let name = action["name"] as? String {
+                self.name = name
+            } else {
+                log("Invalid json[\"name\"] field - expected String")
+                self.name = nil
+            }
+            
+            if let description = action["description"] as? String {
+                self.description = description
+            } else {
+                log("Invalid json[\"description\"] field - expected String")
+                self.description = nil
+            }
+        }
+        
+        if let trigger = activeSkillJSON["trigger"] as? [String: NSObject] {
+            builder.trigger = Trigger(json: trigger)
+        }
+        
+        if let clause = activeSkillJSON["clause"] as? [String: NSObject] {
+            builder.clause = Clause(json: clause)
         }
     }
 }

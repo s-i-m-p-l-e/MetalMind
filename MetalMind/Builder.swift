@@ -60,6 +60,18 @@ struct Trigger {
     var who: Who = .Me
     var what: What = .Attack
     
+    init() {
+        self.when = .Before
+        self.who =  .Me
+        self.what = .Attack
+    }
+    
+    init(json: [String: NSObject]) {
+        self.when = When.fromString(json["when"] as! String)!
+        self.who = Who.fromString(json["who"] as! String)!
+        self.what = What.fromString(json["what"] as! String)!
+    }
+    
     func toDictionary() -> [String : String] {
         return ["when": self.when.toString(),
                 "who": self.who.toString(),
@@ -76,6 +88,14 @@ struct Trigger {
 enum When: UInt32 {
     case Before
     case After
+    
+    static func fromString(str: String) -> When? {
+        switch str {
+            case "before": return .Before
+            case "after": return .After
+            default: return nil
+        }
+    }
     
     func toString() -> String {
         switch self {
@@ -102,6 +122,14 @@ enum Who: UInt32 {
     case Me
     case Enemy
     
+    static func fromString(str: String) -> Who? {
+        switch str {
+        case "me": return .Me
+        case "enemy": return .Enemy
+        default: return nil
+        }
+    }
+    
     func toString() -> String {
         switch self {
         case .Me:
@@ -125,6 +153,13 @@ enum Who: UInt32 {
 
 enum What: UInt32 {
     case Attack
+    
+    static func fromString(str: String) -> What? {
+        switch str {
+        case "attack": return .Attack
+        default: return nil
+        }
+    }
     
     func toString() -> String {
         switch self {
@@ -154,6 +189,23 @@ struct Clause {
     var value: Float = 0.0
     var metrics: Metrics = .Points
     
+    init() {
+        self.actor = .Me
+        self.stats = .Health
+        self.mmOperator = .Less
+        self.value = 0.0
+        self.metrics = .Points
+    }
+    
+    init(json: [String:NSObject]) {
+        self.actor = Actor.fromString(json["actor"] as! String)!
+        self.stats = Stats.fromString(json["stats"] as! String)!
+        self.mmOperator = MMOperator.fromString(json["operator"] as! String)!
+        let stringValue = json["value"] as? NSString
+        self.value = stringValue!.floatValue
+        self.metrics = Metrics.fromString(json["metrics"] as! String)!
+    }
+    
     func toDictionary() -> [String : String] {
         return ["actor": self.actor.toString(),
                 "stats": self.stats.toString(),
@@ -174,6 +226,14 @@ struct Clause {
 enum Actor: UInt32 {
     case Me
     case Enemy
+    
+    static func fromString(str: String) -> Actor? {
+        switch str {
+        case "me": return .Me
+        case "enemy": return .Enemy
+        default: return nil
+        }
+    }
     
     func toString() -> String {
         switch self {
@@ -202,6 +262,18 @@ enum Stats: UInt32 {
     case Energy
     case Armor
     case AttackSpeed
+    
+    static func fromString(str: String) -> Stats? {
+        switch str {
+        case "health": return .Health
+        case "damage": return .Damage
+        case "energy": return .Energy
+        case "armor": return .Armor
+        case "attackspeed": return .AttackSpeed
+
+        default: return nil
+        }
+    }
     
     func toString() -> String {
         switch self {
@@ -237,6 +309,19 @@ enum MMOperator: UInt32 {
     case LessOrEqual
     case GreaterOrEqual
     
+    static func fromString(str: String) -> MMOperator? {
+        switch str {
+        case "<": return .Less
+        case "=": return .Equal
+        case ">": return .Greater
+        case "<=": return .LessOrEqual
+        case ">=": return .GreaterOrEqual
+            
+        default: return nil
+        }
+    }
+    
+    
     
     func toString() -> String {
         switch self {
@@ -268,6 +353,15 @@ enum MMOperator: UInt32 {
 enum Metrics: UInt32 {
     case Points
     case Procents
+    
+    static func fromString(str: String) -> Metrics? {
+        switch str {
+        case "points": return .Points
+        case "%": return .Procents
+            
+        default: return nil
+        }
+    }
     
     func toString() -> String {
         switch self {
