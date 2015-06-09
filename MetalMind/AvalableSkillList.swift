@@ -24,6 +24,7 @@ class AvailableSkillList: UITableViewController, UITableViewDataSource, UITableV
         }
     }
     var token: String?  { return userData?.objectForKey("token") as? String }
+    var delegate: SkillListDelegate?
     
     // MARK: - UIViewController Life-Cycle
     override func viewDidLoad() {
@@ -53,11 +54,17 @@ class AvailableSkillList: UITableViewController, UITableViewDataSource, UITableV
         
         return cell!
     }
-
+    
     // MARK: - UITableViewDelegate
-//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        performSegueWithIdentifier(builderTVCSegue, sender: indexPath.row)
-//    }
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let actionID = skillList[indexPath.row].id
+        
+        addSkillToActiveSkillList(actionID!)
+        if let delegate = self.delegate {
+            delegate.controller(self, didAddSkill: true)
+        }
+        self.navigationController?.popViewControllerAnimated(true)
+    }
     
     // MARK: - Helpers
     func loadSkills() {
@@ -85,6 +92,44 @@ class AvailableSkillList: UITableViewController, UITableViewDataSource, UITableV
             }
         }
         downloadingSkillList = false
+    }
+    
+    func addSkillToActiveSkillList(actionID: Int) {
+        let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
+        let currentRobotID = appDelegate?.currentRobot!.id
+        
+        let URL =  NSURL(string: "https://api.metalmind.rocks/v1/action/\(currentRobotID!)")
+        let parameters: [String : AnyObject] = [
+            "config": [
+                "trigger": Trigger().toDictionary(),
+                "clause": Clause().toDictionary(),
+                "action": ["actionId": actionID,
+                           "quantity": 1]
+                ]
+        ]
+        
+        /* parameter serialization */
+        var error: NSError?
+        let dataJSON = NSJSONSerialization.dataWithJSONObject(parameters, options: NSJSONWritingOptions.PrettyPrinted, error: &error)
+        let stringJSON = NSString(data: dataJSON!,
+            encoding: NSASCIIStringEncoding)
+        println(stringJSON)
+        
+        /* custom request configuration */
+        var mutableURLRequest = NSMutableURLRequest(URL: URL!)
+        if token != nil {
+            mutableURLRequest.setValue(token!, forHTTPHeaderField: "Authorization")
+        }
+        mutableURLRequest.HTTPMethod = "POST"
+        mutableURLRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        mutableURLRequest.HTTPBody = dataJSON
+        
+        var manager = Alamofire.Manager.sharedInstance
+        var request = manager.request(mutableURLRequest)
+        
+        request.responseJSON {(request, response, JSON, error) in
+                println(JSON)
+        }
     }
 
 }

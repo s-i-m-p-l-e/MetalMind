@@ -34,6 +34,22 @@ struct Builder {
                            ]
                 ]
     }
+    
+    func toDefaultDictionary() -> [String : [String : String]] {
+        let trigger: [String : String] = self.trigger.toDictionary()
+        let clause: [String : String] = self.clause.toDictionary()
+        return ["trigger": trigger,
+            "clause": clause,
+            "action": ["actionId": "1.0", "quantity": "1.0"],
+            "actions": [ "id": "1.0",
+                "effect": "health",
+                "value": "100.0",
+                "cost": "3.0",
+                "duration": "null"
+            ]
+        ]
+    }
+
 }
 
 

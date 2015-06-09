@@ -76,6 +76,11 @@ class SkillListTableViewController: UITableViewController, UITableViewDataSource
         skillList[index].builder = builder
     }
     
+    func controller(controller: UITableViewController, didAddSkill: Bool) {
+        loadSkills()
+        self.tableView.reloadData()
+    }
+    
     // MARK: - Helpers
     func loadSkills() {
         if downloadingSkillList { return }
@@ -92,8 +97,6 @@ class SkillListTableViewController: UITableViewController, UITableViewDataSource
         
         request.RobotDataLoadResponseJSON { (request, response, arrayJSON, error) -> Void in
             
-//            println(response)
-//            println(arrayJSON)
             if arrayJSON != nil && error == nil {
 //                self.robots = map(arrayJSON!) { Robot(json: $0) }
             }
@@ -113,6 +116,9 @@ class SkillListTableViewController: UITableViewController, UITableViewDataSource
             builderTVC?.skillIndex = index
             builderTVC?.skillBuilder = skillList[index!].builder
             builderTVC?.navigationItem.title = skillList[index!].name
+        case availableSkillListTVCSegue:
+            let availableSkillListTVC = segue.destinationViewController as? AvailableSkillList
+            availableSkillListTVC?.delegate = self
         default: break
         }
     }
