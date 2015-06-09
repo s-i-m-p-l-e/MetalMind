@@ -269,7 +269,7 @@ enum Stats: UInt32 {
         case "damage": return .Damage
         case "energy": return .Energy
         case "armor": return .Armor
-        case "attackspeed": return .AttackSpeed
+        case "attackSpeed": return .AttackSpeed
 
         default: return nil
         }

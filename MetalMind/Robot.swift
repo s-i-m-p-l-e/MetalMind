@@ -18,6 +18,7 @@ class Robot {
     var defence: Float?
     var damage: Float?
     var level: UInt?
+    var xp: UInt?
 //    owner (User, optional),
     var points: UInt?
     var win: UInt?
@@ -101,6 +102,13 @@ class Robot {
             log("Invalid json[\"looses\"] field - expected UInt")
             self.lost = nil
         }
+        
+        if let xp = json["xp"] as? UInt {
+            self.xp = xp
+        } else {
+            log("Invalid json[\"xp\"] field - expected UInt")
+            self.xp = nil
+        }
 
     }
 }
@@ -116,6 +124,7 @@ extension Robot: Printable {
             if let energy = self.energy { dataArray.append("Energy: \(energy)") }
             if let defence = self.defence { dataArray.append("Defence: \(defence)") }
             if let damage = self.damage { dataArray.append("Damage: \(damage)") }
+            if let xp = self.xp { dataArray.append("XP: \(xp)") }
             if let points = self.points { dataArray.append("Ponits: \(points)") }
             if let win = self.win { dataArray.append("Win: \(win)") }
             if let lost = self.lost { dataArray.append("Lost: \(lost)") }

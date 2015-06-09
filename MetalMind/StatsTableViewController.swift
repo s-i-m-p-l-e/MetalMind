@@ -44,18 +44,18 @@ class StatsTableViewController: UITableViewController {
         super.viewDidLoad()
         loadRobotData()
         
-        if let robot = self.robot {
-            self.winLabel.text = "\(robot.win!)"
-            self.loseLabel.text = "\(robot.lost!)"
-            self.xpLabel.text = "\(robot.points!)"
-            self.pointsLabel.text = "\(robot.points!)"
-            self.levelLabel.text = "\(robot.level!)"
-            self.healthLabel.text = "\(robot.health!)"
-            self.energyLabel.text = "\(robot.energy!)"
-            self.defenceLabel.text = "\(robot.defence!)"
-            self.damageLabel.text = "\(robot.damage!)"
-            self.attackSpeedLabel.text = "\(robot.attackSpeed!)"
-        }
+//        if let robot = self.robot {
+//            self.winLabel.text = "\(robot.win!)"
+//            self.loseLabel.text = "\(robot.lost!)"
+//            self.xpLabel.text = "\(robot.points!)"
+//            self.pointsLabel.text = "\(robot.points!)"
+//            self.levelLabel.text = "\(robot.level!)"
+//            self.healthLabel.text = "\(robot.health!)"
+//            self.energyLabel.text = "\(robot.energy!)"
+//            self.defenceLabel.text = "\(robot.defence!)"
+//            self.damageLabel.text = "\(robot.damage!)"
+//            self.attackSpeedLabel.text = "\(robot.attackSpeed!)"
+//        }
     }
     
     // MARK: - UITableViewDelegate
@@ -75,7 +75,7 @@ class StatsTableViewController: UITableViewController {
         let currentRobotID = appDelegate?.currentRobot!.id
 
         
-        let URL =  NSURL(string: "https://api.metalmind.rocks/v1/robots/\(currentRobotID!)")
+        let URL =  NSURL(string: "https://api.metalmind.rocks/v1/robot/\(currentRobotID!)")
         var mutableURLRequest = NSMutableURLRequest(URL: URL!)
         if token != nil {
             mutableURLRequest.setValue(token!, forHTTPHeaderField: "Authorization")
@@ -84,25 +84,27 @@ class StatsTableViewController: UITableViewController {
         var manager = Alamofire.Manager.sharedInstance
         var request = manager.request(mutableURLRequest)
         
-        request.RobotDataLoadResponseJSON { (request, response, JSON, error) -> Void in
-            
+        request.responseJSON { (request, response, JSON, error) -> Void in
             if JSON != nil && error == nil {
                 println(response)
                 println(JSON)
+                let serializedJSON = JSON as? [String:NSObject]
                 
-                self.robot = Robot(json: JSON!.first!)
+                self.robot = Robot(json: serializedJSON!)
                 
                 dispatch_async(dispatch_get_main_queue()) {
-                    self.winLabel.text = "\(self.robot?.win!)"
-                    self.loseLabel.text = "\(self.robot?.lost!)"
-                    self.xpLabel.text = "\(self.robot?.points!)"
-                    self.pointsLabel.text = "\(self.robot?.points!)"
-                    self.levelLabel.text = "\(self.robot?.level!)"
-                    self.healthLabel.text = "\(self.robot?.health!)"
-                    self.energyLabel.text = "\(self.robot?.energy!)"
-                    self.defenceLabel.text = "\(self.robot?.defence!)"
-                    self.damageLabel.text = "\(self.robot?.damage!)"
-                    self.attackSpeedLabel.text = "\(self.robot?.attackSpeed!)"
+                    if let robot = self.robot {
+                        self.winLabel.text = "\(robot.win!)"
+                        self.loseLabel.text = "\(robot.lost!)"
+                        self.xpLabel.text = "\(robot.xp!)"
+                        self.pointsLabel.text = "\(robot.points!)"
+                        self.levelLabel.text = "\(robot.level!)"
+                        self.healthLabel.text = "\(robot.health!)"
+                        self.energyLabel.text = "\(robot.energy!)"
+                        self.defenceLabel.text = "\(robot.defence!)"
+                        self.damageLabel.text = "\(robot.damage!)"
+                        self.attackSpeedLabel.text = "\(robot.attackSpeed!)"
+                    }
                 }
             }
         }
