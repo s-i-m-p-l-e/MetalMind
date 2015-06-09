@@ -63,7 +63,7 @@ class HomeViewController: UIViewController, HomeViewControllerDelegate {
     // MARK:- UIViewController Life-Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.loadRobotsData()
+        self.loadRobotsData(nil)
     }
     
     override func viewWillLayoutSubviews() {
@@ -115,7 +115,7 @@ class HomeViewController: UIViewController, HomeViewControllerDelegate {
     }
     
     // MARK: - Helpers
-    func loadRobotsData() {
+    func loadRobotsData(completion: (() -> Void)? ) {
         if downloadingRobotData { return }
         downloadingRobotData = true
         
@@ -133,6 +133,11 @@ class HomeViewController: UIViewController, HomeViewControllerDelegate {
             if arrayJSON != nil && error == nil {
                 self.robots = map(arrayJSON!) { Robot(json: $0) }
             }
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                completion?()
+            }
+            
         }
         downloadingRobotData = false
     }
@@ -191,8 +196,9 @@ class HomeViewController: UIViewController, HomeViewControllerDelegate {
                 let json = jsonObject as? [String:Int]
                 if json?["success"] == 1 {
                     
+                    self.animateCharacterChange(self.view, duration: 0.5)
                     self.robots.removeAtIndex(self.currentRobotIndex)
-                    
+
                     let alert = UIAlertView(title: "DELETED", message: "Robot deleted successfully", delegate: nil, cancelButtonTitle: "OK")
                     alert.show()
                 }
@@ -223,8 +229,7 @@ class HomeViewController: UIViewController, HomeViewControllerDelegate {
     // MARK: - HomeViewControllerDelegate
     func controller(controller: UIViewController, didLoginUser: Bool) {
         if token != nil && didLoginUser == true {
-            self.loadRobotsData()
-            dispatch_async(dispatch_get_main_queue()) {
+            self.loadRobotsData(){
                 self.view.setNeedsDisplay()
             }
         }
@@ -232,8 +237,10 @@ class HomeViewController: UIViewController, HomeViewControllerDelegate {
     
     func controller(controller: UIViewController, didAddRobot: Bool) {
         if token != nil && didAddRobot == true {
-            self.loadRobotsData()
-            currentRobotIndex = robots.count
+            self.currentRobotIndex = self.robots.count - 1
+            self.loadRobotsData(){
+                self.switchToNextRobot()
+            }
         }
     }
     

@@ -115,7 +115,66 @@ class BuilderTableViewController: UITableViewController {
     }
     
     func changeData() {
-    
+        
+        /* get user data */
+        skillBuilder?.trigger.when = When(rawValue: UInt32(whenSegmenControl.selectedSegmentIndex))!
+        skillBuilder?.trigger.who = Who(rawValue: UInt32(whoSegmentControl.selectedSegmentIndex))!
+        skillBuilder?.trigger.what = What(rawValue: UInt32(whatSegmentControl.selectedSegmentIndex))!
+        
+        skillBuilder?.clause.actor = Actor(rawValue: UInt32(actorSegmentControl.selectedSegmentIndex))!
+        skillBuilder?.clause.stats = Stats(rawValue: UInt32(statsSegmentControl.selectedSegmentIndex))!
+        skillBuilder?.clause.mmOperator = MMOperator(rawValue: UInt32(operatorSegmentControl.selectedSegmentIndex))!
+        skillBuilder?.clause.value = valueTextField.text.floatValue
+        skillBuilder?.clause.metrics = Metrics(rawValue: UInt32(metricsSegmentControl.selectedSegmentIndex))!
+        
+        /* prepare needed variables for request */
+        let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
+        let currentRobotID = appDelegate?.currentRobot!.id
+        let action = skillBuilder?.toDefaultDictionary()["action"]
+        let actionID = (action!["actionId"]! as NSString).floatValue
+        
+        /* set parameters */
+        let URL =  NSURL(string: "https://api.metalmind.rocks/v1/action/\(skillID!)")
+        let parameters: [String : AnyObject] = [
+            "id": skillID!,
+            "robotId": currentRobotID!,
+            "config": [
+                "trigger": skillBuilder!.trigger.toDictionary(),
+                "clause": skillBuilder!.clause.toDictionary(),
+                "action": ["actionId": actionID,
+                           "quantity": 1]
+            ]
+        ]
+        
+        /* parameter serialization */
+        var error: NSError?
+        let dataJSON = NSJSONSerialization.dataWithJSONObject(parameters, options: NSJSONWritingOptions.PrettyPrinted, error: &error)
+        let stringJSON = NSString(data: dataJSON!,
+            encoding: NSASCIIStringEncoding)
+        println(stringJSON)
+        
+        /* custom request configuration */
+        var mutableURLRequest = NSMutableURLRequest(URL: URL!)
+        if token != nil {
+            mutableURLRequest.setValue(token!, forHTTPHeaderField: "Authorization")
+        }
+        mutableURLRequest.HTTPMethod = "PUT"
+        mutableURLRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        mutableURLRequest.HTTPBody = dataJSON
+        
+        var manager = Alamofire.Manager.sharedInstance
+        var request = manager.request(mutableURLRequest)
+        
+        request.responseJSON {(request, response, JSON, error) in
+            println(JSON)
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                if let delegate = self.delegate {
+                    delegate.controller(self, didAddSkill: true)
+                }
+                self.navigationController?.popViewControllerAnimated(true)
+            }
+        }
     }
     
     func deleteCurrentSkill() {
@@ -149,18 +208,7 @@ class BuilderTableViewController: UITableViewController {
     
     // MARK: - IBActions
     @IBAction func saveChangesButtonAction(sender: UIButton) {
-        skillBuilder?.trigger.when = When(rawValue: UInt32(whenSegmenControl.selectedSegmentIndex))!
-        skillBuilder?.trigger.who = Who(rawValue: UInt32(whoSegmentControl.selectedSegmentIndex))!
-        skillBuilder?.trigger.what = What(rawValue: UInt32(whatSegmentControl.selectedSegmentIndex))!
-        
-        skillBuilder?.clause.actor = Actor(rawValue: UInt32(actorSegmentControl.selectedSegmentIndex))!
-        skillBuilder?.clause.stats = Stats(rawValue: UInt32(statsSegmentControl.selectedSegmentIndex))!
-        skillBuilder?.clause.mmOperator = MMOperator(rawValue: UInt32(operatorSegmentControl.selectedSegmentIndex))!
-        skillBuilder?.clause.value = valueTextField.text.floatValue
-        skillBuilder?.clause.metrics = Metrics(rawValue: UInt32(metricsSegmentControl.selectedSegmentIndex))!
-        
-        delegate?.controller(self, didChangeSkillData: true, index: self.skillIndex!, builder: self.skillBuilder!)
-        self.navigationController?.popViewControllerAnimated(true)
+        changeData()
     }
     
     @IBAction func deleteSkillAction(sender: UIBarButtonItem) {
