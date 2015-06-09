@@ -32,6 +32,7 @@ class BuilderTableViewController: UITableViewController {
     var skillIndex: Int?
     var skillBuilder: Builder?
     var skillID: Int?
+    var actionID: Float?
     var downloadingSkillData = false
     var userData: NSDictionary? {
         get {

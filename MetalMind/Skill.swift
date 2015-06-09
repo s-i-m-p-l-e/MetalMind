@@ -14,6 +14,7 @@ class Skill {
     var effect: String?
     var value: Int?
     var cost: Int?
+    var actionID: Float?
     
     var image: UIImage?
     var name: String?
@@ -85,6 +86,12 @@ class Skill {
             } else {
                 log("Invalid json[\"name\"] field - expected String")
                 self.name = nil
+            }
+            if let id = action["id"] as? Float {
+                self.actionID = id
+            } else {
+                log("Invalid json[\"actionId\"] field - expected Float")
+                self.actionID = nil
             }
             
             if let description = action["description"] as? String {

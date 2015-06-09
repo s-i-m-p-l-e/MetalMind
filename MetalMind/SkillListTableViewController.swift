@@ -121,6 +121,7 @@ class SkillListTableViewController: UITableViewController, UITableViewDataSource
             builderTVC?.delegate = self
             builderTVC?.skillIndex = index
             builderTVC?.skillID = skillList[index!].id
+            builderTVC?.actionID = skillList[index!].actionID
             builderTVC?.skillBuilder = skillList[index!].builder
             builderTVC?.navigationItem.title = skillList[index!].name
         case availableSkillListTVCSegue:

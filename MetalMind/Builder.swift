@@ -15,6 +15,8 @@ struct Builder {
     var trigger: Trigger
     var clause: Clause
     
+    var actionID: Float? = 1.0
+    
     init() {
         self.trigger = Trigger()
         self.clause = Clause()
@@ -40,7 +42,7 @@ struct Builder {
         let clause: [String : String] = self.clause.toDictionary()
         return ["trigger": trigger,
             "clause": clause,
-            "action": ["actionId": "1.0", "quantity": "1.0"],
+            "action": ["actionId": "\(self.actionID!)", "quantity": "1.0"],
             "actions": [ "id": "1.0",
                 "effect": "health",
                 "value": "100.0",

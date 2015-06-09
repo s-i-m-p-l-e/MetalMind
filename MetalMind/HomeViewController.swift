@@ -237,7 +237,10 @@ class HomeViewController: UIViewController, HomeViewControllerDelegate {
     
     func controller(controller: UIViewController, didAddRobot: Bool) {
         if token != nil && didAddRobot == true {
-            self.currentRobotIndex = self.robots.count - 1
+            if self.robots.count - 1 >= 0 {
+                self.currentRobotIndex = self.robots.count - 1
+            }
+            
             self.loadRobotsData(){
                 self.switchToNextRobot()
             }
