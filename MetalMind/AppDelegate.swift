@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        UIApplication.sharedApplication().statusBarStyle = .LightContent
         
         // uncomment line to debug LoginTableViewController and server authentication
-//        Locksmith.deleteDataForUserAccount("MetalMindUserAccount")
+        Locksmith.deleteDataForUserAccount("MetalMindUserAccount")
         return true
     }
 

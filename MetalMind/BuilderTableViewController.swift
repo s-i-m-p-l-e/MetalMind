@@ -33,6 +33,7 @@ class BuilderTableViewController: UITableViewController {
     // MARK: - UIViewController Life-Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadSkillData()
         
         /* Make table header smaller */
         self.tableView.tableHeaderView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: tableView.bounds.width, height: 0.1))
@@ -43,7 +44,7 @@ class BuilderTableViewController: UITableViewController {
         self.tableView.addGestureRecognizer(tapGestureRecognizer)
         
         /* Update interface to show builder changes */
-        saveChangesButton.setTitle(self.navigationItem.title, forState: .Normal)
+//        saveChangesButton.setTitle(self.navigationItem.title, forState: .Normal)
         whenSegmenControl.selectedSegmentIndex = Int(skillBuilder!.trigger.when.rawValue)
         whoSegmentControl.selectedSegmentIndex = Int(skillBuilder!.trigger.who.rawValue)
         whatSegmentControl.selectedSegmentIndex = Int(skillBuilder!.trigger.what.rawValue)
@@ -66,6 +67,10 @@ class BuilderTableViewController: UITableViewController {
     // MARK: - Helpers
     func hideKeyboard() {
         self.view.endEditing(false)
+    }
+    
+    func loadSkillData() {
+        
     }
     
     func changeData() { }
