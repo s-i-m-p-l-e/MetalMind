@@ -131,8 +131,6 @@ class BuilderTableViewController: UITableViewController {
         /* prepare needed variables for request */
         let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
         let currentRobotID = appDelegate?.currentRobot!.id
-        let action = skillBuilder?.toDefaultDictionary()["action"]
-        let actionID = (action!["actionId"]! as NSString).floatValue
         
         /* set parameters */
         let URL =  NSURL(string: "https://api.metalmind.rocks/v1/action/\(skillID!)")
@@ -142,7 +140,7 @@ class BuilderTableViewController: UITableViewController {
             "config": [
                 "trigger": skillBuilder!.trigger.toDictionary(),
                 "clause": skillBuilder!.clause.toDictionary(),
-                "action": ["actionId": actionID,
+                "action": ["actionId": self.actionID!,
                            "quantity": 1]
             ]
         ]
